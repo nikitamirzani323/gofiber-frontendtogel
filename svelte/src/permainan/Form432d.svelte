@@ -1387,14 +1387,22 @@
 				alert("Maximal Bet 4D : " +new Intl.NumberFormat().format(max4d_bet));
 			}
 			if (flag == true) {
-				if(flag_fulldiskon =="DISC"){
-					diskon = Math.ceil(bet_1 * disc4d_bet);
-					diskonpercen = disc4d_bet;
-					win = win4d_bet;
-				}else{
-					diskon = 0;
-					diskonpercen = 0;
-					win = win4dnodiskon_bet;
+				switch(flag_fulldiskon){
+					case "FULL":
+						diskon = 0
+						diskonpercen = 0
+						win = win4dnodiskon_bet;
+						break;
+					case "BB":
+						diskon = 0
+						diskonpercen = 0
+						win = win4dbb_kena_bet;
+						break;
+					default:
+						diskon = Math.ceil(bet_1 * disc4d_bet);
+						diskonpercen = disc4d_bet;
+						win = win4d_bet;
+						break;
 				}
 				bayar = parseInt(bet_1) - parseInt(Math.ceil(diskon));
 				for (let a = 0; a < data_bbfs.length; a++) {
@@ -1463,14 +1471,22 @@
 				alert("Maximal Bet 3D : " +new Intl.NumberFormat().format(max3d_bet));
 			}
 			if (flag == true) {
-				if(flag_fulldiskon =="DISC"){
-					diskon = Math.ceil(bet_2 * disc3d_bet);
-					diskonpercen = disc3d_bet;
-					win = win3d_bet;
-				}else{
-					diskon = 0;
-					diskonpercen = 0;
-					win = win3dnodiskon_bet;
+				switch(flag_fulldiskon){
+					case "FULL":
+						diskon = 0
+						diskonpercen = 0
+						win = win3dnodiskon_bet;
+						break;
+					case "BB":
+						diskon = 0
+						diskonpercen = 0
+						win = win3dbb_kena_bet;
+						break;
+					default:
+						diskon = Math.ceil(bet_2 * disc3d_bet);
+						diskonpercen = disc3d_bet;
+						win = win3d_bet;
+						break;
 				}
 				bayar = parseInt(bet_2) - parseInt(Math.ceil(diskon));
 				for (let a = 0; a < data_bbfs.length; a++) {
@@ -1541,14 +1557,22 @@
 				);
 			}
 			if (flag == true) {
-				if(flag_fulldiskon =="DISC"){
-					diskon = Math.ceil(bet_3 * disc2d_bet);
-					diskonpercen = disc2d_bet;
-					win = win2d_bet;
-				}else{
-					diskon = 0;
-					diskonpercen = 0;
-					win = win2dnodiskon_bet;
+				switch(flag_fulldiskon){
+					case "FULL":
+						diskon = 0
+						diskonpercen = 0
+						win = win2dnodiskon_bet;
+						break;
+					case "BB":
+						diskon = 0
+						diskonpercen = 0
+						win = win2dbb_kena_bet;
+						break;
+					default:
+						diskon = Math.ceil(bet_3 * disc2d_bet);
+						diskonpercen = disc2d_bet;
+						win = win2d_bet;
+						break;
 				}
 				bayar = parseInt(bet_3) - parseInt(Math.ceil(diskon));
 				for (let a = 0; a < data_bbfs.length; a++) {
@@ -1618,16 +1642,23 @@
 				alert("Maximal Bet 2DD : " +new Intl.NumberFormat().format(max2dd_bet));
 			}
 			if (flag == true) {
-				if(flag_fulldiskon =="DISC"){
-					diskon = Math.ceil(bet_4 * disc2dd_bet);
-					diskonpercen = disc2dd_bet;
-					win = win2dd_bet;
-				}else{
-					diskon = 0;
-					diskonpercen = 0;
-					win = win2ddnodiskon_bet;
+				switch(flag_fulldiskon){
+					case "FULL":
+						diskon = 0
+						diskonpercen = 0
+						win = win2ddnodiskon_bet;
+						break;
+					case "BB":
+						diskon = 0
+						diskonpercen = 0
+						win = win2ddbb_kena_bet;
+						break;
+					default:
+						diskon = Math.ceil(bet_4 * disc2dd_bet);
+						diskonpercen = disc2dd_bet;
+						win = win2dd_bet;
+						break;
 				}
-				
 				bayar = parseInt(bet_4) - parseInt(Math.ceil(diskon));
 				for (let a = 0; a < data_bbfs.length; a++) {
 					for (let b = 0; b < data_bbfs.length; b++) {
@@ -1696,14 +1727,22 @@
 				alert("Maximal Bet 2DT : " +new Intl.NumberFormat().format(max2dt_bet));
 			}
 			if (flag == true) {
-				if(flag_fulldiskon =="DISC"){
-					diskon = Math.ceil(bet_5 * disc2dt_bet);
-					diskonpercen = disc2dt_bet;
-					win = win2dd_bet;
-				}else{
-					diskon = 0;
-					diskonpercen = 0;
-					win = win2ddnodiskon_bet;
+				switch(flag_fulldiskon){
+					case "FULL":
+						diskon = 0
+						diskonpercen = 0
+						win = win2dtnodiskon_bet;
+						break;
+					case "BB":
+						diskon = 0
+						diskonpercen = 0
+						win = win2dtbb_kena_bet;
+						break;
+					default:
+						diskon = Math.ceil(bet_5 * disc2dt_bet);
+						diskonpercen = disc2dt_bet;
+						win = win2dd_bet;
+						break;
 				}
 				bayar = parseInt(bet_5) - parseInt(Math.ceil(diskon));
 				for (let a = 0; a < data_bbfs.length; a++) {
@@ -1773,16 +1812,23 @@
 				alert("Maximal Bet 3DD : " +new Intl.NumberFormat().format(max3dd_bet));
 			}
 			if (flag == true) {
-				if(flag_fulldiskon =="DISC"){
-					diskon = Math.ceil(bet_6 * disc3dd_bet);
-					diskonpercen = disc3dd_bet;
-					win = win3dd_bet;
-				}else{
-					diskon = 0;
-					diskonpercen = 0;
-					win = win3ddnodiskon_bet;
+				switch(flag_fulldiskon){
+					case "FULL":
+						diskon = 0
+						diskonpercen = 0
+						win = win3ddnodiskon_bet;
+						break;
+					case "BB":
+						diskon = 0
+						diskonpercen = 0
+						win = win3ddbb_kena_bet;
+						break;
+					default:
+						diskon = Math.ceil(bet_6 * disc3dd_bet);
+						diskonpercen = disc3dd_bet;
+						win = win3dd_bet;
+						break;
 				}
-				
 				bayar = parseInt(bet_6) - parseInt(Math.ceil(diskon));
 				for (let a = 0; a < data_bbfs.length; a++) {
 					for (let b = 0; b < data_bbfs.length; b++) {
