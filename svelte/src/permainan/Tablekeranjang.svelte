@@ -127,23 +127,17 @@
                         size="sm"
                         data-bs-toggle="modal"
                         data-bs-target="#modalInformasi"
-                        style="margin-top:5px;"
-                        ><Icon name="info-circle" /> Informasi</Button
-                    >
+                        style="margin-top:5px;"><Icon name="info-circle" /> Informasi</Button>
                     <Button
                         id="btn1"
                         size="sm"
                         on:click={handleRemoveKeranjang_all}
-                        style="margin-top:5px;"
-                        ><Icon name="trash" /> Hapus Semua</Button
-                    >
+                        style="margin-top:5px;"><Icon name="trash" /> Hapus Semua</Button>
                     <Button
                         id="btn1"
                         size="sm"
                         on:click={handleSave}
-                        style="margin-top:5px;"
-                        ><Icon name="cart-check" /> BELI</Button
-                    >
+                        style="margin-top:5px;"><Icon name="cart-check" /> BELI</Button>
                 </center>
             {/if}
         {/if}
@@ -192,18 +186,18 @@
                                 }}>
                                 <Icon name="trash" style="cursor:pointer;" />
                             </td>
-                            <td style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;">{rec.nomor}</td>
-                            <td style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;">{rec.tipetoto}</td>
-                            <td style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;">{rec.permainan}</td>
-                            <td style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;">
+                            <td style="text-align:center;vertical-align:top;font-size:12px;color:#ffd292;">{rec.nomor}</td>
+                            <td style="text-align:center;vertical-align:top;font-size:12px;color:#ffd292;">{rec.tipetoto}</td>
+                            <td style="text-align:center;vertical-align:top;font-size:12px;color:#ffd292;">{rec.permainan}</td>
+                            <td style="text-align:right;vertical-align:top;font-size:12px;color:#ffd292;">
                                 {new Intl.NumberFormat().format(rec.bet)}
                             </td>
-                            <td style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;">
+                            <td style="text-align:right;vertical-align:top;font-size:12px;color:#ffd292;">
                                 {new Intl.NumberFormat().format(
                                     Math.ceil(rec.diskon)
                                 )} ({(rec.diskonpercen * 100).toFixed(1)}%)
                             </td>
-                            <td style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;">
+                            <td style="text-align:right;vertical-align:top;font-size:12px;color:#ffd292;">
                                 {new Intl.NumberFormat().format(rec.bayar)}
                             </td>
                         </tr>

@@ -130,33 +130,23 @@
                         id="btn1"
                         data-bs-toggle="modal"
                         data-bs-target="#modalInformasi"
-                        style="margin-top:5px;"
-                        ><Icon name="info-circle" /> Informasi</Button
-                    >
+                        style="margin-top:5px;"><Icon name="info-circle" /> Informasi</Button>
                     <Button
                         id="btn1"
                         on:click={handleRemoveKeranjang_all}
-                        style="margin-top:5px;"
-                        ><Icon name="trash" /> Hapus Semua</Button
-                    >
+                        style="margin-top:5px;"><Icon name="trash" /> Hapus Semua</Button>
                     <Button
                         id="btn1"
                         on:click={handleSave}
-                        style="margin-top:5px;"
-                        ><Icon name="cart-check" /> BELI</Button
-                    >
+                        style="margin-top:5px;"><Icon name="cart-check" /> BELI</Button>
                 </div>
             {/if}
             <h1 style="padding:5px;margin:0px;color:white;font-size:15px;">
-                TOTAL BAYAR : <span style="color:#fc0;"
-                    >{new Intl.NumberFormat().format(totalkeranjang)}</span
-                >
+                TOTAL BAYAR : <span style="color:#fc0;">{new Intl.NumberFormat().format(totalkeranjang)}</span>
             </h1>
         {:else}
             <h1 style="padding:5px;margin:0px;color:white;font-size:13px;">
-                TOTAL BAYAR : <span style="color:#fc0;"
-                    >{new Intl.NumberFormat().format(totalkeranjang)}</span
-                >
+                TOTAL BAYAR : <span style="color:#fc0;">{new Intl.NumberFormat().format(totalkeranjang)}</span>
             </h1>
             {#if group_btn_beli == true}
                 <center id="btnbelitogel">
@@ -165,23 +155,17 @@
                         id="btn1"
                         data-bs-toggle="modal"
                         data-bs-target="#modalInformasi"
-                        style="margin-top:5px;"
-                        ><Icon name="info-circle" /> Informasi</Button
-                    >
+                        style="margin-top:5px;"><Icon name="info-circle" /> Informasi</Button>
                     <Button
                         size="sm"
                         id="btn1"
                         on:click={handleRemoveKeranjang_all}
-                        style="margin-top:5px;"
-                        ><Icon name="trash" /> Hapus Semua</Button
-                    >
+                        style="margin-top:5px;"><Icon name="trash" /> Hapus Semua</Button>
                     <Button
                         size="sm"
                         id="btn1"
                         on:click={handleSave}
-                        style="margin-top:5px;"
-                        ><Icon name="cart-check" /> BELI</Button
-                    >
+                        style="margin-top:5px;"><Icon name="cart-check" /> BELI</Button>
                 </center>
             {/if}
         {/if}
@@ -194,38 +178,31 @@
                         <th
                             width="1%"
                             style="text-align:center;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;"
-                            NOWRAP>&nbsp;</th
-                        >
+                            NOWRAP>&nbsp;</th>
                         <th
                             width="10%"
                             style="text-align:center;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;"
-                            NOWRAP>NOMOR</th
-                        >
+                            NOWRAP>NOMOR</th>
                         <th
                             width="20%"
                             style="text-align:center;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;"
-                            NOWRAP>PERMAINAN</th
-                        >
+                            NOWRAP>PERMAINAN</th>
                         <th
                             width="20%"
                             style="text-align:right;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;"
-                            NOWRAP>BET</th
-                        >
+                            NOWRAP>BET</th>
                         <th
                             width="20%"
                             style="text-align:right;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;"
-                            NOWRAP>DISKON</th
-                        >
+                            NOWRAP>DISKON</th>
                         <th
                             width="20%"
                             style="text-align:right;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;"
-                            NOWRAP>KEI</th
-                        >
+                            NOWRAP>KEI</th>
                         <th
                             width="*"
                             style="text-align:right;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;"
-                            NOWRAP>BAYAR</th
-                        >
+                            NOWRAP>BAYAR</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -235,41 +212,26 @@
                                 style="text-align:center;vertical-align:middle;"
                                 on:click={() => {
                                     handleRemoveKeranjang(rec.id, rec.bayar);
-                                }}
-                            >
+                                }}>
                                 <Icon name="trash" style="cursor:pointer;" />
                             </td>
-                            <td
-                                style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;"
-                                >{rec.nomor}</td
-                            >
-                            <td
-                                style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;"
-                                >{rec.permainan}</td
-                            >
-                            <td
-                                style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;"
-                            >
+                            <td style="text-align:center;vertical-align:top;font-size:12px;color:#ffd292;">{rec.nomor}</td>
+                            <td style="text-align:center;vertical-align:top;font-size:12px;color:#ffd292;">{rec.permainan}</td>
+                            <td style="text-align:right;vertical-align:top;font-size:12px;color:#ffd292;">
                                 {new Intl.NumberFormat().format(rec.bet)}
                             </td>
-                            <td
-                                style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;"
-                            >
+                            <td style="text-align:right;vertical-align:top;font-size:12px;color:#ffd292;">
                                 {new Intl.NumberFormat().format(
                                     Math.ceil(rec.diskon)
                                 )} ({(rec.diskonpercen * 100).toFixed(1)}%)
                             </td>
-                            <td
-                                style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;"
-                            >
+                            <td style="text-align:right;vertical-align:top;font-size:12px;color:#ffd292;">
                                 {new Intl.NumberFormat().format(
                                     Math.ceil(rec.kei)
                                 )}
                                 ({(rec.kei_percen * 100).toFixed(1)}%)
                             </td>
-                            <td
-                                style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;"
-                            >
+                            <td style="text-align:right;vertical-align:top;font-size:12px;color:#ffd292;">
                                 {new Intl.NumberFormat().format(rec.bayar)}
                             </td>
                         </tr>
@@ -283,38 +245,31 @@
                         <th
                             width="1%"
                             style="text-align:center;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;"
-                            NOWRAP>&nbsp;</th
-                        >
+                            NOWRAP>&nbsp;</th>
                         <th
                             width="10%"
                             style="text-align:center;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;"
-                            NOWRAP>NOMOR</th
-                        >
+                            NOWRAP>NOMOR</th>
                         <th
                             width="20%"
                             style="text-align:center;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;"
-                            NOWRAP>PERMAINAN</th
-                        >
+                            NOWRAP>PERMAINAN</th>
                         <th
                             width="20%"
                             style="text-align:right;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;"
-                            NOWRAP>BET</th
-                        >
+                            NOWRAP>BET</th>
                         <th
                             width="20%"
                             style="text-align:right;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;"
-                            NOWRAP>DISKON</th
-                        >
+                            NOWRAP>DISKON</th>
                         <th
                             width="20%"
                             style="text-align:right;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;"
-                            NOWRAP>KEI</th
-                        >
+                            NOWRAP>KEI</th>
                         <th
                             width="*"
                             style="text-align:right;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;"
-                            NOWRAP>BAYAR</th
-                        >
+                            NOWRAP>BAYAR</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -324,43 +279,28 @@
                                 style="text-align:center;vertical-align:top;"
                                 on:click={() => {
                                     handleRemoveKeranjang(rec.id, rec.bayar);
-                                }}
-                            >
+                                }}>
                                 <Icon name="trash" style="cursor:pointer;" />
                             </td>
-                            <td
-                                style="text-align:center;vertical-align:top;font-size:11px;color:#fc0;"
-                                >{rec.nomor}</td
-                            >
-                            <td
-                                style="text-align:center;vertical-align:top;font-size:11px;color:#fc0;"
-                                >{rec.permainan}</td
-                            >
-                            <td
-                                style="text-align:right;vertical-align:top;font-size:11px;color:#fc0;"
-                            >
+                            <td style="text-align:center;vertical-align:top;font-size:11px;color:#ffd292;">{rec.nomor}</td>
+                            <td style="text-align:center;vertical-align:top;font-size:11px;color:#ffd292;">{rec.permainan}</td>
+                            <td style="text-align:right;vertical-align:top;font-size:11px;color:#ffd292;">
                                 {new Intl.NumberFormat().format(rec.bet)}
                             </td>
-                            <td
-                                style="text-align:right;vertical-align:top;font-size:11px;color:#fc0;"
-                            >
+                            <td style="text-align:right;vertical-align:top;font-size:11px;color:#ffd292;">
                                 {new Intl.NumberFormat().format(
                                     Math.ceil(rec.diskon)
                                 )}
                                 <br />
                                 ({(rec.diskonpercen * 100).toFixed(1)}%)
                             </td>
-                            <td
-                                style="text-align:right;vertical-align:top;font-size:11px;color:#fc0;"
-                            >
+                            <td style="text-align:right;vertical-align:top;font-size:11px;color:#ffd292;">
                                 {new Intl.NumberFormat().format(
                                     Math.ceil(rec.kei)
                                 )}<br />
                                 ({(rec.kei_percen * 100).toFixed(1)}%)
                             </td>
-                            <td
-                                style="text-align:right;vertical-align:top;font-size:11px;color:#fc0;"
-                            >
+                            <td style="text-align:right;vertical-align:top;font-size:11px;color:#ffd292;">
                                 {new Intl.NumberFormat().format(rec.bayar)}
                             </td>
                         </tr>
@@ -372,14 +312,11 @@
     <slot:template slot="footer">
         <table
             class="table"
-            style="font-size:15px;padding:0px;margin:0px;background:#101010;"
-        >
+            style="font-size:15px;padding:0px;margin:0px;background:#101010;">
             <tr>
-                <td colspan="5" style="color:white;"
-                    >TOTAL LINE : <span style="color:#f7941d;"
-                        >{count_line}</span
-                    ></td
-                >
+                <td colspan="5" style="color:white;">
+                    TOTAL LINE : <span style="color:#f7941d;">{count_line}</span>
+                </td>
             </tr>
         </table>
     </slot:template>
@@ -403,37 +340,26 @@
                 <table class="table table-dark table-sm">
                     <tbody>
                         <tr>
+                            <td style="background:#303030;border:1px solid #282828;font-size:12px;">MIN BET</td>
                             <td
-                                style="background:#303030;border:1px solid #282828;font-size:12px;"
-                                >MIN BET</td
-                            >
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                                >{new Intl.NumberFormat().format(
+                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">
+                                {new Intl.NumberFormat().format(
                                     min_bet_5050umum
-                                )}</td
-                            >
+                                )}
+                            </td>
                         </tr>
                         <tr>
+                            <td >MAX BET</td>
                             <td
-                                style="background:#303030;border:1px solid #282828;font-size:12px;"
-                                >MAX BET</td
-                            >
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                                >{new Intl.NumberFormat().format(
+                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">
+                                {new Intl.NumberFormat().format(
                                     max_bet_5050umum
-                                )}</td
-                            >
+                                )}
+                                </td>
                         </tr>
                         <tr>
-                            <td
-                                style="background:#303030;border:1px solid #282828;font-size:12px;"
-                                >DISKON</td
-                            >
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                            >
+                            <td style="background:#303030;border:1px solid #282828;font-size:12px;">DISKON</td>
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">
                                 BESAR : {discbesar_bet_5050umum * 100}% <br />
                                 KECIL : {disckecil_bet_5050umum * 100}% <br />
                                 GENAP : {discgenap_bet_5050umum * 100}% <br />
@@ -448,9 +374,7 @@
                                 style="background:#303030;border:1px solid #282828;font-size:12px;"
                                 >KEI</td
                             >
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                            >
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">
                                 BESAR : {keibesar_bet_5050umum * 100}% <br />
                                 KECIL : {keikecil_bet_5050umum * 100}% <br />
                                 GENAP : {keigenap_bet_5050umum * 100}% <br />

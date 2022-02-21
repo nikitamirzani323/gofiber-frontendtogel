@@ -170,6 +170,12 @@
 		}
 	}
 	async function limittogel(e) {
+		db_form4d_4d_count_temp = 0;
+		db_form4d_3d_count_temp = 0;
+		db_form4d_3dd_count_temp = 0;
+		db_form4d_2d_count_temp = 0;
+		db_form4d_2dd_count_temp = 0;
+		db_form4d_2dt_count_temp = 0;
 		const res = await fetch("/api/limittogel", {
 			method: "POST",
 			headers: {
@@ -2704,13 +2710,15 @@
 		if (flag_checkcharacter == true && count_checkcharacter > 0) {
 			flag_running = true;
 		}
-
 		if (flag_running == false) {
 			let flag_checkdata = true;
+			
 			flag_checkdata = checkdata_432d(datanomor, datanomor.length, money);
+			
 			if (flag_checkdata == true) {
 				let flag_push = false;
 				let game = datanomor.length;
+				
 				switch (game.toString()) {
 					case "4":
 						if (checkLimitLine("4D") == true) {
