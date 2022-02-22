@@ -5068,6 +5068,8 @@
 							bind:this={nomorwap_input}
 							bind:value={nomorwap}
 							placeholder="Input Format"
+							rows="100" cols="100"
+							maxlength=1000 
 							style="border:none;background:#303030;color:white;height:95px;resize:none;"
 							class="form-control"
 						/>
