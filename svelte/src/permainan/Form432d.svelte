@@ -5309,8 +5309,7 @@
 				aria-label="Close"
 				width="25"
 				src="https://i.ibb.co/9yNF25L/outline-close-white-48dp.png"
-				alt=""
-			/>
+				alt=""/>
 		</div>
 		<h5 class="modal-title" id="exampleModalLabel">ERROR</h5>
 	</slot:template>
