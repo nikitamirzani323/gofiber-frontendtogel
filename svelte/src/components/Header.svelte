@@ -331,6 +331,7 @@
                                 bet_no: record[i]["no"],
                                 bet_background: background,
                                 bet_status: record[i]["status"],
+                                bet_tipe: record[i]["tipe"],
                                 bet_permainan: record[i]["permainan"],
                                 bet_nomor: record[i]["nomor"],
                                 bet_bet: record[i]["bet"],
@@ -1416,10 +1417,11 @@
                         >STATUS</th
                     >
                     <th
+                        width="10%"
+                        style="text-align:center;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">TIPE</th>
+                    <th
                         width="20%"
-                        style="text-align:center;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;"
-                        >PERMAINAN</th
-                    >
+                        style="text-align:center;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">PERMAINAN</th>
                     <th
                         width="*"
                         style="text-align:center;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;"
@@ -1467,9 +1469,10 @@
                         >
                         <td
                             NOWRAP
-                            style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};"
-                            >{rec.bet_permainan}</td
-                        >
+                            style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};">{rec.bet_tipe}</td>
+                        <td
+                            NOWRAP
+                            style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};">{rec.bet_permainan}</td>
                         <td
                             NOWRAP
                             style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};"

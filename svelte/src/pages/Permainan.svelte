@@ -194,6 +194,7 @@
                         {
                             permainan: record[i]["permainan"],
                             periode: record[i]["periode"],
+                            tipe_betinvoice: record[i]["tipe"],
                             nomor: record[i]["nomor"],
                             bet: record[i]["bet"],
                             diskon: record[i]["diskon"],
@@ -594,6 +595,10 @@
                                         <th
                                             width="10%"
                                             style="text-align:center;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;"
+                                            NOWRAP>TIPE</th>
+                                        <th
+                                            width="10%"
+                                            style="text-align:center;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;"
                                             NOWRAP>PERMAINAN</th>
                                         <th
                                             width="20%"
@@ -618,8 +623,10 @@
                                         <tr>
                                             <td
                                                 style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;"
-                                                NOWRAP>{rec.nomor}</td
-                                            >
+                                                NOWRAP>{rec.nomor}</td>
+                                            <td
+                                                style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;"
+                                                NOWRAP>{rec.tipe_betinvoice}</td>
                                             <td
                                                 style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;"
                                                 NOWRAP>{rec.permainan}</td
@@ -983,8 +990,7 @@
                     on:change={handleSelect}
                     style="background-color: #323030;color:white;border:1px solid #323030;"
                     aria-label="Permainan"
-                    class="form-select"
-                >
+                    class="form-select">
                     <option value="4-3-2">4D/3D/2D</option>
                     <option value="colok">COLOK</option>
                     <option value="5050">50-50</option>
@@ -1115,8 +1121,11 @@
                                     <th
                                         width="10%"
                                         style="text-align:center;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;"
-                                        NOWRAP>NOMOR</th
-                                    >
+                                        NOWRAP>NOMOR</th>
+                                    <th
+                                        width="10%"
+                                        style="text-align:center;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;"
+                                        NOWRAP>TIPE</th>
                                     <th
                                         width="10%"
                                         style="text-align:center;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;"
@@ -1149,8 +1158,10 @@
                                     <tr>
                                         <td
                                             style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;"
-                                            NOWRAP>{rec.nomor}</td
-                                        >
+                                            NOWRAP>{rec.nomor}</td>
+                                        <td
+                                            style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;"
+                                            NOWRAP>{rec.tipe_betinvoice}</td>
                                         <td
                                             style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;"
                                             NOWRAP>{rec.permainan}</td
