@@ -145,33 +145,15 @@
 		for (var i = 0; i < record.length; i++) {
 			min_bet_5050umum = parseInt(record[i]["min_bet_5050umum"]);
 			max_bet_5050umum = parseInt(record[i]["max_bet_5050umum"]);
-			keibesar_bet_5050umum = parseFloat(
-				record[i]["keibesar_bet_5050umum"]
-			);
-			keikecil_bet_5050umum = parseFloat(
-				record[i]["keikecil_bet_5050umum"]
-			);
-			keigenap_bet_5050umum = parseFloat(
-				record[i]["keigenap_bet_5050umum"]
-			);
-			keiganjil_bet_5050umum = parseFloat(
-				record[i]["keiganjil_bet_5050umum"]
-			);
-			keitengah_bet_5050umum = parseFloat(
-				record[i]["keitengah_bet_5050umum"]
-			);
-			keitepi_bet_5050umum = parseFloat(
-				record[i]["keitepi_bet_5050umum"]
-			);
-			discbesar_bet_5050umum = parseFloat(
-				record[i]["discbesar_bet_5050umum"]
-			);
-			disckecil_bet_5050umum = parseFloat(
-				record[i]["disckecil_bet_5050umum"]
-			);
-			discgenap_bet_5050umum = parseFloat(
-				record[i]["discgenap_bet_5050umum"]
-			);
+			keibesar_bet_5050umum = parseFloat(record[i]["keibesar_bet_5050umum"]);
+			keikecil_bet_5050umum = parseFloat(record[i]["keikecil_bet_5050umum"]);
+			keigenap_bet_5050umum = parseFloat(record[i]["keigenap_bet_5050umum"]);
+			keiganjil_bet_5050umum = parseFloat(record[i]["keiganjil_bet_5050umum"]);
+			keitengah_bet_5050umum = parseFloat(record[i]["keitengah_bet_5050umum"]);
+			keitepi_bet_5050umum = parseFloat(record[i]["keitepi_bet_5050umum"]);
+			discbesar_bet_5050umum = parseFloat(record[i]["discbesar_bet_5050umum"]);
+			disckecil_bet_5050umum = parseFloat(record[i]["disckecil_bet_5050umum"]);
+			discgenap_bet_5050umum = parseFloat(record[i]["discgenap_bet_5050umum"]);
 			discganjil_bet_5050umum = parseFloat(
 				record[i]["discganjil_bet_5050umum"]
 			);
@@ -441,9 +423,7 @@
 		count_line_5050kombinasi = 0;
 	}
 	inittogel_432d("5050");
-	function addKeranjang(nomor,game,bet,
-		diskon_percen,diskon,bayar,win,
-		kei_percen,kei,tipetoto) {
+	function addKeranjang(nomor,game,bet,diskon_percen,diskon,bayar,win,kei_percen,kei,tipetoto) {
 		let total_data = keranjang.length;
 		let flag_data = false;
 		for (var i = 0; i < total_data; i++) {
@@ -622,10 +602,7 @@
 			flag = false;
 			alert("Amount tidak boleh kosong");
 		}
-		if (
-			parseInt(bet) < parseInt(min_bet_5050umum) ||
-			parseInt(bet) > parseInt(max_bet_5050umum)
-		) {
+		if (parseInt(bet) < parseInt(min_bet_5050umum) || parseInt(bet) > parseInt(max_bet_5050umum)) {
 			bet_5050umum = min_bet_5050umum;
 			flag = false;
 			alert("Minimal Bet : " + min_bet_5050umum + " Maximal Bet : " + max_bet_5050umum);
@@ -904,7 +881,7 @@
 			diskonpercen = diskon;
 			kei = parseInt(bet) * kei;
 			diskon = parseInt(bet) * diskon;
-			bayar = parseInt(bet) - parseInt(kei);
+			bayar = parseInt(bet) - parseInt(diskon) - parseInt(kei);
 
 			totalkeranjang = bayar + totalkeranjang;
 
