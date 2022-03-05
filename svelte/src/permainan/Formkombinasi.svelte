@@ -337,7 +337,7 @@
 <Loader cssstyle={css_loader} />
 {#if client_device == "WEBSITE"}
 	<Card color="dark" style="border:1px solid #262424;">
-		<CardHeader tyle="background:#323030;border-bottom:1px solid #333;border-top: 0 solid #333;">
+		<CardHeader style="background:#323030;border-bottom:1px solid #333;border-top: 0 solid #333;">
 			<div class="float-end">
 				<div style="color:white;text-align:right;font-size:13px;font-weight:bold;">
 					{pasaran_name}
