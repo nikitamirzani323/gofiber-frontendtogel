@@ -147,34 +147,13 @@
             <table class="table table-dark table-striped table-sm">
                 <thead>
                     <tr>
-                        <th
-                            width="1%"
-                            style="text-align:center;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;"
-                            NOWRAP>&nbsp;</th>
-                        <th
-                            width="10%"
-                            style="text-align:center;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;"
-                            NOWRAP>NOMOR</th>
-                        <th
-                            width="20%"
-                            style="text-align:center;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;"
-                            NOWRAP>TIPE</th>
-                        <th
-                            width="20%"
-                            style="text-align:center;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;"
-                            NOWRAP>PERMAINAN</th>
-                        <th
-                            width="20%"
-                            style="text-align:right;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;"
-                            NOWRAP>BET</th>
-                        <th
-                            width="20%"
-                            style="text-align:right;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;"
-                            NOWRAP>DISKON</th>
-                        <th
-                            width="*"
-                            style="text-align:right;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;"
-                            NOWRAP>BAYAR</th>
+                        <th width="1%" style="text-align:center;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;" NOWRAP>&nbsp;</th>
+                        <th width="10%" style="text-align:center;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;" NOWRAP>NOMOR</th>
+                        <th width="20%" style="text-align:center;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;" NOWRAP>TIPE</th>
+                        <th width="20%" style="text-align:center;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;" NOWRAP>PERMAINAN</th>
+                        <th width="20%" style="text-align:right;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;" NOWRAP>BET</th>
+                        <th width="20%" style="text-align:right;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;" NOWRAP>DISKON</th>
+                        <th width="*" style="text-align:right;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;" NOWRAP>BAYAR</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -195,7 +174,7 @@
                             <td style="text-align:right;vertical-align:top;font-size:12px;color:#ffd292;">
                                 {new Intl.NumberFormat().format(
                                     Math.ceil(rec.diskon)
-                                )} ({(rec.diskonpercen * 100).toFixed(1)}%)
+                                )} ({(rec.diskonpercen * 100).toFixed(2)}%)
                             </td>
                             <td style="text-align:right;vertical-align:top;font-size:12px;color:#ffd292;">
                                 {new Intl.NumberFormat().format(rec.bayar)}
@@ -209,37 +188,18 @@
                 <table class="table table-dark table-striped">
                     <thead>
                         <tr>
-                            <th
-                                width="1%"
-                                style="text-align:center;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;"
-                                NOWRAP>&nbsp;</th>
-                            <th
-                                width="10%"
-                                style="text-align:center;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;"
-                                NOWRAP>NOMOR</th>
-                            <th
-                                width="20%"
-                                style="text-align:center;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;"
-                                NOWRAP>PERMAINAN</th>
-                            <th
-                                width="20%"
-                                style="text-align:right;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;"
-                                NOWRAP>BET</th>
-                            <th
-                                width="20%"
-                                style="text-align:right;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;"
-                                NOWRAP>DISKON</th>
-                            <th
-                                width="*"
-                                style="text-align:right;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;"
-                                NOWRAP>BAYAR</th>
+                            <th width="1%" style="text-align:center;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;" NOWRAP>&nbsp;</th>
+                            <th width="10%" style="text-align:center;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;" NOWRAP>NOMOR</th>
+                            <th width="20%" style="text-align:center;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;" NOWRAP>PERMAINAN</th>
+                            <th width="20%" style="text-align:right;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;" NOWRAP>BET</th>
+                            <th width="20%" style="text-align:right;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;" NOWRAP>DISKON</th>
+                            <th width="*" style="text-align:right;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;" NOWRAP>BAYAR</th>
                         </tr>
                     </thead>
                     <tbody>
                         {#each keranjang as rec}
                             <tr>
-                                <td
-                                    style="text-align:center;vertical-align:top;"
+                                <td style="text-align:center;vertical-align:top;"
                                     on:click={() => {
                                         handleRemoveKeranjang(
                                             rec.id,
@@ -250,12 +210,9 @@
                                         name="trash"
                                         style="cursor:pointer;"/>
                                 </td>
-                                <td
-                                    style="text-align:center;vertical-align:top;font-size:11px;color:#fc0;">{rec.nomor}</td>
-                                <td
-                                    style="text-align:center;vertical-align:top;font-size:11px;color:#fc0;">{rec.permainan}</td>
-                                <td
-                                    style="text-align:right;vertical-align:top;font-size:11px;color:#fc0;">
+                                <td style="text-align:center;vertical-align:top;font-size:11px;color:#fc0;">{rec.nomor}</td>
+                                <td style="text-align:center;vertical-align:top;font-size:11px;color:#fc0;">{rec.permainan}</td>
+                                <td style="text-align:right;vertical-align:top;font-size:11px;color:#fc0;">
                                     {new Intl.NumberFormat().format(rec.bet)}
                                 </td>
                                 <td
@@ -263,12 +220,9 @@
                                     {new Intl.NumberFormat().format(
                                         Math.ceil(rec.diskon)
                                     )} <br />
-                                    ({(rec.diskonpercen * 100).toFixed(1)}%)
+                                    ({(rec.diskonpercen * 100).toFixed(2)}%)
                                 </td>
-                                <td
-                                    style="text-align:right;vertical-align:top;font-size:11px;color:#fc0;">
-                                    {new Intl.NumberFormat().format(rec.bayar)}
-                                </td>
+                                <td style="text-align:right;vertical-align:top;font-size:11px;color:#fc0;">{new Intl.NumberFormat().format(rec.bayar)}</td>
                             </tr>
                         {/each}
                     </tbody>
@@ -336,140 +290,87 @@
             </thead>
             <tbody>
                 <tr>
-                    <td
-                        nowrap
-                        style="background:#303030;border:1px solid #282828;font-size:12px;">MIN BET</td>
-                    <td
-                        nowrap
-                        style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">
-                        {new Intl.NumberFormat().format(
-                            minimal_bet)}</td>
-                    <td
-                        nowrap
-                        style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">
-                        {new Intl.NumberFormat().format(
-                            minimal_bet)}</td>
-                    <td
-                        nowrap
-                        style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">
-                        {new Intl.NumberFormat().format(
-                            minimal_bet)}</td>
-                    <td
-                        nowrap
-                        style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">
-                        {new Intl.NumberFormat().format(
-                            minimal_bet
-                        )}</td>
-                    <td
-                        nowrap
-                        style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">
-                        {new Intl.NumberFormat().format(
-                            minimal_bet
-                        )}</td>
-                    <td
-                        nowrap
-                        style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                        >{new Intl.NumberFormat().format(
-                            minimal_bet
-                        )}</td>
+                    <td nowrap style="background:#303030;border:1px solid #282828;font-size:12px;">MIN BET</td>
+                    <td nowrap style="border:1px solid #282828;text-align:right;font-size:12px;color:#fc0;">{new Intl.NumberFormat().format(minimal_bet)}</td>
+                    <td nowrap style="border:1px solid #282828;text-align:right;font-size:12px;color:#fc0;">{new Intl.NumberFormat().format(minimal_bet)}</td>
+                    <td nowrap style="border:1px solid #282828;text-align:right;font-size:12px;color:#fc0;">{new Intl.NumberFormat().format( minimal_bet)}</td>
+                    <td nowrap style="border:1px solid #282828;text-align:right;font-size:12px;color:#fc0;">{new Intl.NumberFormat().format(minimal_bet)}</td>
+                    <td nowrap style="border:1px solid #282828;text-align:right;font-size:12px;color:#fc0;">{new Intl.NumberFormat().format(minimal_bet)}</td>
+                    <td nowrap style="border:1px solid #282828;text-align:right;font-size:12px;color:#fc0;">{new Intl.NumberFormat().format(minimal_bet)}</td>
                 </tr>
                 <tr>
                     <td style="background:#303030;border:1px solid #282828;font-size:11px;">MAX BET</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{new Intl.NumberFormat().format(max4d_bet)}</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{new Intl.NumberFormat().format(max3d_bet)}</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{new Intl.NumberFormat().format(max3dd_bet)}</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{new Intl.NumberFormat().format(max2d_bet)}</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{new Intl.NumberFormat().format(max2dd_bet)}</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{new Intl.NumberFormat().format(max2dt_bet)}</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{new Intl.NumberFormat().format(max4d_bet)}</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{new Intl.NumberFormat().format(max3d_bet)}</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{new Intl.NumberFormat().format(max3dd_bet)}</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{new Intl.NumberFormat().format(max2d_bet)}</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{new Intl.NumberFormat().format(max2dd_bet)}</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{new Intl.NumberFormat().format(max2dt_bet)}</td>
                 </tr>
                 <tr>
                     <td style="background:#303030;border:1px solid #282828;font-size:11px;">DISKON</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{Math.ceil(disc4d_bet * 100)}%</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{Math.ceil(disc3d_bet * 100)}%</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{Math.ceil(disc3dd_bet * 100)}%</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{Math.ceil(disc2d_bet * 100)}%</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{Math.ceil(disc2dd_bet * 100)}%</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{Math.ceil(disc2dt_bet * 100)}%</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{(disc4d_bet * 100).toFixed(2)}%</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{(disc3d_bet * 100).toFixed(2)}%</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{(disc3dd_bet * 100).toFixed(2)}%</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{(disc2d_bet * 100).toFixed(2)}%</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{(disc2dd_bet * 100).toFixed(2)}%</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{(disc2dt_bet * 100).toFixed(2)}%</td>
                 </tr>
                 <tr>
                     <td style="background:#303030;border:1px solid #282828;font-size:11px;">HADIAH</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{win4d_bet}x</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{win3d_bet}x</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{win3dd_bet}x</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{win2d_bet}x</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{win2dd_bet}x</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{win2dt_bet}x</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#fc0;">{win4d_bet}x</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win3d_bet}x</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win3dd_bet}x</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win2d_bet}x</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win2dd_bet}x</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win2dt_bet}x</td>
                 </tr>
                 <tr>
                     <td style="background:#303030;border:1px solid #282828;font-size:11px;">HADIAH FULL</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{win4dnodiskon_bet}x</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{win3dnodiskon_bet}x</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{win3ddnodiskon_bet}x</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{win2dnodiskon_bet}x</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{win2ddnodiskon_bet}x</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{win2dtnodiskon_bet}x</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#fc0;">{win4dnodiskon_bet}x</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win3dnodiskon_bet}x</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win3ddnodiskon_bet}x</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win2dnodiskon_bet}x</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win2ddnodiskon_bet}x</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win2dtnodiskon_bet}x</td>
                 </tr>
                 <tr>
                     <td style="background:#303030;border:1px solid #282828;font-size:11px;">HADIAH BB KENA</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{win4dbb_kena_bet}x</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{win3dbb_kena_bet}x</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{win3ddbb_kena_bet}x</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{win2dbb_kena_bet}x</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{win2ddbb_kena_bet}x</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{win2dtbb_kena_bet}x</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#fc0;">{win4dbb_kena_bet}x</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win3dbb_kena_bet}x</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win3ddbb_kena_bet}x</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win2dbb_kena_bet}x</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win2ddbb_kena_bet}x</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win2dtbb_kena_bet}x</td>
                 </tr>
                 <tr>
                     <td style="background:#303030;border:1px solid #282828;font-size:11px;">HADIAH BB</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{win4dbb_bet}x</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{win3dbb_bet}x</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{win3ddbb_bet}x</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{win2dbb_bet}x</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{win2ddbb_bet}x</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">{win2dtbb_bet}x</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#fc0;">{win4dbb_bet}x</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win3dbb_bet}x</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win3ddbb_bet}x</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win2dbb_bet}x</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win2ddbb_bet}x</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win2dtbb_bet}x</td>
                 </tr>
                 <tr>
                     <td style="background:#303030;border:1px solid #282828;font-size:11px;">LIMIT LINE</td>
-                    <td
-                        style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">
-                        {new Intl.NumberFormat().format(
-                            limitline_4d
-                        )}</td>
-                    <td
-                        style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">
-                        {new Intl.NumberFormat().format(
-                            limitline_3d
-                        )}</td>
-                    <td
-                        style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">
-                        {new Intl.NumberFormat().format(
-                            limitline_3dd
-                        )}</td>
-                    <td
-                        style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;">
-                        {new Intl.NumberFormat().format(
-                            limitline_2d
-                        )}</td>
-                    <td
-                        style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;"
-                        >{new Intl.NumberFormat().format(
-                            limitline_2dd
-                        )}</td>
-                    <td
-                        style="border:1px solid #282828;text-align:right;font-size:11px;color:#ffd292;"
-                        >{new Intl.NumberFormat().format(
-                            limitline_2dt
-                        )}</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{new Intl.NumberFormat().format(limitline_4d)}</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{new Intl.NumberFormat().format(limitline_3d)}</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{new Intl.NumberFormat().format(limitline_3dd)}</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{new Intl.NumberFormat().format(limitline_2d)}</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{new Intl.NumberFormat().format(limitline_2dd)}</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{new Intl.NumberFormat().format(limitline_2dt)}</td>
                 </tr>
             </tbody>
         </table>
-        <p style="font-size:13px;padding:5px;color:white;">
+        <p style="font-size:12px;padding:5px;color:white;">
             <b>Contoh Penulisan 4D/3D/2D:</b><br />
             1234 : 4D<br /> 
             123 : 3D<br /> *123 : 3D<br /> 123* : 3DD<br /> 
             12 : 2D <br />
             **12 : 2D<br /> 12** : 2DD<br /> *12* : 2DT
         </p>
-        <p style="font-size:13px;padding: 5px;color:white;">
+        <p style="font-size:12px;padding: 5px;color:white;">
             <b>CARA BERMAIN</b><br>
             Menebak 4 angka, 3 angka dan 2 angka
             <br />
@@ -495,8 +396,7 @@
             4D = 100rb x [Indeks kemenangan untuk 4D]<br />
             3D = 100rb x [Indeks kemenangan untuk 3D]<br />
             2D = 100rb x [Indeks kemenangan untuk 2D]<br /><br />
-            (Catatan: nilai bet 100rb tidak dikembalikan ke member)<br
-            />
+            (Catatan: nilai bet 100rb tidak dikembalikan ke member)<br/>
             (Khusus untuk 4D,3D dan 2D diberikan diskon tambahan)<br />
         </p>
     </slot:template>

@@ -308,7 +308,7 @@
 	const handleTambah = (e) => {
 		switch (e) {
 			case "macaukombinasi":
-				if (elect_kombinasi_1 == "" && select_kombinasi_2 == "" && select_kombinasi_3 == "" && parseInt(bet_kombinasi) < min_bet) {
+				if (select_kombinasi_1 == "" && select_kombinasi_2 == "" && select_kombinasi_3 == "" && parseInt(bet_kombinasi) < min_bet) {
 					select_kombinasi_1_input.focus();
 				} else {
 					formkombinasi_add();

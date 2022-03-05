@@ -76,33 +76,23 @@
                         id="btn1"
                         data-bs-toggle="modal"
                         data-bs-target="#modalInformasi"
-                        style="margin-top:5px;"
-                        ><Icon name="info-circle" /> Informasi</Button
-                    >
+                        style="margin-top:5px;"><Icon name="info-circle" /> Informasi</Button>
                     <Button
                         id="btn1"
                         on:click={handleRemoveKeranjang_all}
-                        style="margin-top:5px;"
-                        ><Icon name="trash" /> Hapus Semua</Button
-                    >
+                        style="margin-top:5px;"><Icon name="trash" /> Hapus Semua</Button>
                     <Button
                         id="btn1"
                         on:click={handleSave}
-                        style="margin-top:5px;"
-                        ><Icon name="cart-check" /> BELI</Button
-                    >
+                        style="margin-top:5px;"><Icon name="cart-check" /> BELI</Button>
                 </div>
             {/if}
             <h1 style="padding:5px;margin:0px;color:white;font-size:15px;">
-                TOTAL BAYAR : <span style="color:#fc0;"
-                    >{new Intl.NumberFormat().format(totalkeranjang)}</span
-                >
+                TOTAL BAYAR : <span style="color:#fc0;">{new Intl.NumberFormat().format(totalkeranjang)}</span>
             </h1>
         {:else}
             <h1 style="padding:5px;margin:0px;color:white;font-size:13px;">
-                TOTAL BAYAR : <span style="color:#fc0;"
-                    >{new Intl.NumberFormat().format(totalkeranjang)}</span
-                >
+                TOTAL BAYAR : <span style="color:#fc0;">{new Intl.NumberFormat().format(totalkeranjang)}</span>
             </h1>
             <br />
             {#if group_btn_beli == true}
@@ -112,23 +102,17 @@
                         size="sm"
                         data-bs-toggle="modal"
                         data-bs-target="#modalInformasi"
-                        style="margin-top:5px;"
-                        ><Icon name="info-circle" /> Informasi</Button
-                    >
+                        style="margin-top:5px;"><Icon name="info-circle" /> Informasi</Button>
                     <Button
                         id="btn1"
                         size="sm"
                         on:click={handleRemoveKeranjang_all}
-                        style="margin-top:5px;"
-                        ><Icon name="trash" /> Hapus Semua</Button
-                    >
+                        style="margin-top:5px;"><Icon name="trash" /> Hapus Semua</Button>
                     <Button
                         id="btn1"
                         size="sm"
                         on:click={handleSave}
-                        style="margin-top:5px;"
-                        ><Icon name="cart-check" /> BELI</Button
-                    >
+                        style="margin-top:5px;"><Icon name="cart-check" /> BELI</Button>
                 </center>
             {/if}
         {/if}
@@ -199,7 +183,7 @@
                             >
                                 {new Intl.NumberFormat().format(
                                     Math.ceil(rec.diskon)
-                                )} ({Math.ceil(rec.diskonpercen * 100)}%)
+                                )} ({(rec.diskonpercen * 100).toFixed(2)}%)
                             </td>
                             <td
                                 style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;"
@@ -275,7 +259,7 @@
                             >
                                 {new Intl.NumberFormat().format(
                                     Math.ceil(rec.diskon)
-                                )} ({(rec.diskonpercen * 100).toFixed(1)}%)
+                                )} ({(rec.diskonpercen * 100).toFixed(2)}%)
                             </td>
                             <td
                                 style="text-align:right;vertical-align:top;font-size:11px;color:#fc0;"
@@ -289,16 +273,9 @@
         {/if}
     </slot:template>
     <slot:template slot="footer">
-        <table
-            class="table"
-            style="font-size:15px;padding:0px;margin:0px;background:#101010;"
-        >
+        <table class="table" style="font-size:15px;padding:0px;margin:0px;background:#101010;">
             <tr>
-                <td colspan="5" style="color:white;"
-                    >TOTAL LINE : <span style="color:#f7941d;"
-                        >{count_line}</span
-                    ></td
-                >
+                <td colspan="5" style="color:white;">TOTAL LINE : <span style="color:#f7941d;">{count_line}</span></td>
             </tr>
         </table>
     </slot:template>
@@ -323,48 +300,24 @@
                 <table class="table table-dark table-sm">
                     <tbody>
                         <tr>
-                            <td
-                                style="background:#303030;border:1px solid #282828;font-size:12px;"
-                                >MIN BET</td>
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                                >{new Intl.NumberFormat().format(
-                                    min_bet_colokbebas
-                                )}</td>
+                            <td style="background:#303030;border:1px solid #282828;font-size:12px;">MIN BET</td>
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{new Intl.NumberFormat().format( min_bet_colokbebas)}</td>
                         </tr>
                         <tr>
-                            <td
-                                style="background:#303030;border:1px solid #282828;font-size:12px;"
-                                >MAX BET</td>
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                                >{new Intl.NumberFormat().format(
-                                    max_bet_colokbebas
-                                )}</td>
+                            <td style="background:#303030;border:1px solid #282828;font-size:12px;">MAX BET</td>
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{new Intl.NumberFormat().format(max_bet_colokbebas)}</td>
                         </tr>
                         <tr>
-                            <td
-                                style="background:#303030;border:1px solid #282828;font-size:12px;"
-                                >DISKON</td
-                            >
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                                >{Math.ceil(disc_bet_colokbebas * 100)}%</td
-                            >
+                            <td style="background:#303030;border:1px solid #282828;font-size:12px;">DISKON</td>
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{(disc_bet_colokbebas * 100).toFixed(2)}%</td>
                         </tr>
                         <tr>
-                            <td
-                                style="background:#303030;border:1px solid #282828;font-size:12px;"
-                                >HADIAH</td
-                            >
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                                >{win_bet_colokbebas}x</td
-                            >
+                            <td style="background:#303030;border:1px solid #282828;font-size:12px;">HADIAH</td>
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{win_bet_colokbebas.toFixed(2)}x</td>
                         </tr>
                     </tbody>
                 </table>
-                <p style="padding: 5px;color:white;font-size:13px;">
+                <p style="padding: 5px;color:white;font-size:12px;">
                     CARA BERMAIN
                     <br />
                     Menebak salah satu angka dari 4D. Posisi angka bisa dimana saja
@@ -391,72 +344,32 @@
                 <table class="table table-dark table-sm">
                     <tbody>
                         <tr>
-                            <td
-                                style="background:#303030;border:1px solid #282828;font-size:12px;"
-                                >MIN BET</td
-                            >
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                                >{new Intl.NumberFormat().format(
-                                    min_bet_colokmacau
-                                )}</td
-                            >
+                            <td style="background:#303030;border:1px solid #282828;font-size:12px;">MIN BET</td>
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{new Intl.NumberFormat().format( min_bet_colokmacau)}</td>
                         </tr>
                         <tr>
-                            <td
-                                style="background:#303030;border:1px solid #282828;font-size:12px;"
-                                >MAX BET</td
-                            >
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                                >{new Intl.NumberFormat().format(
-                                    max_bet_colokmacau
-                                )}</td
-                            >
+                            <td style="background:#303030;border:1px solid #282828;font-size:12px;">MAX BET</td>
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{new Intl.NumberFormat().format(max_bet_colokmacau)}</td>
                         </tr>
                         <tr>
-                            <td
-                                style="background:#303030;border:1px solid #282828;font-size:12px;"
-                                >DISKON</td
-                            >
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                                >{Math.ceil(disc_bet_colokmacau * 100)}%</td
-                            >
+                            <td style="background:#303030;border:1px solid #282828;font-size:12px;">DISKON</td>
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{(disc_bet_colokmacau * 100).toFixed(2)}%</td>
                         </tr>
                         <tr>
-                            <td
-                                style="background:#303030;border:1px solid #282828;font-size:12px;"
-                                >HADIAH 2 DIGIT</td
-                            >
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                                >{win_bet_colokmacau}x</td
-                            >
+                            <td style="background:#303030;border:1px solid #282828;font-size:12px;">HADIAH 2 DIGIT</td>
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{win_bet_colokmacau.toFixed(2)}x</td>
                         </tr>
                         <tr>
-                            <td
-                                style="background:#303030;border:1px solid #282828;font-size:12px;"
-                                >HADIAH 3 DIGIT</td
-                            >
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                                >{win3_bet_colokmacau}x</td
-                            >
+                            <td style="background:#303030;border:1px solid #282828;font-size:12px;">HADIAH 3 DIGIT</td>
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{win3_bet_colokmacau.toFixed(2)}x</td>
                         </tr>
                         <tr>
-                            <td
-                                style="background:#303030;border:1px solid #282828;font-size:12px;"
-                                >HADIAH 4 DIGIT</td
-                            >
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                                >{win4_bet_colokmacau}x</td
-                            >
+                            <td style="background:#303030;border:1px solid #282828;font-size:12px;">HADIAH 4 DIGIT</td>
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{win4_bet_colokmacau.toFixed(2)}x</td>
                         </tr>
                     </tbody>
                 </table>
-                <p style="padding: 5px;color:white;font-size:13px;">
+                <p style="padding: 5px;color:white;font-size:12px;">
                     CARA BERMAIN
                     <br />
                     Cara kerja seperti colok angka tapi mesti yang keluar 2 angka dari 4D.
@@ -491,62 +404,28 @@
                 <table class="table table-dark">
                     <tbody>
                         <tr>
-                            <td
-                                style="background:#303030;border:1px solid #282828;font-size:12px;"
-                                >MIN BET</td
-                            >
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                                >{new Intl.NumberFormat().format(
-                                    min_bet_coloknaga
-                                )}</td
-                            >
+                            <td style="background:#303030;border:1px solid #282828;font-size:12px;">MIN BET</td>
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{new Intl.NumberFormat().format(min_bet_coloknaga)}</td>
                         </tr>
                         <tr>
-                            <td
-                                style="background:#303030;border:1px solid #282828;font-size:12px;"
-                                >MAX BET</td
-                            >
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                                >{new Intl.NumberFormat().format(
-                                    max_bet_coloknaga
-                                )}</td
-                            >
+                            <td style="background:#303030;border:1px solid #282828;font-size:12px;">MAX BET</td>
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{new Intl.NumberFormat().format(max_bet_coloknaga)}</td>
                         </tr>
                         <tr>
-                            <td
-                                style="background:#303030;border:1px solid #282828;font-size:12px;"
-                                >DISKON</td
-                            >
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                                >{Math.ceil(disc_bet_coloknaga * 100)}%</td
-                            >
+                            <td style="background:#303030;border:1px solid #282828;font-size:12px;">DISKON</td>
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{(disc_bet_coloknaga * 100).toFixed(2)}%</td>
                         </tr>
                         <tr>
-                            <td
-                                style="background:#303030;border:1px solid #282828;font-size:12px;"
-                                >HADIAH 3 DIGIT</td
-                            >
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                                >{win_bet_coloknaga}x</td
-                            >
+                            <td style="background:#303030;border:1px solid #282828;font-size:12px;">HADIAH 3 DIGIT</td>
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{win_bet_coloknaga.toFixed(2)}x</td>
                         </tr>
                         <tr>
-                            <td
-                                style="background:#303030;border:1px solid #282828;font-size:12px;"
-                                >HADIAH 4 DIGIT</td
-                            >
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                                >{win4_bet_coloknaga}x</td
-                            >
+                            <td style="background:#303030;border:1px solid #282828;font-size:12px;">HADIAH 4 DIGIT</td>
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{win4_bet_coloknaga.toFixed(2)}x</td>
                         </tr>
                     </tbody>
                 </table>
-                <p style="padding: 5px;color:white;font-size:13px;">
+                <p style="padding: 5px;color:white;font-size:12px;">
                     CARA BERMAIN
                     <br />
                     Cara kerja seperti colok angka tapi mesti yang keluar 3 angka dari 4D.
@@ -583,82 +462,36 @@
                 <table class="table table-dark">
                     <tbody>
                         <tr>
-                            <td
-                                style="background:#303030;border:1px solid #282828;font-size:12px;"
-                                >MIN BET</td
-                            >
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                                >{new Intl.NumberFormat().format(
-                                    min_bet_colokjitu
-                                )}</td
-                            >
+                            <td style="background:#303030;border:1px solid #282828;font-size:12px;">MIN BET</td>
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{new Intl.NumberFormat().format(min_bet_colokjitu)}</td>
                         </tr>
                         <tr>
-                            <td
-                                style="background:#303030;border:1px solid #282828;font-size:12px;"
-                                >MAX BET</td
-                            >
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                                >{new Intl.NumberFormat().format(
-                                    max_bet_colokjitu
-                                )}</td
-                            >
+                            <td style="background:#303030;border:1px solid #282828;font-size:12px;">MAX BET</td>
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{new Intl.NumberFormat().format(max_bet_colokjitu)}</td>
                         </tr>
                         <tr>
-                            <td
-                                style="background:#303030;border:1px solid #282828;font-size:12px;"
-                                >DISKON</td
-                            >
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                                >{Math.ceil(disc_bet_colokjitu * 100)}%</td
-                            >
+                            <td style="background:#303030;border:1px solid #282828;font-size:12px;">DISKON</td>
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{(disc_bet_colokjitu * 100).toFixed(2)}%</td>
                         </tr>
                         <tr>
-                            <td
-                                style="background:#303030;border:1px solid #282828;font-size:12px;"
-                                >HADIAH AS</td
-                            >
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                                >{winas_bet_colokjitu}x</td
-                            >
+                            <td style="background:#303030;border:1px solid #282828;font-size:12px;">HADIAH AS</td>
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{winas_bet_colokjitu.toFixed(2)}x</td>
                         </tr>
                         <tr>
-                            <td
-                                style="background:#303030;border:1px solid #282828;font-size:12px;"
-                                >HADIAH KOP</td
-                            >
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                                >{winkop_bet_colokjitu}x</td
-                            >
+                            <td style="background:#303030;border:1px solid #282828;font-size:12px;">HADIAH KOP</td>
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{winkop_bet_colokjitu.toFixed(2)}x</td>
                         </tr>
                         <tr>
-                            <td
-                                style="background:#303030;border:1px solid #282828;font-size:12px;"
-                                >HADIAH KEPALA</td
-                            >
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                                >{winkepala_bet_colokjitu}x</td
-                            >
+                            <td style="background:#303030;border:1px solid #282828;font-size:12px;">HADIAH KEPALA</td>
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{winkepala_bet_colokjitu.toFixed(2)}x</td>
                         </tr>
                         <tr>
-                            <td
-                                style="background:#303030;border:1px solid #282828;font-size:12px;"
-                                >HADIAH EKOR</td
-                            >
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                                >{winekor_bet_colokjitu}x</td
-                            >
+                            <td style="background:#303030;border:1px solid #282828;font-size:12px;">HADIAH EKOR</td>
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{winekor_bet_colokjitu.toFixed(2)}x</td>
                         </tr>
                     </tbody>
                 </table>
-                <p style="padding: 5px;color:white;font-size:13px;">
+                <p style="padding: 5px;color:white;font-size:12px;">
                     CARA BERMAIN
                     <br />
                     Menebak satu angka pada posisi tertentu dari 4D.

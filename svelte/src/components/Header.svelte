@@ -1406,106 +1406,39 @@
         <table class="table table-dark">
             <thead>
                 <tr>
-                    <th
-                        width="1%"
-                        style="text-align:center;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;"
-                        >NO</th
-                    >
-                    <th
-                        width="1%"
-                        style="text-align:center;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;"
-                        >STATUS</th
-                    >
-                    <th
-                        width="10%"
-                        style="text-align:center;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">TIPE</th>
-                    <th
-                        width="20%"
-                        style="text-align:center;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">PERMAINAN</th>
-                    <th
-                        width="*"
-                        style="text-align:center;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;"
-                        >NOMOR</th
-                    >
-                    <th
-                        width="10%"
-                        style="text-align:right;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;"
-                        >BET</th
-                    >
-                    <th
-                        width="10%"
-                        style="text-align:right;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;"
-                        >DISC(%)</th
-                    >
-                    <th
-                        width="10%"
-                        style="text-align:right;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;"
-                        >KEI(%)</th
-                    >
-                    <th
-                        width="10%"
-                        style="text-align:right;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;"
-                        >BAYAR</th
-                    >
-                    <th
-                        width="10%"
-                        style="text-align:right;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;"
-                        >WIN</th
-                    >
+                    <th width="1%" style="text-align:center;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">NO</th>
+                    <th width="1%" style="text-align:center;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">STATUS</th>
+                    <th width="10%" style="text-align:center;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">TIPE</th>
+                    <th width="20%" style="text-align:center;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">PERMAINAN</th>
+                    <th width="*" style="text-align:center;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">NOMOR</th>
+                    <th width="10%" style="text-align:right;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">BET</th>
+                    <th width="10%" style="text-align:right;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">DISC(%)</th>
+                    <th width="10%" style="text-align:right;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">KEI(%)</th>
+                    <th width="10%" style="text-align:right;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">BAYAR</th>
+                    <th width="10%" style="text-align:right;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">WIN</th>
                 </tr>
             </thead>
             <tbody>
                 {#each listhasilinvoicebet as rec}
                     <tr>
-                        <td
-                            NOWRAP
-                            style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};"
-                            >{rec.bet_no}</td
-                        >
-                        <td
-                            NOWRAP
-                            style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};{rec.bet_background}"
-                            >{rec.bet_status}</td
-                        >
-                        <td
-                            NOWRAP
-                            style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};">{rec.bet_tipe}</td>
-                        <td
-                            NOWRAP
-                            style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};">{rec.bet_permainan}</td>
-                        <td
-                            NOWRAP
-                            style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};"
-                            >{rec.bet_nomor}</td
-                        >
-                        <td
-                            NOWRAP
-                            style="text-align:right;vertical-align:top;color:#fc0;font-size:{modal_table_fontsize_body};"
-                        >
+                        <td NOWRAP style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};">{rec.bet_no}</td>
+                        <td NOWRAP style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};{rec.bet_background}">{rec.bet_status}</td>
+                        <td NOWRAP style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};">{rec.bet_tipe}</td>
+                        <td NOWRAP style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};">{rec.bet_permainan}</td>
+                        <td NOWRAP style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};">{rec.bet_nomor}</td>
+                        <td NOWRAP style="text-align:right;vertical-align:top;color:#fc0;font-size:{modal_table_fontsize_body};">
                             {new Intl.NumberFormat().format(rec.bet_bet)}
                         </td>
-                        <td
-                            NOWRAP
-                            style="text-align:right;vertical-align:top;color:#fc0;font-size:{modal_table_fontsize_body};"
-                        >
+                        <td NOWRAP style="text-align:right;vertical-align:top;color:#fc0;font-size:{modal_table_fontsize_body};">
                             {rec.bet_diskon.toFixed(2)}
                         </td>
-                        <td
-                            NOWRAP
-                            style="text-align:right;vertical-align:top;color:#fc0;font-size:{modal_table_fontsize_body};"
-                        >
+                        <td NOWRAP style="text-align:right;vertical-align:top;color:#fc0;font-size:{modal_table_fontsize_body};">
                             {rec.bet_kei.toFixed(2)}
                         </td>
-                        <td
-                            NOWRAP
-                            style="text-align:right;vertical-align:top;color:#fc0;font-size:{modal_table_fontsize_body};"
-                        >
+                        <td NOWRAP style="text-align:right;vertical-align:top;color:#fc0;font-size:{modal_table_fontsize_body};">
                             {new Intl.NumberFormat().format(rec.bet_bayar)}
                         </td>
-                        <td
-                            NOWRAP
-                            style="text-align:right;vertical-align:top;color:#fc0;font-size:{modal_table_fontsize_body};"
-                        >
+                        <td NOWRAP style="text-align:right;vertical-align:top;color:#fc0;font-size:{modal_table_fontsize_body};">
                             {new Intl.NumberFormat().format(rec.bet_win)}
                         </td>
                     </tr>

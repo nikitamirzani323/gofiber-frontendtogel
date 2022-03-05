@@ -611,7 +611,7 @@
                                         <th
                                             width="20%"
                                             style="text-align:right;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;"
-                                            NOWRAP>DIS(%)</th>
+                                            NOWRAP>DISC(%)</th>
                                         <th
                                             width="20%"
                                             style="text-align:right;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;"
@@ -621,39 +621,13 @@
                                 <tbody>
                                     {#each resultinvoice as rec}
                                         <tr>
-                                            <td
-                                                style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;"
-                                                NOWRAP>{rec.nomor}</td>
-                                            <td
-                                                style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;"
-                                                NOWRAP>{rec.tipe_betinvoice}</td>
-                                            <td
-                                                style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;"
-                                                NOWRAP>{rec.permainan}</td
-                                            >
-                                            <td
-                                                style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;"
-                                                NOWRAP
-                                                >{new Intl.NumberFormat().format(
-                                                    rec.bet
-                                                )}</td
-                                            >
-                                            <td
-                                                style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;"
-                                                NOWRAP>{rec.kei.toFixed(1)}</td
-                                            >
-                                            <td
-                                                style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;"
-                                                NOWRAP
-                                                >{rec.diskon.toFixed(1)}</td
-                                            >
-                                            <td
-                                                style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;"
-                                                NOWRAP
-                                                >{new Intl.NumberFormat().format(
-                                                    rec.bayar
-                                                )}</td
-                                            >
+                                            <td style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;"NOWRAP>{rec.nomor}</td>
+                                            <td style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;" NOWRAP>{rec.tipe_betinvoice}</td>
+                                            <td style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;"NOWRAP>{rec.permainan}</td>
+                                            <td style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;" NOWRAP>{new Intl.NumberFormat().format(rec.bet)}</td>
+                                            <td style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;" NOWRAP>{rec.kei.toFixed(2)}</td>
+                                            <td style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;" NOWRAP>{rec.diskon.toFixed(2)}</td>
+                                            <td style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;" NOWRAP>{new Intl.NumberFormat().format(rec.bayar)}</td>
                                         </tr>
                                     {/each}
                                 </tbody>
@@ -665,26 +639,14 @@
                         <slot:template slot="footer">
                             <table class="table" style="background:none;">
                                 <tr>
-                                    <td
-                                        style="text-align:right;color:white;font-size:12px;">TOTAL BET</td>
-                                    <td
-                                        style="text-align:right;color:white;font-size:12px;">:</td>
-                                    <td
-                                        style="text-align:right;color:#fc0;font-size:12px;"
-                                        >{new Intl.NumberFormat().format(
-                                            totalbet_invoice
-                                        )}</td>
+                                    <td style="text-align:right;color:white;font-size:12px;">TOTAL BET</td>
+                                    <td style="text-align:right;color:white;font-size:12px;">:</td>
+                                    <td style="text-align:right;color:#fc0;font-size:12px;">{new Intl.NumberFormat().format(totalbet_invoice)}</td>
                                 </tr>
                                 <tr>
-                                    <td
-                                        style="text-align:right;color:white;font-size:12px;">TOTAL BAYAR</td>
-                                    <td
-                                        style="text-align:right;color:white;font-size:12px;">:</td>
-                                    <td
-                                        style="text-align:right;color:#fc0;font-size:12px;"
-                                        >{new Intl.NumberFormat().format(
-                                            totalbayar_invoice
-                                        )}</td>
+                                    <td style="text-align:right;color:white;font-size:12px;">TOTAL BAYAR</td>
+                                    <td style="text-align:right;color:white;font-size:12px;">:</td>
+                                    <td style="text-align:right;color:#fc0;font-size:12px;">{new Intl.NumberFormat().format(totalbayar_invoice)}</td>
                                 </tr>
                             </table>
                         </slot:template>
@@ -961,7 +923,7 @@
                     type="button"
                     role="tab"
                     aria-controls="pills-keranjang"
-                    aria-selected="true">KERANJANG</button
+                    aria-selected="true">HISTORY BET</button
                 >
             </li>
             <li class="nav-item" role="presentation">
@@ -1144,7 +1106,7 @@
                                     <th
                                         width="20%"
                                         style="text-align:right;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;"
-                                        NOWRAP>DIS(%)</th
+                                        NOWRAP>DISC(%)</th
                                     >
                                     <th
                                         width="20%"
@@ -1175,11 +1137,11 @@
                                         >
                                         <td
                                             style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;"
-                                            NOWRAP>{rec.kei.toFixed(1)}</td
+                                            NOWRAP>{rec.kei.toFixed(2)}</td
                                         >
                                         <td
                                             style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;"
-                                            NOWRAP>{rec.diskon.toFixed(1)}</td
+                                            NOWRAP>{rec.diskon.toFixed(2)}</td
                                         >
                                         <td
                                             style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;"

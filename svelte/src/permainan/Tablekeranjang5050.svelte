@@ -223,13 +223,13 @@
                             <td style="text-align:right;vertical-align:top;font-size:12px;color:#ffd292;">
                                 {new Intl.NumberFormat().format(
                                     Math.ceil(rec.diskon)
-                                )} ({(rec.diskonpercen * 100).toFixed(1)}%)
+                                )} ({(rec.diskonpercen * 100).toFixed(2)}%)
                             </td>
                             <td style="text-align:right;vertical-align:top;font-size:12px;color:#ffd292;">
                                 {new Intl.NumberFormat().format(
                                     Math.ceil(rec.kei)
                                 )}
-                                ({(rec.kei_percen * 100).toFixed(1)}%)
+                                ({(rec.kei_percen * 100).toFixed(2)}%)
                             </td>
                             <td style="text-align:right;vertical-align:top;font-size:12px;color:#ffd292;">
                                 {new Intl.NumberFormat().format(rec.bayar)}
@@ -292,13 +292,13 @@
                                     Math.ceil(rec.diskon)
                                 )}
                                 <br />
-                                ({(rec.diskonpercen * 100).toFixed(1)}%)
+                                ({(rec.diskonpercen * 100).toFixed(2)}%)
                             </td>
                             <td style="text-align:right;vertical-align:top;font-size:11px;color:#ffd292;">
                                 {new Intl.NumberFormat().format(
                                     Math.ceil(rec.kei)
                                 )}<br />
-                                ({(rec.kei_percen * 100).toFixed(1)}%)
+                                ({(rec.kei_percen * 100).toFixed(2)}%)
                             </td>
                             <td style="text-align:right;vertical-align:top;font-size:11px;color:#ffd292;">
                                 {new Intl.NumberFormat().format(rec.bayar)}
@@ -341,47 +341,37 @@
                     <tbody>
                         <tr>
                             <td style="background:#303030;border:1px solid #282828;font-size:12px;">MIN BET</td>
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">
-                                {new Intl.NumberFormat().format(
-                                    min_bet_5050umum
-                                )}
-                            </td>
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{new Intl.NumberFormat().format( min_bet_5050umum)}</td>
                         </tr>
                         <tr>
-                            <td >MAX BET</td>
-                            <td
-                                style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">
-                                {new Intl.NumberFormat().format(
-                                    max_bet_5050umum
-                                )}
-                                </td>
+                            <td style="background:#303030;border:1px solid #282828;font-size:12px;">MAX BET</td>
+                            <td style="border:1px solid #303030;text-align:right;font-size:12px;color:#ffd292;">{new Intl.NumberFormat().format(max_bet_5050umum)}</td>
                         </tr>
                         <tr>
                             <td style="background:#303030;border:1px solid #282828;font-size:12px;">DISKON</td>
                             <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">
-                                BESAR : {new Intl.NumberFormat().format(discbesar_bet_5050umum*100)}% <br />
-                                KECIL : {new Intl.NumberFormat().format(disckecil_bet_5050umum*100)}% <br />
-                                GENAP : {new Intl.NumberFormat().format(discgenap_bet_5050umum*100)}% <br />
-                                GANJIL : {new Intl.NumberFormat().format(discganjil_bet_5050umum*100)}% <br />
-                                TENGAH : {new Intl.NumberFormat().format(disctengah_bet_5050umum*100)}% <br />
-                                TEPI : {new Intl.NumberFormat().format(disctepi_bet_5050umum*100)}% <br />
+                                BESAR : {(discbesar_bet_5050umum*100).toFixed(2)}% <br />
+                                KECIL : {(disckecil_bet_5050umum*100).toFixed(2)}% <br />
+                                GENAP : {(discgenap_bet_5050umum*100).toFixed(2)}% <br />
+                                GANJIL : {(discganjil_bet_5050umum*100).toFixed(2)}% <br />
+                                TENGAH : {(disctengah_bet_5050umum*100).toFixed(2)}% <br />
+                                TEPI : {(disctepi_bet_5050umum*100).toFixed(2)}% <br />
                             </td>
                         </tr>
                         <tr>
                             <td style="background:#303030;border:1px solid #282828;font-size:12px;">KEI</td >
                             <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">
-                                BESAR : {new Intl.NumberFormat().format(keibesar_bet_5050umum*100)}% <br />
-                                KECIL : {new Intl.NumberFormat().format(keikecil_bet_5050umum*100)}% <br />
-                                GENAP : {new Intl.NumberFormat().format(keigenap_bet_5050umum*100)}% <br />
-                                GANJIL : {new Intl.NumberFormat().format(keiganjil_bet_5050umum*100)}% <br />
-                                TENGAH : {new Intl.NumberFormat().format(keitengah_bet_5050umum*100)}% <br />
-                                TEPI : {new Intl.NumberFormat().format(keitepi_bet_5050umum*100)}% <br />
+                                BESAR : {(keibesar_bet_5050umum*100).toFixed(2)}% <br />
+                                KECIL : {(keikecil_bet_5050umum*100).toFixed(2)}% <br />
+                                GENAP : {(keigenap_bet_5050umum*100).toFixed(2)}% <br />
+                                GANJIL : {(keiganjil_bet_5050umum*100).toFixed(2)}% <br />
+                                TENGAH : {(keitengah_bet_5050umum*100).toFixed(2)}% <br />
+                                TEPI : {(keitepi_bet_5050umum*100).toFixed(2)}% <br />
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <p style="padding: 5px;color:white;font-size:13px;">
+                <p style="padding: 5px;color:white;font-size:12px;">
                     CARA BERMAIN
                     <br />
                     Permainan ganjil/genap, besar/kecil, dan tengah/ tepi UMUM
@@ -411,65 +401,57 @@
                     <tbody>
                         <tr>
                             <td style="background:#303030;border:1px solid #282828;font-size:12px;">MIN BET</td>
-                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">
-                                {new Intl.NumberFormat().format(
-                                    min_bet_5050special
-                                )}
-                            </td>
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{new Intl.NumberFormat().format(min_bet_5050special)}</td>
                         </tr>
                         <tr>
                             <td style="background:#303030;border:1px solid #282828;font-size:12px;">MAX BET</td>
-                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">
-                                {new Intl.NumberFormat().format(
-                                    max_bet_5050special
-                                )}
-                            </td>
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{new Intl.NumberFormat().format(max_bet_5050special)}</td>
                         </tr>
                         <tr>
                             <td style="background:#303030;border:1px solid #282828;font-size:12px;">DISKON</td>
                             <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">
-                                AS GANJIL : {new Intl.NumberFormat().format(discasganjil_bet_5050special*100)}% <br />
-                                AS GENAP : {new Intl.NumberFormat().format(discasgenap_bet_5050special*100)}% <br />
-                                AS BESAR : {new Intl.NumberFormat().format(discasbesar_bet_5050special*100)}% <br />
-                                AS KECIL : {new Intl.NumberFormat().format(discaskecil_bet_5050special*100)}% <br />
-                                KOP GANJIL : {new Intl.NumberFormat().format(disckopganjil_bet_5050special*100)}% <br />
-                                KOP GENAP : {new Intl.NumberFormat().format(disckopgenap_bet_5050special*100)}% <br />
-                                KOP BESAR : {new Intl.NumberFormat().format(disckopbesar_bet_5050special*100)}% <br />
-                                KOP KECIL : {new Intl.NumberFormat().format(disckopkecil_bet_5050special*100)}% <br />
-                                KEPALA GANJIL : {new Intl.NumberFormat().format(disckepalaganjil_bet_5050special*100)}% <br />
-                                KEPALA GENAP : {new Intl.NumberFormat().format(disckepalagenap_bet_5050special*100)}% <br />
-                                KEPALA BESAR : {new Intl.NumberFormat().format(disckepalabesar_bet_5050special*100)}% <br />
-                                KEPALA KECIL : {new Intl.NumberFormat().format(disckepalakecil_bet_5050special*100)}% <br />
-                                EKOR GANJIL : {new Intl.NumberFormat().format(discekorganjil_bet_5050special*100)}% <br />
-                                EKOR GENAP : {new Intl.NumberFormat().format(discekorgenap_bet_5050special*100)}% <br />
-                                EKOR BESAR : {new Intl.NumberFormat().format(discekorbesar_bet_5050special*100)}% <br />
-                                EKOR KECIL : {new Intl.NumberFormat().format(discekorkecil_bet_5050special*100)}% <br />
+                                AS GANJIL : {(discasganjil_bet_5050special*100).toFixed(2)}% <br />
+                                AS GENAP : {(discasgenap_bet_5050special*100).toFixed(2)}% <br />
+                                AS BESAR : {(discasbesar_bet_5050special*100).toFixed(2)}% <br />
+                                AS KECIL : {(discaskecil_bet_5050special*100).toFixed(2)}% <br />
+                                KOP GANJIL : {(disckopganjil_bet_5050special*100).toFixed(2)}% <br />
+                                KOP GENAP : {(disckopgenap_bet_5050special*100).toFixed(2)}% <br />
+                                KOP BESAR : {(disckopbesar_bet_5050special*100).toFixed(2)}% <br />
+                                KOP KECIL : {(disckopkecil_bet_5050special*100).toFixed(2)}% <br />
+                                KEPALA GANJIL : {(disckepalaganjil_bet_5050special*100).toFixed(2)}% <br />
+                                KEPALA GENAP : {(disckepalagenap_bet_5050special*100).toFixed(2)}% <br />
+                                KEPALA BESAR : {(disckepalabesar_bet_5050special*100).toFixed(2)}% <br />
+                                KEPALA KECIL : {(disckepalakecil_bet_5050special*100).toFixed(2)}% <br />
+                                EKOR GANJIL : {(discekorganjil_bet_5050special*100).toFixed(2)}% <br />
+                                EKOR GENAP : {(discekorgenap_bet_5050special*100).toFixed(2)}% <br />
+                                EKOR BESAR : {(discekorbesar_bet_5050special*100).toFixed(2)}% <br />
+                                EKOR KECIL : {(discekorkecil_bet_5050special*100).toFixed(2)}% <br />
                             </td>
                         </tr>
                         <tr>
                             <td style="background:#303030;border:1px solid #282828;font-size:12px;">KEI</td>
                             <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">
-                                AS GANJIL : {new Intl.NumberFormat().format(keiasganjil_bet_5050special*100)}% <br />
-                                AS GENAP : {new Intl.NumberFormat().format(keiasgenap_bet_5050special*100)}% <br />
-                                AS BESAR : {new Intl.NumberFormat().format(keiasbesar_bet_5050special*100)}% <br />
-                                AS KECIL : {new Intl.NumberFormat().format(keiaskecil_bet_5050special*100)}% <br />
-                                KOP GANJIL : {new Intl.NumberFormat().format(keikopganjil_bet_5050special*100)}% <br />
-                                KOP GENAP : {new Intl.NumberFormat().format(keikopgenap_bet_5050special*100)}% <br />
-                                KOP BESAR : {new Intl.NumberFormat().format(keikopbesar_bet_5050special*100)}% <br />
-                                KOP KECIL : {new Intl.NumberFormat().format(keikopkecil_bet_5050special*100)}% <br />
-                                KEPALA GANJIL : {new Intl.NumberFormat().format(keikepalaganjil_bet_5050special*100)}% <br />
-                                KEPALA GENAP : {new Intl.NumberFormat().format(keikepalagenap_bet_5050special*100)}% <br />
-                                KEPALA BESAR : {new Intl.NumberFormat().format(keikepalabesar_bet_5050special*100)}% <br />
-                                KEPALA KECIL : {new Intl.NumberFormat().format(keikepalakecil_bet_5050special*100)}% <br />
-                                EKOR GANJIL : {new Intl.NumberFormat().format(keiekorganjil_bet_5050special*100)}% <br />
-                                EKOR GENAP : {new Intl.NumberFormat().format(keiekorgenap_bet_5050special*100)}% <br />
-                                EKOR BESAR : {new Intl.NumberFormat().format(keiekorbesar_bet_5050special*100)}% <br />
-                                EKOR KECIL : {new Intl.NumberFormat().format(keiekorkecil_bet_5050special*100)}% <br />
+                                AS GANJIL : {(keiasganjil_bet_5050special*100).toFixed(2)}% <br />
+                                AS GENAP : {(keiasgenap_bet_5050special*100).toFixed(2)}% <br />
+                                AS BESAR : {(keiasbesar_bet_5050special*100).toFixed(2)}% <br />
+                                AS KECIL : {(keiaskecil_bet_5050special*100).toFixed(2)}% <br />
+                                KOP GANJIL : {(keikopganjil_bet_5050special*100).toFixed(2)}% <br />
+                                KOP GENAP : {(keikopgenap_bet_5050special*100).toFixed(2)}% <br />
+                                KOP BESAR : {(keikopbesar_bet_5050special*100).toFixed(2)}% <br />
+                                KOP KECIL : {(keikopkecil_bet_5050special*100).toFixed(2)}% <br />
+                                KEPALA GANJIL : {(keikepalaganjil_bet_5050special*100).toFixed(2)}% <br />
+                                KEPALA GENAP : {(keikepalagenap_bet_5050special*100).toFixed(2)}% <br />
+                                KEPALA BESAR : {(keikepalabesar_bet_5050special*100).toFixed(2)}% <br />
+                                KEPALA KECIL : {(keikepalakecil_bet_5050special*100).toFixed(2)}% <br />
+                                EKOR GANJIL : {(keiekorganjil_bet_5050special*100).toFixed(2)}% <br />
+                                EKOR GENAP : {(keiekorgenap_bet_5050special*100).toFixed(2)}% <br />
+                                EKOR BESAR : {(keiekorbesar_bet_5050special*100).toFixed(2)}% <br />
+                                EKOR KECIL : {(keiekorkecil_bet_5050special*100).toFixed(2)}% <br />
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <p style="padding: 5px;color:white;font-size:13px;">
+                <p style="padding: 5px;color:white;font-size:12px;">
                     CARA BERMAIN
                     <br />
                     Menebak ganjil/genap, besar/kecil <br>
@@ -508,63 +490,55 @@
                     <tbody>
                         <tr>
                             <td style="background:#303030;border:1px solid #282828;font-size:12px;">MIN BET</td>
-                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;"
-                                >{new Intl.NumberFormat().format(
-                                    min_bet_5050kombinasi
-                                )}
-                            </td >
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{new Intl.NumberFormat().format(min_bet_5050kombinasi)}</td >
                         </tr>
                         <tr>
                             <td style="background:#303030;border:1px solid #282828;font-size:12px;">MAX BET</td>
-                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">
-                                {new Intl.NumberFormat().format(
-                                    max_bet_5050kombinasi
-                                )}
-                            </td>
+                            <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{new Intl.NumberFormat().format(max_bet_5050kombinasi)}</td>
                         </tr>
                         <tr>
                             <td style="background:#303030;border:1px solid #282828;font-size:12px;">DISKON</td>
                             <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">
-                                BELAKANG MONO  : {new Intl.NumberFormat().format(disc_belakangmono_bet_5050kombinasi*100)}% <br />
-                                BELAKANG STEREO  : {new Intl.NumberFormat().format(disc_belakangstereo_bet_5050kombinasi*100)}% <br />
-                                BELAKANG KEMBANG  : {new Intl.NumberFormat().format(disc_belakangkembang_bet_5050kombinasi*100)}% <br />
-                                BELAKANG KEMPIS  : {new Intl.NumberFormat().format(disc_belakangkempis_bet_5050kombinasi*100)}% <br />
-                                BELAKANG KEMBAR  : {new Intl.NumberFormat().format(disc_belakangkembar_bet_5050kombinasi*100)}% <br />
-                                TENGAH MONO  : {new Intl.NumberFormat().format(disc_tengahmono_bet_5050kombinasi*100)}% <br />
-                                TENGAH STEREO  : {new Intl.NumberFormat().format(disc_tengahstereo_bet_5050kombinasi*100)}% <br />
-                                TENGAH KEMBANG  : {new Intl.NumberFormat().format(disc_tengahkembang_bet_5050kombinasi*100)}% <br />
-                                TENGAH KEMPIS  : {new Intl.NumberFormat().format(disc_tengahkempis_bet_5050kombinasi*100)}% <br />
-                                TENGAH KEMBAR  : {new Intl.NumberFormat().format(disc_tengahkembar_bet_5050kombinasi*100)}% <br />
-                                DEPAN MONO  : {new Intl.NumberFormat().format(disc_depanmono_bet_5050kombinasi*100)}% <br />
-                                DEPAN STEREO  : {new Intl.NumberFormat().format(disc_depanstereo_bet_5050kombinasi*100)}% <br />
-                                DEPAN KEMBANG  : {new Intl.NumberFormat().format(disc_depankembang_bet_5050kombinasi*100)}% <br />
-                                DEPAN KEMPIS  : {new Intl.NumberFormat().format(disc_depankempis_bet_5050kombinasi*100)}% <br />
-                                DEPAN KEMBAR  : {new Intl.NumberFormat().format(disc_depankembar_bet_5050kombinasi*100)}% <br />
+                                BELAKANG MONO : {(disc_belakangmono_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                BELAKANG STEREO : {(disc_belakangstereo_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                BELAKANG KEMBANG : {(disc_belakangkembang_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                BELAKANG KEMPIS : {(disc_belakangkempis_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                BELAKANG KEMBAR : {(disc_belakangkembar_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                TENGAH MONO : {(disc_tengahmono_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                TENGAH STEREO : {(disc_tengahstereo_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                TENGAH KEMBANG : {(disc_tengahkembang_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                TENGAH KEMPIS : {(disc_tengahkempis_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                TENGAH KEMBAR : {(disc_tengahkembar_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                DEPAN MONO : {(disc_depanmono_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                DEPAN STEREO : {(disc_depanstereo_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                DEPAN KEMBANG : {(disc_depankembang_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                DEPAN KEMPIS : {(disc_depankempis_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                DEPAN KEMBAR : {(disc_depankembar_bet_5050kombinasi*100).toFixed(2)}% <br />
                             </td>
                         </tr>
                         <tr>
                             <td style="background:#303030;border:1px solid #282828;font-size:12px;">KEI</td>
                             <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;" >
-                                BELAKANG MONO  : {new Intl.NumberFormat().format(kei_belakangmono_bet_5050kombinasi*100)}% <br />
-                                BELAKANG STEREO  : {new Intl.NumberFormat().format(kei_belakangstereo_bet_5050kombinasi*100)}% <br />
-                                BELAKANG KEMBANG  : {new Intl.NumberFormat().format(kei_belakangkembang_bet_5050kombinasi*100)}% <br />
-                                BELAKANG KEMPIS  : {new Intl.NumberFormat().format(kei_belakangkempis_bet_5050kombinasi*100)}% <br />
-                                BELAKANG KEMBAR  : {new Intl.NumberFormat().format(kei_belakangkembar_bet_5050kombinasi*100)}% <br />
-                                TENGAH MONO  : {new Intl.NumberFormat().format(kei_tengahmono_bet_5050kombinasi*100)}% <br />
-                                TENGAH STEREO  : {new Intl.NumberFormat().format(kei_tengahstereo_bet_5050kombinasi*100)}% <br />
-                                TENGAH KEMBANG  : {new Intl.NumberFormat().format(kei_tengahkembang_bet_5050kombinasi*100)}% <br />
-                                TENGAH KEMPIS  : {new Intl.NumberFormat().format(kei_tengahkempis_bet_5050kombinasi*100)}% <br />
-                                TENGAH KEMBAR  : {new Intl.NumberFormat().format(kei_tengahkembar_bet_5050kombinasi*100)}% <br />
-                                DEPAN MONO  : {new Intl.NumberFormat().format(kei_depanmono_bet_5050kombinasi*100)}% <br />
-                                DEPAN STEREO  : {new Intl.NumberFormat().format(kei_depanstereo_bet_5050kombinasi*100)}% <br />
-                                DEPAN KEMBANG  : {new Intl.NumberFormat().format(kei_depankembang_bet_5050kombinasi*100)}% <br />
-                                DEPAN KEMPIS  : {new Intl.NumberFormat().format(kei_depankempis_bet_5050kombinasi*100)}% <br />
-                                DEPAN KEMBAR  : {new Intl.NumberFormat().format(kei_depankembar_bet_5050kombinasi*100)}% <br />
+                                BELAKANG MONO : {(kei_belakangmono_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                BELAKANG STEREO : {(kei_belakangstereo_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                BELAKANG KEMBANG : {(kei_belakangkembang_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                BELAKANG KEMPIS : {(kei_belakangkempis_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                BELAKANG KEMBAR : {(kei_belakangkembar_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                TENGAH MONO : {(kei_tengahmono_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                TENGAH STEREO : {(kei_tengahstereo_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                TENGAH KEMBANG : {(kei_tengahkembang_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                TENGAH KEMPIS : {(kei_tengahkempis_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                TENGAH KEMBAR : {(kei_tengahkembar_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                DEPAN MONO : {(kei_depanmono_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                DEPAN STEREO : {(kei_depanstereo_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                DEPAN KEMBANG : {(kei_depankembang_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                DEPAN KEMPIS : {(kei_depankempis_bet_5050kombinasi*100).toFixed(2)}% <br />
+                                DEPAN KEMBAR : {(kei_depankembar_bet_5050kombinasi*100).toFixed(2)}% <br />
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <p style="padding: 5px;color:white;font-size:13px;">
+                <p style="padding: 5px;color:white;font-size:12px;">
                     CARA BERMAIN
                     <br />
                     MONO STEREO <br>
