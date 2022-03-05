@@ -151,6 +151,7 @@
                         <th width="20%" style="text-align:center;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;" NOWRAP>PERMAINAN</th>
                         <th width="20%" style="text-align:right;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;" NOWRAP>BET</th>
                         <th width="20%" style="text-align:right;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;" NOWRAP>DISKON</th>
+                        <th width="20%" style="text-align:right;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;"  NOWRAP>KEI</th>
                         <th width="*" style="text-align:right;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;" NOWRAP>BAYAR</th>
                     </tr>
                 </thead>
@@ -174,6 +175,12 @@
                                 )}
                                 <br />
                                 ({(rec.diskonpercen * 100).toFixed(2)}%)
+                            </td>
+                            <td style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;">
+                                {new Intl.NumberFormat().format(
+                                    Math.ceil(rec.kei)
+                                )}
+                                ({(rec.kei_percen * 100).toFixed(2)}%)
                             </td>
                             <td  style="text-align:right;vertical-align:top;font-size:11px;color:#fc0;">
                                 {new Intl.NumberFormat().format(rec.bayar)}
