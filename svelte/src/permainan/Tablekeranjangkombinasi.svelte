@@ -205,7 +205,7 @@
                 </tr>
                 <tr>
                     <td style="background:#303030;border:1px solid #282828;font-size:12px;">DISKON</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{(diskon_bet * 100).toFixed(1)}%</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#ffd292;">{(diskon_bet * 100).toFixed(2)}%</td>
                 </tr>
                 <tr>
                     <td style="background:#303030;border:1px solid #282828;font-size:12px;">HADIAH</td>
