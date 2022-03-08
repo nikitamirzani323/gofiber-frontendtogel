@@ -176,60 +176,24 @@
 			keiekorgenap_bet_5050special = parseFloat(record[i]["keiekorgenap_bet_5050special"]);
 			keiekorbesar_bet_5050special = parseFloat(record[i]["keiekorbesar_bet_5050special"]);
 			keiekorkecil_bet_5050special = parseFloat(record[i]["keiekorkecil_bet_5050special"]);
-			discasganjil_bet_5050special = parseFloat(
-				record[i]["discasganjil_bet_5050special"]
-			);
-			discasgenap_bet_5050special = parseFloat(
-				record[i]["discasgenap_bet_5050special"]
-			);
-			discasbesar_bet_5050special = parseFloat(
-				record[i]["discasbesar_bet_5050special"]
-			);
-			discaskecil_bet_5050special = parseFloat(
-				record[i]["discaskecil_bet_5050special"]
-			);
-			disckopganjil_bet_5050special = parseFloat(
-				record[i]["disckopganjil_bet_5050special"]
-			);
-			disckopgenap_bet_5050special = parseFloat(
-				record[i]["disckopgenap_bet_5050special"]
-			);
-			disckopbesar_bet_5050special = parseFloat(
-				record[i]["disckopbesar_bet_5050special"]
-			);
-			disckopkecil_bet_5050special = parseFloat(
-				record[i]["disckopkecil_bet_5050special"]
-			);
-			disckepalaganjil_bet_5050special = parseFloat(
-				record[i]["disckepalaganjil_bet_5050special"]
-			);
-			disckepalagenap_bet_5050special = parseFloat(
-				record[i]["disckepalagenap_bet_5050special"]
-			);
-			disckepalabesar_bet_5050special = parseFloat(
-				record[i]["disckepalabesar_bet_5050special"]
-			);
-			disckepalakecil_bet_5050special = parseFloat(
-				record[i]["disckepalakecil_bet_5050special"]
-			);
-			discekorganjil_bet_5050special = parseFloat(
-				record[i]["discekorganjil_bet_5050special"]
-			);
-			discekorgenap_bet_5050special = parseFloat(
-				record[i]["discekorgenap_bet_5050special"]
-			);
-			discekorbesar_bet_5050special = parseFloat(
-				record[i]["discekorbesar_bet_5050special"]
-			);
-			discekorkecil_bet_5050special = parseFloat(
-				record[i]["discekorkecil_bet_5050special"]
-			);
-			limittotal_bet_5050special = parseFloat(
-				record[i]["limittotal_bet_5050special"]
-			);
-			min_bet_5050kombinasi = parseFloat(
-				record[i]["min_bet_5050kombinasi"]
-			);
+			discasganjil_bet_5050special = parseFloat(record[i]["discasganjil_bet_5050special"]);
+			discasgenap_bet_5050special = parseFloat(record[i]["discasgenap_bet_5050special"]);
+			discasbesar_bet_5050special = parseFloat(record[i]["discasbesar_bet_5050special"]);
+			discaskecil_bet_5050special = parseFloat(record[i]["discaskecil_bet_5050special"]);
+			disckopganjil_bet_5050special = parseFloat(record[i]["disckopganjil_bet_5050special"]);
+			disckopgenap_bet_5050special = parseFloat(record[i]["disckopgenap_bet_5050special"]);
+			disckopbesar_bet_5050special = parseFloat(record[i]["disckopbesar_bet_5050special"]);
+			disckopkecil_bet_5050special = parseFloat(record[i]["disckopkecil_bet_5050special"]);
+			disckepalaganjil_bet_5050special = parseFloat(record[i]["disckepalaganjil_bet_5050special"]);
+			disckepalagenap_bet_5050special = parseFloat(record[i]["disckepalagenap_bet_5050special"]);
+			disckepalabesar_bet_5050special = parseFloat(record[i]["disckepalabesar_bet_5050special"]);
+			disckepalakecil_bet_5050special = parseFloat(record[i]["disckepalakecil_bet_5050special"]);
+			discekorganjil_bet_5050special = parseFloat(record[i]["discekorganjil_bet_5050special"]);
+			discekorgenap_bet_5050special = parseFloat(record[i]["discekorgenap_bet_5050special"]);
+			discekorbesar_bet_5050special = parseFloat(record[i]["discekorbesar_bet_5050special"]);
+			discekorkecil_bet_5050special = parseFloat(record[i]["discekorkecil_bet_5050special"]);
+			limittotal_bet_5050special = parseFloat(record[i]["limittotal_bet_5050special"]);
+			min_bet_5050kombinasi = parseFloat(record[i]["min_bet_5050kombinasi"]);
 			max_bet_5050kombinasi = parseFloat(
 				record[i]["max_bet_5050kombinasi"]
 			);
