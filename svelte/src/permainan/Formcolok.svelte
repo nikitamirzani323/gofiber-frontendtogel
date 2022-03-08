@@ -940,8 +940,7 @@
 		<CardHeader
 			style="background:#323030;border-bottom:1px solid #333;border-top: 0 solid #333;">
 			<div class="float-end">
-				<div
-					style="color:white;text-align:right;font-size:13px;font-weight:bold;">
+				<div style="color:white;text-align:right;font-size:13px;font-weight:bold;">
 					{pasaran_name}
 				</div>
 			</div>
@@ -1013,72 +1012,74 @@
 					id="pills-cbebas"
 					role="tabpanel"
 					aria-labelledby="pills-cbebas-tab">
-					<table class="table" style="background:none;width:100%;">
-						<tr>
-							<td
-								width="25%"
-								NOWRAP
-								style="padding-right:10px;vertical-align: center;">
-								<span style="color:#8a8a8a;">Nomor (0-9)</span>
-								<input
-									autofocus
-									bind:this={nomor_colokbebas_input}
-									bind:value={nomor_colokbebas}
-									on:keyup={handleKeyboard_format}
-									on:keypress={handleKeyboard_checkenter}
-									type="text"
-									class="form-control form-control-sm"
-									placeholder="Input 1 Digit"
-									style="border:none;background:#303030;color:white;font-size:20px;text-align:center;"
-									minlength="1"
-									maxlength="1"
-									tab_index="-1"
-									autocomplete="off"/>
-								<span
-									class="help-block"
-									style="text-align:right;font-size:12px;"/>
-							</td>
-							<td
-								width="*"
-								NOWRAP
-								style="padding-right:10px;vertical-align: center;text-align:right;">
-								<span style="color:#8a8a8a;">
-									Bet (min : {new Intl.NumberFormat().format(
-										min_bet_colokbebas
-									)} dan max : {new Intl.NumberFormat().format(
-										max_bet_colokbebas
-									)})
-								</span>
-								<input
-									bind:value={bet_colokbebas}
-									on:keyup={handleKeyboard_number}
-									on:keypress={handleKeyboard_checkenter}
-									type="text"
-									class="form-control"
-									placeholder="Bet"
-									style="border:none;background:#303030;color:white;font-size:20px;text-align:right;"
-									minlength="3"
-									maxlength="7"
-									tab_index="0"/>
-								<span
-									style="text-align:right;font-size:12px;color:#8a8a8a;">
-									{new Intl.NumberFormat().format(
-										bet_colokbebas
-									)}
-								</span>
-							</td>
-							<td
-								width="20%"
-								NOWRAP
-								style="vertical-align: center;">
-								<Button
-									id="btn2"
-									on:click={() => {
-										handleTambah("colokbebas");
-									}}>TAMBAH</Button>
-							</td>
-						</tr>
-					</table>
+					<div style="margin:5px;">
+						<table class="table" style="background:none;width:100%;">
+							<tr>
+								<td
+									width="25%"
+									NOWRAP
+									style="padding-right:10px;vertical-align: center;">
+									<span style="color:#8a8a8a;">Nomor (0-9)</span>
+									<input
+										autofocus
+										bind:this={nomor_colokbebas_input}
+										bind:value={nomor_colokbebas}
+										on:keyup={handleKeyboard_format}
+										on:keypress={handleKeyboard_checkenter}
+										type="text"
+										class="form-control form-control-sm"
+										placeholder="Input 1 Digit"
+										style="border:none;background:#303030;color:white;font-size:20px;text-align:center;"
+										minlength="1"
+										maxlength="1"
+										tab_index="-1"
+										autocomplete="off"/>
+									<span
+										class="help-block"
+										style="text-align:right;font-size:12px;"/>
+								</td>
+								<td
+									width="*"
+									NOWRAP
+									style="padding-right:10px;vertical-align: center;text-align:right;">
+									<span style="color:#8a8a8a;">
+										Bet (min : {new Intl.NumberFormat().format(
+											min_bet_colokbebas
+										)} dan max : {new Intl.NumberFormat().format(
+											max_bet_colokbebas
+										)})
+									</span>
+									<input
+										bind:value={bet_colokbebas}
+										on:keyup={handleKeyboard_number}
+										on:keypress={handleKeyboard_checkenter}
+										type="text"
+										class="form-control"
+										placeholder="Bet"
+										style="border:none;background:#303030;color:white;font-size:20px;text-align:right;"
+										minlength="3"
+										maxlength="7"
+										tab_index="0"/>
+									<span
+										style="text-align:right;font-size:12px;color:#8a8a8a;">
+										{new Intl.NumberFormat().format(
+											bet_colokbebas
+										)}
+									</span>
+								</td>
+								<td
+									width="20%"
+									NOWRAP
+									style="vertical-align: center;">
+									<Button
+										id="btn2"
+										on:click={() => {
+											handleTambah("colokbebas");
+										}}>TAMBAH</Button>
+								</td>
+							</tr>
+						</table>
+					</div>
 				</div>
 				<div class="tab-pane fade "
 					id="pills-cmacau"

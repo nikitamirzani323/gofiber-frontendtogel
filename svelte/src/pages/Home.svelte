@@ -38,64 +38,14 @@
     {client_device}/>
     {#each listkeluaran as rec}
         {#if client_device == "WEBSITE"}
-        <Col
-            xxl="3"
-            xl="3"
-            lg="6"
-            md="6"
-            sm="6"
-            xs="6"
-            style="cursor:pointer;padding:5px;margin:0px;">
-            <Card
-                color="dark"
-                style="border:none;background:#181a1c;"
-                on:click={() => {
-                    handleClick(
-                        rec.pasaran_code,
-                        rec.pasaran,
-                        rec.pasaran_periode,
-                        rec.pasaran_status
-                    );
-                }}>
-                <CardHeader style="background:#181a1c;border:none;">
-                    <center id="style_text" style="font-size:18px;">
-                        {rec.pasaran}
-                    </center>
-                </CardHeader>
-                <CardBody style="background:#181a1c;border:none;">
-                    <div class="float-end">
-                        {#if rec.pasaran_status == "ONLINE"}
-                            <div
-                                class="blink_me"
-                                style="margin-top:5px;color:black;background:#c4f750;font-size:11px;font-weight:bold;padding:5px;border-radius:5px"
-                            >
-                                {rec.pasaran_status}
-                            </div>
-                        {:else}
-                            <div
-                                style="margin-top:5px;background:#f7602e;color:white;font-size:11px;font-weight:bold;padding:5px;border-radius:5px"
-                            >
-                                {rec.pasaran_status}
-                            </div>
-                        {/if}
-                    </div>
-                    <span style="font-size: 12px;"
-                        >PERIODE : {rec.pasaran_periode}</span
-                    ><br />
-                    <span style="font-size: 11px;">{rec.pasaran_tgl} WIB</span>
-                </CardBody>
-            </Card>
-        </Col>
-        {:else}
             <Col
-                xxl="6"
-                xl="6"
+                xxl="3"
+                xl="3"
                 lg="6"
                 md="6"
                 sm="6"
                 xs="6"
-                style="cursor:pointer;padding:5px;margin:0px;"
-            >
+                style="cursor:pointer;padding:5px;margin:0px;">
                 <Card
                     color="dark"
                     style="border:none;background:#181a1c;"
@@ -106,8 +56,49 @@
                             rec.pasaran_periode,
                             rec.pasaran_status
                         );
-                    }}
-                >
+                    }}>
+                    <CardHeader style="background:#181a1c;border:none;">
+                        <center id="style_text" style="font-size:18px;">
+                            {rec.pasaran}
+                        </center>
+                    </CardHeader>
+                    <CardBody style="background:#181a1c;border:none;">
+                        <div class="float-end">
+                            {#if rec.pasaran_status == "ONLINE"}
+                                <div class="blink_me" style="margin-top:5px;color:black;background:#c4f750;font-size:11px;font-weight:bold;padding:5px;border-radius:5px">
+                                    {rec.pasaran_status}
+                                </div>
+                            {:else}
+                                <div style="margin-top:5px;background:#f7602e;color:white;font-size:11px;font-weight:bold;padding:5px;border-radius:5px">
+                                    {rec.pasaran_status}
+                                </div>
+                            {/if}
+                        </div>
+                        <span style="font-size: 12px;">PERIODE : {rec.pasaran_periode}</span><br />
+                        <span style="font-size: 11px;">{rec.pasaran_tgl} WIB</span>
+                    </CardBody>
+                </Card>
+            </Col>
+        {:else}
+            <Col
+                xxl="6"
+                xl="6"
+                lg="6"
+                md="6"
+                sm="6"
+                xs="6"
+                style="cursor:pointer;padding:5px;margin:0px;">
+                <Card
+                    color="dark"
+                    style="border:none;background:#181a1c;"
+                    on:click={() => {
+                        handleClick(
+                            rec.pasaran_code,
+                            rec.pasaran,
+                            rec.pasaran_periode,
+                            rec.pasaran_status
+                        );
+                    }}>
                     <CardHeader style="background:#181a1c;border:none;">
                         <center id="style_text" style="font-size:15px;">
                             {rec.pasaran}

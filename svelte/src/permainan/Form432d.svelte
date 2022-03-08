@@ -4577,8 +4577,7 @@
 						</table>
 					</div>
 				</div>
-			</div>
-			
+			</div>		
 		</CardBody>
 	</Card>
 {:else}
