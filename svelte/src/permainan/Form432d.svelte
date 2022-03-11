@@ -288,11 +288,11 @@
 						for (var j = 0; j < keranjang.length; j++) {
 							if ("4D" == keranjang[j].permainan) {
 								if (parseInt(nomor) ==parseInt(keranjang[j].nomor)) {
-									maxtotal_bayar4d =parseInt(maxtotal_bayar4d) +parseInt(keranjang[j].bayar);
+									maxtotal_bayar4d =parseInt(maxtotal_bayar4d) +parseInt(keranjang[j].bet);
 								}
 							}
 						}
-						if (parseInt(limittotal4d_bet) < (parseInt(maxtotal_bayar4d)+parseInt(bayar))) {
+						if (parseInt(limittotal4d_bet) < (parseInt(maxtotal_bayar4d)+parseInt(bet))) {
 							temp_bulk_error = "Nomor ini : " +nomor +" sudah melebihi LIMIT TOTAL 4D<br />";
 							flag_data = true;
 						}
@@ -304,12 +304,11 @@
 						for (var j = 0; j < keranjang.length; j++) {
 							if ("3D" == keranjang[j].permainan) {
 								if (parseInt(nomor) ==parseInt(keranjang[j].nomor)) {
-									maxtotal_bayar3d =parseInt(maxtotal_bayar3d) + parseInt(keranjang[j].bayar);
+									maxtotal_bayar3d =parseInt(maxtotal_bayar3d) + parseInt(keranjang[j].bet);
 								}
 							}
 						}
-
-						if (parseInt(limittotal3d_bet) < parseInt(maxtotal_bayar3d)) {
+						if (parseInt(limittotal3d_bet) < (parseInt(maxtotal_bayar3d)+parseInt(bet))) {
 							temp_bulk_error ="Nomor ini : " +nomor +" sudah melebihi LIMIT TOTAL 3D<br />";
 							flag_data = true;
 						}
@@ -321,12 +320,11 @@
 						for (var j = 0; j < keranjang.length; j++) {
 							if ("3DD" == keranjang[j].permainan) {
 								if (parseInt(nomor) == parseInt(keranjang[j].nomor)) {
-									maxtotal_bayar3dd = parseInt(maxtotal_bayar3dd) + parseInt(keranjang[j].bayar);
+									maxtotal_bayar3dd = parseInt(maxtotal_bayar3dd) + parseInt(keranjang[j].bet);
 								}
 							}
 						}
-
-						if (parseInt(limittotal3dd_bet) < parseInt(maxtotal_bayar3dd)) {
+						if (parseInt(limittotal3dd_bet) < (parseInt(maxtotal_bayar3dd)+parseInt(bet))) {
 							temp_bulk_error = "Nomor ini : " +nomor +" sudah melebihi LIMIT TOTAL 3DD<br />";
 							flag_data = true;
 						}
@@ -338,12 +336,11 @@
 						for (var j = 0; j < keranjang.length; j++) {
 							if ("2D" == keranjang[j].game) {
 								if (parseInt(nomor) ==parseInt(keranjang[j].nomor)) {
-									maxtotal_bayar2d =parseInt(maxtotal_bayar2d) + parseInt(keranjang[j].bayar);
+									maxtotal_bayar2d =parseInt(maxtotal_bayar2d) + parseInt(keranjang[j].bet);
 								}
 							}
 						}
-
-						if (parseInt(limittotal2d_bet) <parseInt(maxtotal_bayar2d)) {
+						if (parseInt(limittotal2d_bet) < (parseInt(maxtotal_bayar2d)+parseInt(bet))) {
 							temp_bulk_error ="Nomor ini : " +nomor +" sudah melebihi LIMIT TOTAL 2D<br />";
 							flag_data = true;
 						}
@@ -355,11 +352,11 @@
 						for (var j = 0; j < keranjang.length; j++) {
 							if ("2DD" == keranjang[j].game) {
 								if (parseInt(nomor) == parseInt(keranjang[j].nomor)) {
-									maxtotal_bayar2dd = parseInt(maxtotal_bayar2dd) + parseInt(keranjang[j].bayar);
+									maxtotal_bayar2dd = parseInt(maxtotal_bayar2dd) + parseInt(keranjang[j].bet);
 								}
 							}
 						}
-						if (parseInt(limittotal2dd_bet) < parseInt(maxtotal_bayar2dd)) {
+						if (parseInt(limittotal2dd_bet) < (parseInt(maxtotal_bayar2dd)+parseInt(bet))) {
 							temp_bulk_error = "Nomor ini : " +nomor + " sudah melebihi LIMIT TOTAL 2DD<br />";
 							flag_data = true;
 						}
@@ -371,11 +368,11 @@
 						for (var j = 0; j < keranjang.length; j++) {
 							if ("2DT" == keranjang[j].game) {
 								if (parseInt(nomor) == parseInt(keranjang[j].nomor)) {
-									maxtotal_bayar2dt =parseInt(maxtotal_bayar2dt) + parseInt(keranjang[j].bayar);
+									maxtotal_bayar2dt =parseInt(maxtotal_bayar2dt) + parseInt(keranjang[j].bet);
 								}
 							}
 						}
-						if (parseInt(limittotal2dt_bet) <parseInt(maxtotal_bayar2dt)) {
+						if (parseInt(limittotal2dt_bet) < (parseInt(maxtotal_bayar2dt)+parseInt(bet))) {
 							temp_bulk_error = "Nomor ini : " + nomor +" sudah melebihi LIMIT TOTAL 2DT<br />";
 							flag_data = true;
 						}
