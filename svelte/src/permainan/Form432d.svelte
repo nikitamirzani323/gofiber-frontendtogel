@@ -334,7 +334,7 @@
 					if (nomor == keranjang[i].nomor.toString()) {
 						let maxtotal_bayar2d = 0;
 						for (var j = 0; j < keranjang.length; j++) {
-							if ("2D" == keranjang[j].game) {
+							if ("2D" == keranjang[j].permainan) {
 								if (nomor ==keranjang[j].nomor) {
 									maxtotal_bayar2d =parseInt(maxtotal_bayar2d) + parseInt(keranjang[j].bet);
 								}
@@ -344,13 +344,15 @@
 							temp_bulk_error ="Nomor ini : " +nomor +" sudah melebihi LIMIT TOTAL 2D<br />";
 							flag_data = true;
 						}
+						console.log("LIMIT TOTAL : ", limittotal2d_bet)
+						console.log("LIMIT TOTAL BAYAR : ", maxtotal_bayar2d)
 					}
 					break;
 				case "2DD":
 					if (nomor == keranjang[i].nomor.toString()) {
 						let maxtotal_bayar2dd = 0;
 						for (var j = 0; j < keranjang.length; j++) {
-							if ("2DD" == keranjang[j].game) {
+							if ("2DD" == keranjang[j].permainan) {
 								if (nomor ==keranjang[j].nomor) {
 									maxtotal_bayar2dd = parseInt(maxtotal_bayar2dd) + parseInt(keranjang[j].bet);
 								}
@@ -366,7 +368,7 @@
 					if (nomor == keranjang[i].nomor.toString()) {
 						let maxtotal_bayar2dt = 0;
 						for (var j = 0; j < keranjang.length; j++) {
-							if ("2DT" == keranjang[j].game) {
+							if ("2DT" == keranjang[j].permainan) {
 								if (nomor ==keranjang[j].nomor) {
 									maxtotal_bayar2dt =parseInt(maxtotal_bayar2dt) + parseInt(keranjang[j].bet);
 								}
