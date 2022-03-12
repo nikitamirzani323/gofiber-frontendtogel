@@ -344,8 +344,6 @@
 							temp_bulk_error ="Nomor ini : " +nomor +" sudah melebihi LIMIT TOTAL 2D<br />";
 							flag_data = true;
 						}
-						console.log("LIMIT TOTAL : ", limittotal2d_bet)
-						console.log("LIMIT TOTAL BAYAR : ", maxtotal_bayar2d)
 					}
 					break;
 				case "2DD":
