@@ -287,7 +287,7 @@
 						let maxtotal_bayar4d = 0;
 						for (var j = 0; j < keranjang.length; j++) {
 							if ("4D" == keranjang[j].permainan) {
-								if (parseInt(nomor) ==parseInt(keranjang[j].nomor)) {
+								if (nomor ==keranjang[j].nomor) {
 									maxtotal_bayar4d =parseInt(maxtotal_bayar4d) +parseInt(keranjang[j].bet);
 								}
 							}
@@ -303,7 +303,7 @@
 						let maxtotal_bayar3d = 0;
 						for (var j = 0; j < keranjang.length; j++) {
 							if ("3D" == keranjang[j].permainan) {
-								if (parseInt(nomor) ==parseInt(keranjang[j].nomor)) {
+								if (nomor ==keranjang[j].nomor) {
 									maxtotal_bayar3d =parseInt(maxtotal_bayar3d) + parseInt(keranjang[j].bet);
 								}
 							}
@@ -319,7 +319,7 @@
 						let maxtotal_bayar3dd = 0;
 						for (var j = 0; j < keranjang.length; j++) {
 							if ("3DD" == keranjang[j].permainan) {
-								if (parseInt(nomor) == parseInt(keranjang[j].nomor)) {
+								if (nomor ==keranjang[j].nomor) {
 									maxtotal_bayar3dd = parseInt(maxtotal_bayar3dd) + parseInt(keranjang[j].bet);
 								}
 							}
@@ -335,7 +335,7 @@
 						let maxtotal_bayar2d = 0;
 						for (var j = 0; j < keranjang.length; j++) {
 							if ("2D" == keranjang[j].game) {
-								if (parseInt(nomor) ==parseInt(keranjang[j].nomor)) {
+								if (nomor ==keranjang[j].nomor) {
 									maxtotal_bayar2d =parseInt(maxtotal_bayar2d) + parseInt(keranjang[j].bet);
 								}
 							}
@@ -351,7 +351,7 @@
 						let maxtotal_bayar2dd = 0;
 						for (var j = 0; j < keranjang.length; j++) {
 							if ("2DD" == keranjang[j].game) {
-								if (parseInt(nomor) == parseInt(keranjang[j].nomor)) {
+								if (nomor ==keranjang[j].nomor) {
 									maxtotal_bayar2dd = parseInt(maxtotal_bayar2dd) + parseInt(keranjang[j].bet);
 								}
 							}
@@ -367,7 +367,7 @@
 						let maxtotal_bayar2dt = 0;
 						for (var j = 0; j < keranjang.length; j++) {
 							if ("2DT" == keranjang[j].game) {
-								if (parseInt(nomor) == parseInt(keranjang[j].nomor)) {
+								if (nomor ==keranjang[j].nomor) {
 									maxtotal_bayar2dt =parseInt(maxtotal_bayar2dt) + parseInt(keranjang[j].bet);
 								}
 							}
