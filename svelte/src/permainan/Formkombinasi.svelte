@@ -126,39 +126,26 @@
 	}
 	inittogel_432d("macaukombinasi");
 	function addKeranjang(
-		nomor,
-		game,
-		bet,
+		nomor,game,bet,
 		diskon_percen,diskon,bayar,win,
 		kei_percen,kei,tipetoto) {
 		let total_data = keranjang.length;
 		let flag_data = false;
+		temp_bulk_error = "";
 		for (var i = 0; i < total_data; i++) {
 			switch (game) {
 				case "MACAU_KOMBINASI":
 					if (nomor == keranjang[i].nomor.toString()) {
 						let maxtotal_bayarmacaukombinasi = 0;
 						for (var j = 0; j < keranjang.length; j++) {
-							if ("50_50_UMUM" == keranjang[j].permainan) {
-								if (
-									parseInt(nomor) ==
-									parseInt(keranjang[j].nomor)
-								) {
-									maxtotal_bayarmacaukombinasi =
-										parseInt(maxtotal_bayarmacaukombinasi) +
-										(parseInt(keranjang[j].bet) +
-											parseInt(bet));
+							if ("MACAU_KOMBINASI" == keranjang[j].permainan) {
+								if (nomor == keranjang[j].nomor) {
+									maxtotal_bayarmacaukombinasi = parseInt(maxtotal_bayarmacaukombinasi) + parseInt(keranjang[j].bet);
 								}
 							}
 						}
-						if (
-							parseInt(limittotal_bet_macaukombinasi) <
-							parseInt(maxtotal_bayarmacaukombinasi)
-						) {
-							temp_bulk_error +=
-								"Nomor ini : " +
-								nomor +
-								" sudah melebihi LIMIT TOTAL MACAU KOMBINASI<br />";
+						if (parseInt(limit_total) < (parseInt(maxtotal_bayarmacaukombinasi)+parseInt(bet))) {
+							temp_bulk_error = "Nomor ini : " +nomor + " sudah melebihi LIMIT TOTAL MACAU KOMBINASI<br />";
 							flag_data = true;
 						}
 					}
@@ -182,6 +169,8 @@
 			};
 			keranjang = [data, ...keranjang];
 			count_keranjang();
+		}else{
+			totalkeranjang = totalkeranjang  - bayar;
 		}
 	}
 	const removekeranjang = (e) => {
@@ -303,6 +292,12 @@
 				kei,flag_fulldiskon
 			);
 			form_clear("macaukombinasi");
+			if (temp_bulk_error != "") {
+				let myModal = new bootstrap.Modal(
+					document.getElementById("modalError")
+				);
+				myModal.show();
+			}
 		}
 	}
 	const handleTambah = (e) => {

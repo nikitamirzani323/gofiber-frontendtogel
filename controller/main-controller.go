@@ -146,6 +146,14 @@ type responseduaall struct {
 		Result       string `json:"result"`
 	} `json:"record"`
 }
+type responsesavetransaksi struct {
+	Status       int         `json:"status"`
+	Totalbayar   int         `json:"totalbayar"`
+	Totalbet     int         `json:"totalrecord"`
+	Message      string      `json:"message"`
+	Messageerror interface{} `json:"messageerror"`
+	Record       interface{} `json:"record"`
+}
 
 func InitToken(c *fiber.Ctx) error {
 	client := new(clientInit)
@@ -675,7 +683,7 @@ func Savetransaksi(c *fiber.Ctx) error {
 	axios := resty.New()
 
 	resp, err := axios.R().
-		SetResult(response{}).
+		SetResult(responsesavetransaksi{}).
 		SetHeader("Content-Type", "application/json").
 		SetBody(map[string]interface{}{
 			"idtrxkeluaran":   client.Pasaran_idtransaction,
@@ -705,21 +713,16 @@ func Savetransaksi(c *fiber.Ctx) error {
 	log.Println("  Received At:", resp.ReceivedAt())
 	log.Println("  Body       :\n", resp)
 	log.Println()
-	result := resp.Result().(*response)
+	result := resp.Result().(*responsesavetransaksi)
 
-	if result.Status == 200 {
-		return c.JSON(fiber.Map{
-			"status": http.StatusOK,
-			"record": result.Record,
-			"time":   time.Since(render_page).String(),
-		})
-	} else {
-		return c.JSON(fiber.Map{
-			"status": http.StatusOK,
-			"record": nil,
-			"time":   time.Since(render_page).String(),
-		})
-	}
+	return c.JSON(fiber.Map{
+		"status":       result.Status,
+		"message":      result.Message,
+		"messageerror": result.Messageerror,
+		"record":       result.Record,
+		"totalbayar":   result.Totalbayar,
+		"time":         time.Since(render_page).String(),
+	})
 }
 func Listbukumimpi(c *fiber.Ctx) error {
 	client := new(clientbukumimpi)

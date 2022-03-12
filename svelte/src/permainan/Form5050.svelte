@@ -194,9 +194,7 @@
 			discekorkecil_bet_5050special = parseFloat(record[i]["discekorkecil_bet_5050special"]);
 			limittotal_bet_5050special = parseFloat(record[i]["limittotal_bet_5050special"]);
 			min_bet_5050kombinasi = parseFloat(record[i]["min_bet_5050kombinasi"]);
-			max_bet_5050kombinasi = parseFloat(
-				record[i]["max_bet_5050kombinasi"]
-			);
+			max_bet_5050kombinasi = parseFloat(record[i]["max_bet_5050kombinasi"]);
 			kei_belakangmono_bet_5050kombinasi = parseFloat(
 				record[i]["kei_belakangmono_bet_5050kombinasi"]
 			);
@@ -242,54 +240,22 @@
 			kei_depankembar_bet_5050kombinasi = parseFloat(
 				record[i]["kei_depankembar_bet_5050kombinasi"]
 			);
-			disc_belakangmono_bet_5050kombinasi = parseFloat(
-				record[i]["disc_belakangmono_bet_5050kombinasi"]
-			);
-			disc_belakangstereo_bet_5050kombinasi = parseFloat(
-				record[i]["disc_belakangstereo_bet_5050kombinasi"]
-			);
-			disc_belakangkembang_bet_5050kombinasi = parseFloat(
-				record[i]["disc_belakangkembang_bet_5050kombinasi"]
-			);
-			disc_belakangkempis_bet_5050kombinasi = parseFloat(
-				record[i]["disc_belakangkempis_bet_5050kombinasi"]
-			);
-			disc_belakangkembar_bet_5050kombinasi = parseFloat(
-				record[i]["disc_belakangkembar_bet_5050kombinasi"]
-			);
-			disc_tengahmono_bet_5050kombinasi = parseFloat(
-				record[i]["disc_tengahmono_bet_5050kombinasi"]
-			);
-			disc_tengahstereo_bet_5050kombinasi = parseFloat(
-				record[i]["disc_tengahstereo_bet_5050kombinasi"]
-			);
-			disc_tengahkembang_bet_5050kombinasi = parseFloat(
-				record[i]["disc_tengahkembang_bet_5050kombinasi"]
-			);
-			disc_tengahkempis_bet_5050kombinasi = parseFloat(
-				record[i]["disc_tengahkempis_bet_5050kombinasi"]
-			);
-			disc_tengahkembar_bet_5050kombinasi = parseFloat(
-				record[i]["disc_tengahkembar_bet_5050kombinasi"]
-			);
-			disc_depanmono_bet_5050kombinasi = parseFloat(
-				record[i]["disc_depanmono_bet_5050kombinasi"]
-			);
-			disc_depanstereo_bet_5050kombinasi = parseFloat(
-				record[i]["disc_depanstereo_bet_5050kombinasi"]
-			);
-			disc_depankembang_bet_5050kombinasi = parseFloat(
-				record[i]["disc_depankembang_bet_5050kombinasi"]
-			);
-			disc_depankempis_bet_5050kombinasi = parseFloat(
-				record[i]["disc_depankempis_bet_5050kombinasi"]
-			);
-			disc_depankembar_bet_5050kombinasi = parseFloat(
-				record[i]["disc_depankembar_bet_5050kombinasi"]
-			);
-			limittotal_bet_5050kombinasi = parseFloat(
-				record[i]["limittotal_bet_5050kombinasi"]
-			);
+			disc_belakangmono_bet_5050kombinasi = parseFloat(record[i]["disc_belakangmono_bet_5050kombinasi"]);
+			disc_belakangstereo_bet_5050kombinasi = parseFloat(record[i]["disc_belakangstereo_bet_5050kombinasi"]);
+			disc_belakangkembang_bet_5050kombinasi = parseFloat(record[i]["disc_belakangkembang_bet_5050kombinasi"]);
+			disc_belakangkempis_bet_5050kombinasi = parseFloat(record[i]["disc_belakangkempis_bet_5050kombinasi"]);
+			disc_belakangkembar_bet_5050kombinasi = parseFloat(record[i]["disc_belakangkembar_bet_5050kombinasi"]);
+			disc_tengahmono_bet_5050kombinasi = parseFloat(record[i]["disc_tengahmono_bet_5050kombinasi"]);
+			disc_tengahstereo_bet_5050kombinasi = parseFloat(record[i]["disc_tengahstereo_bet_5050kombinasi"]);
+			disc_tengahkembang_bet_5050kombinasi = parseFloat(record[i]["disc_tengahkembang_bet_5050kombinasi"]);
+			disc_tengahkempis_bet_5050kombinasi = parseFloat(record[i]["disc_tengahkempis_bet_5050kombinasi"]);
+			disc_tengahkembar_bet_5050kombinasi = parseFloat(record[i]["disc_tengahkembar_bet_5050kombinasi"]);
+			disc_depanmono_bet_5050kombinasi = parseFloat(record[i]["disc_depanmono_bet_5050kombinasi"]);
+			disc_depanstereo_bet_5050kombinasi = parseFloat(record[i]["disc_depanstereo_bet_5050kombinasi"]);
+			disc_depankembang_bet_5050kombinasi = parseFloat(record[i]["disc_depankembang_bet_5050kombinasi"]);
+			disc_depankempis_bet_5050kombinasi = parseFloat(record[i]["disc_depankempis_bet_5050kombinasi"]);
+			disc_depankembar_bet_5050kombinasi = parseFloat(record[i]["disc_depankembar_bet_5050kombinasi"]);
+			limittotal_bet_5050kombinasi = parseFloat(record[i]["limittotal_bet_5050kombinasi"]);
 		}
 	}
 	async function savetransaksi() {
@@ -322,12 +288,18 @@
 			}),
 		});
 		const json = await res.json();
+		let message = ""
+		let messageerror = json.messageerror
+		let totalbayar_server = json.totalbayar
 		if (json.status == "200") {
 			css_loader = "display:none;";
-			alert(
-				"Data telah berhasil disimpan, Total belanja : " +
-					new Intl.NumberFormat().format(totalkeranjang)
-			);
+			if(messageerror != ""){
+				message += messageerror
+			}
+			if(parseInt(totalbayar_server) > 0){
+				message += "Data telah berhasil disimpan, Total belanja : " +new Intl.NumberFormat().format(totalbayar_server)
+			}
+			alert(message);
 			dispatch("handleInvoice", "call");
 			reset();
 		} else {
@@ -350,6 +322,7 @@
 	function addKeranjang(nomor,game,bet,diskon_percen,diskon,bayar,win,kei_percen,kei,tipetoto) {
 		let total_data = keranjang.length;
 		let flag_data = false;
+		temp_bulk_error = "";
 		for (var i = 0; i < total_data; i++) {
 			switch (game) {
 				case "50_50_UMUM":
@@ -357,13 +330,13 @@
 						let maxtotal_bayar5050umum = 0;
 						for (var j = 0; j < keranjang.length; j++) {
 							if ("50_50_UMUM" == keranjang[j].permainan) {
-								if (parseInt(nomor) == parseInt(keranjang[j].nomor)) {
-									maxtotal_bayar5050umum = parseInt(maxtotal_bayar5050umum) + (parseInt(keranjang[j].bet) + parseInt(bet));
+								if (nomor == keranjang[j].nomor) {
+									maxtotal_bayar5050umum = parseInt(maxtotal_bayar5050umum) + parseInt(keranjang[j].bet);
 								}
 							}
 						}
-						if (parseInt(limittotal_bet_5050umum) < parseInt(maxtotal_bayar5050umum)) {
-							temp_bulk_error +="Nomor ini : " +nomor +" sudah melebihi LIMIT TOTAL 50-50 UMUM<br />";
+						if (parseInt(limittotal_bet_5050umum) < (parseInt(maxtotal_bayar5050umum)+parseInt(bet))) {
+							temp_bulk_error ="Nomor ini : " +nomor +" sudah melebihi LIMIT TOTAL 50-50 UMUM<br />";
 							flag_data = true;
 						}
 					}
@@ -372,14 +345,14 @@
 					if (nomor == keranjang[i].nomor.toString()) {
 						let maxtotal_bayar5050special = 0;
 						for (var j = 0; j < keranjang.length; j++) {
-							if ("50_50_UMUM" == keranjang[j].permainan) {
-								if (parseInt(nomor) == parseInt(keranjang[j].nomor)) {
-									maxtotal_bayar5050special = parseInt(maxtotal_bayar5050special) + (parseInt(keranjang[j].bet) + parseInt(bet));
+							if ("50_50_SPECIAL" == keranjang[j].permainan) {
+								if (nomor == keranjang[j].nomor) {
+									maxtotal_bayar5050special = parseInt(maxtotal_bayar5050special) + parseInt(keranjang[j].bet);
 								}
 							}
 						}
-						if (parseInt(limittotal_bet_5050special) < parseInt(maxtotal_bayar5050special)) {
-							temp_bulk_error += "Nomor ini : " + nomor + " sudah melebihi LIMIT TOTAL 50-50 SPECIAL<br />";
+						if (parseInt(limittotal_bet_5050special) < (parseInt(maxtotal_bayar5050special)+parseInt(bet))) {
+							temp_bulk_error = "Nomor ini : " + nomor + " sudah melebihi LIMIT TOTAL 50-50 SPECIAL<br />";
 							flag_data = true;
 						}
 					}
@@ -388,14 +361,14 @@
 					if (nomor == keranjang[i].nomor.toString()) {
 						let maxtotal_bayar5050kombinasi = 0;
 						for (var j = 0; j < keranjang.length; j++) {
-							if ("50_50_UMUM" == keranjang[j].permainan) {
-								if (parseInt(nomor) == parseInt(keranjang[j].nomor)) {
-									maxtotal_bayar5050kombinasi =parseInt(maxtotal_bayar5050kombinasi) +(parseInt(keranjang[j].bet) +parseInt(bet));
+							if ("50_50_KOMBINASI" == keranjang[j].permainan) {
+								if (nomor == keranjang[j].nomor) {
+									maxtotal_bayar5050kombinasi =parseInt(maxtotal_bayar5050kombinasi) +parseInt(keranjang[j].bet);
 								}
 							}
 						}
-						if (parseInt(limittotal_bet_5050kombinasi) < parseInt(maxtotal_bayar5050kombinasi)) {
-							temp_bulk_error += "Nomor ini : " +nomor +" sudah melebihi LIMIT TOTAL 50-50 KOMBINASI<br />";
+						if (parseInt(limittotal_bet_5050kombinasi) < (parseInt(maxtotal_bayar5050kombinasi)+parseInt(bet))) {
+							temp_bulk_error = "Nomor ini : " +nomor +" sudah melebihi LIMIT TOTAL 50-50 KOMBINASI<br />";
 							flag_data = true;
 						}
 					}
@@ -419,6 +392,8 @@
 			};
 			keranjang = [data, ...keranjang];
 			count_keranjang();
+		}else{
+			totalkeranjang = totalkeranjang  - bayar;
 		}
 	}
 	const removekeranjang = (e) => {
@@ -578,6 +553,12 @@
 				kei,flag_fulldiskon
 			);
 			form_clear("5050umum");
+			if (temp_bulk_error != "") {
+				let myModal = new bootstrap.Modal(
+					document.getElementById("modalError")
+				);
+				myModal.show();
+			}
 		}
 	}
 	function form5050special_add() {
@@ -701,6 +682,12 @@
 				kei,flag_fulldiskon
 			);
 			form_clear("5050special");
+			if (temp_bulk_error != "") {
+				let myModal = new bootstrap.Modal(
+					document.getElementById("modalError")
+				);
+				myModal.show();
+			}
 		}
 	}
 	function form5050kombinasi_add() {
@@ -821,6 +808,12 @@
 				kei,flag_fulldiskon
 			);
 			form_clear("5050kombinasi");
+			if (temp_bulk_error != "") {
+				let myModal = new bootstrap.Modal(
+					document.getElementById("modalError")
+				);
+				myModal.show();
+			}
 		}
 	}
 

@@ -235,12 +235,18 @@
 			}),
 		});
 		const json = await res.json();
+		let message = ""
+		let messageerror = json.messageerror
+		let totalbayar_server = json.totalbayar
 		if (json.status == "200") {
 			css_loader = "display:none;";
-			alert(
-				"Data telah berhasil disimpan, Total belanja : " +
-					new Intl.NumberFormat().format(totalkeranjang)
-			);
+			if(messageerror != ""){
+				message += messageerror
+			}
+			if(parseInt(totalbayar_server) > 0){
+				message += "Data telah berhasil disimpan, Total belanja : " +new Intl.NumberFormat().format(totalbayar_server)
+			}
+			alert(message);
 			dispatch("handleInvoice", "call");
 			reset();
 		} else {
@@ -267,14 +273,8 @@
 	inittogel_432d("4-3-2");
 	limittogel("4-3-2");
 	function addKeranjang(
-		nomor,
-		game,
-		bet,
-		diskon_percen,
-		diskon,
-		bayar,
-		win,
-		kei,
+		nomor,game,
+		bet,diskon_percen,diskon,bayar,win,kei,
 		kei_percen,tipetoto) {
 		let total_data = keranjang.length;
 		let flag_data = false;

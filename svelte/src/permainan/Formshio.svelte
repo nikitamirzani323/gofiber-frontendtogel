@@ -94,12 +94,18 @@
 			}),
 		});
 		const json = await res.json();
+		let message = ""
+		let messageerror = json.messageerror
+		let totalbayar_server = json.totalbayar
 		if (json.status == "200") {
 			css_loader = "display:none;";
-			alert(
-				"Data telah berhasil disimpan, Total belanja : " +
-					new Intl.NumberFormat().format(totalkeranjang)
-			);
+			if(messageerror != ""){
+				message += messageerror
+			}
+			if(parseInt(totalbayar_server) > 0){
+				message += "Data telah berhasil disimpan, Total belanja : " +new Intl.NumberFormat().format(totalbayar_server)
+			}
+			alert(message);
 			dispatch("handleInvoice", "call");
 			reset();
 		} else {
@@ -126,6 +132,7 @@
 		kei_percen,kei,tipetoto) {
 		let total_data = keranjang.length;
 		let flag_data = false;
+		temp_bulk_error = "";
 		for (var i = 0; i < total_data; i++) {
 			switch (game) {
 				case "SHIO":
@@ -133,24 +140,13 @@
 						let maxtotal_bayarshio = 0;
 						for (var j = 0; j < keranjang.length; j++) {
 							if ("SHIO" == keranjang[j].permainan) {
-								if (
-									parseInt(nomor) ==
-									parseInt(keranjang[j].nomor)
-								) {
-									maxtotal_bayarshio =
-										parseInt(maxtotal_bayarshio) +
-										(parseInt(keranjang[j].bet) +
-											parseInt(bet));
+								if (nomor == keranjang[j].nomor) {
+									maxtotal_bayarshio = parseInt(maxtotal_bayarshio) + parseInt(keranjang[j].bet);
 								}
 							}
 						}
-						if (
-							parseInt(limit_total) < parseInt(maxtotal_bayarshio)
-						) {
-							temp_bulk_error +=
-								"Nomor ini : " +
-								nomor +
-								" sudah melebihi LIMIT TOTAL SHIO<br />";
+						if (parseInt(limit_total) < (parseInt(maxtotal_bayarshio) + parseInt(bet))) {
+							temp_bulk_error ="Nomor ini : " +nomor +" sudah melebihi LIMIT TOTAL SHIO<br />";
 							flag_data = true;
 						}
 					}
@@ -174,6 +170,8 @@
 			};
 			keranjang = [data, ...keranjang];
 			count_keranjang();
+		}else{
+			totalkeranjang = totalkeranjang  - bayar;
 		}
 	}
 	const removekeranjang = (e) => {
@@ -277,6 +275,12 @@
 				0,flag_fulldiskon
 			);
 			form_clear("shio");
+			if (temp_bulk_error != "") {
+				let myModal = new bootstrap.Modal(
+					document.getElementById("modalError")
+				);
+				myModal.show();
+			}
 		}
 	}
 	const handleTambah = (e) => {
@@ -333,15 +337,13 @@
 						<td
 							width="25%"
 							NOWRAP
-							style="padding-right:10px;vertical-align: center;"
-						>
+							style="padding-right:10px;vertical-align: center;">
 							<span style="color:#8a8a8a;">TEBAK</span>
 							<select
 								bind:value={select_shio}
 								bind:this={select_shio_input}
 								style="border:none;background:#303030;color:white;"
-								class="form-control"
-							>
+								class="form-control">
 								<option value="">--Pilih--</option>
 								<option value="ANJING">ANJING</option>
 								<option value="AYAM">AYAM</option>
@@ -358,22 +360,16 @@
 							</select>
 							<span
 								class="help-block"
-								style="text-align:right;font-size:12px;"
-							/>
+								style="text-align:right;font-size:12px;"/>
 						</td>
 
 						<td
 							width="*"
 							NOWRAP
-							style="padding-right:10px;vertical-align: center;text-align:right;"
-						>
-							<span style="color:#8a8a8a;"
-								>Bet (min : {new Intl.NumberFormat().format(
-									min_bet
-								)} dan max : {new Intl.NumberFormat().format(
-									max_bet
-								)})</span
-							>
+							style="padding-right:10px;vertical-align: center;text-align:right;">
+							<span style="color:#8a8a8a;">
+								Bet (min : {new Intl.NumberFormat().format(min_bet)} dan max : {new Intl.NumberFormat().format(max_bet)})
+								</span>
 							<input
 								bind:value={bet_shio}
 								on:keyup={handleKeyboard_number}

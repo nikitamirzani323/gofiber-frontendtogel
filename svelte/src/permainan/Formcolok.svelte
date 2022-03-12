@@ -146,12 +146,18 @@
 			}),
 		});
 		const json = await res.json();
+		let message = ""
+		let messageerror = json.messageerror
+		let totalbayar_server = json.totalbayar
 		if (json.status == "200") {
 			css_loader = "display:none;";
-			alert(
-				"Data telah berhasil disimpan, Total belanja : " +
-					new Intl.NumberFormat().format(totalkeranjang)
-			);
+			if(messageerror != ""){
+				message += messageerror
+			}
+			if(parseInt(totalbayar_server) > 0){
+				message += "Data telah berhasil disimpan, Total belanja : " +new Intl.NumberFormat().format(totalbayar_server)
+			}
+			alert(message);
 			dispatch("handleInvoice", "call");
 			reset();
 		} else {
@@ -179,6 +185,8 @@
 		bayar,win,kei,kei_percen,tipetoto) {
 		let total_data = keranjang.length;
 		let flag_data = false;
+		temp_bulk_error = "";
+
 		for (var i = 0; i < total_data; i++) {
 			switch (game) {
 				case "COLOK_BEBAS":
@@ -187,12 +195,60 @@
 						for (var j = 0; j < keranjang.length; j++) {
 							if ("COLOK_BEBAS" == keranjang[j].permainan) {
 								if (parseInt(nomor) == parseInt(keranjang[j].nomor)) {
-									maxtotal_bayarcolokbebas = parseInt(maxtotal_bayarcolokbebas) + (parseInt(keranjang[j].bet) + parseInt(bet));
+									maxtotal_bayarcolokbebas = parseInt(maxtotal_bayarcolokbebas) + parseInt(keranjang[j].bet);
 								}
 							}
 						}
-						if (parseInt(limittotal_bet_colokbebas) <parseInt(maxtotal_bayarcolokbebas)) {
-							temp_bulk_error +="Nomor ini : " + nomor +" sudah melebihi LIMIT TOTAL COLOK BEBAS<br />";
+						if (parseInt(limittotal_bet_colokbebas) < (parseInt(maxtotal_bayarcolokbebas)+parseInt(bet))) {
+							temp_bulk_error ="Nomor ini : " + nomor +" sudah melebihi LIMIT TOTAL COLOK BEBAS<br />";
+							flag_data = true;
+						}
+					}
+					break;
+				case "COLOK_MACAU":
+					if (nomor == keranjang[i].nomor.toString()) {
+						let maxtotal_bayarcolokmacau = 0;
+						for (var j = 0; j < keranjang.length; j++) {
+							if ("COLOK_MACAU" == keranjang[j].permainan) {
+								if (parseInt(nomor) == parseInt(keranjang[j].nomor)) {
+									maxtotal_bayarcolokmacau = parseInt(maxtotal_bayarcolokmacau) + parseInt(keranjang[j].bet);
+								}
+							}
+						}
+						if (parseInt(limittotal_bet_colokmacau) < (parseInt(maxtotal_bayarcolokmacau)+parseInt(bet))) {
+							temp_bulk_error ="Nomor ini : " + nomor +" sudah melebihi LIMIT TOTAL COLOK MACAU<br />";
+							flag_data = true;
+						}
+					}
+					break;
+				case "COLOK_NAGA":
+					if (nomor == keranjang[i].nomor.toString()) {
+						let maxtotal_bayarcoloknaga = 0;
+						for (var j = 0; j < keranjang.length; j++) {
+							if ("COLOK_NAGA" == keranjang[j].permainan) {
+								if (parseInt(nomor) == parseInt(keranjang[j].nomor)) {
+									maxtotal_bayarcoloknaga = parseInt(maxtotal_bayarcoloknaga) + parseInt(keranjang[j].bet);
+								}
+							}
+						}
+						if (parseInt(limittotal_bet_coloknaga) < (parseInt(maxtotal_bayarcoloknaga)+parseInt(bet))) {
+							temp_bulk_error ="Nomor ini : " + nomor +" sudah melebihi LIMIT TOTAL COLOK NAGA<br />";
+							flag_data = true;
+						}
+					}
+					break;
+				case "COLOK_JITU":
+					if (nomor == keranjang[i].nomor.toString()) {
+						let maxtotal_bayarcolokjitu = 0;
+						for (var j = 0; j < keranjang.length; j++) {
+							if ("COLOK_JITU" == keranjang[j].permainan) {
+								if (nomor == keranjang[j].nomor) {
+									maxtotal_bayarcolokjitu = parseInt(maxtotal_bayarcolokjitu) + parseInt(keranjang[j].bet);
+								}
+							}
+						}
+						if (parseInt(limittotal_bet_colokjitu) < (parseInt(maxtotal_bayarcolokjitu)+parseInt(bet))) {
+							temp_bulk_error ="Nomor ini : " + nomor +" sudah melebihi LIMIT TOTAL COLOK JITU<br />";
 							flag_data = true;
 						}
 					}
@@ -216,6 +272,8 @@
 			};
 			keranjang = [data, ...keranjang];
 			count_keranjang();
+		}else{
+			totalkeranjang = totalkeranjang  - bayar;
 		}
 	}
 	const removekeranjang = (e) => {
@@ -451,6 +509,12 @@
 				0,flag_fulldiskon
 			);
 			form_clear("colokmacau");
+			if (temp_bulk_error != "") {
+				let myModal = new bootstrap.Modal(
+					document.getElementById("modalError")
+				);
+				myModal.show();
+			}
 		}
 	}
 	function formcoloknaga_add() {
@@ -525,6 +589,12 @@
 				0,flag_fulldiskon
 			);
 			form_clear("coloknaga");
+			if (temp_bulk_error != "") {
+				let myModal = new bootstrap.Modal(
+					document.getElementById("modalError")
+				);
+				myModal.show();
+			}
 		}
 	}
 	function formcolokjitu_add() {
@@ -595,6 +665,12 @@
 				0,flag_fulldiskon
 			);
 			form_clear("colokjitu");
+			if (temp_bulk_error != "") {
+				let myModal = new bootstrap.Modal(
+					document.getElementById("modalError")
+				);
+				myModal.show();
+			}
 		}
 	}
 	function formpolacolok_add() {

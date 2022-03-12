@@ -113,12 +113,18 @@
 			}),
 		});
 		const json = await res.json();
+		let message = ""
+		let messageerror = json.messageerror
+		let totalbayar_server = json.totalbayar
 		if (json.status == "200") {
 			css_loader = "display:none;";
-			alert(
-				"Data telah berhasil disimpan, Total belanja : " +
-					new Intl.NumberFormat().format(totalkeranjang)
-			);
+			if(messageerror != ""){
+				message += messageerror
+			}
+			if(parseInt(totalbayar_server) > 0){
+				message += "Data telah berhasil disimpan, Total belanja : " +new Intl.NumberFormat().format(totalbayar_server)
+			}
+			alert(message);
 			dispatch("handleInvoice", "call");
 			reset();
 		} else {
@@ -138,31 +144,25 @@
 	}
 	inittogel_432d("dasar");
 	function addKeranjang(
-		nomor,
-		game,
-		bet,
-		diskon_percen,
-		diskon,
-		bayar,
-		win,
-		kei_percen,
-		kei,tipetoto) {
+		nomor,game,bet,diskon_percen,diskon,bayar,win,
+		kei_percen,kei,tipetoto) {
 		let total_data = keranjang.length;
 		let flag_data = false;
+		temp_bulk_error = "";
 		for (var i = 0; i < total_data; i++) {
 			switch (game) {
-				case "MACAU_KOMBINASI":
+				case "DASAR":
 					if (nomor == keranjang[i].nomor.toString()) {
-						let maxtotal_bayarmacaukombinasi = 0;
+						let maxtotal_bayardasar = 0;
 						for (var j = 0; j < keranjang.length; j++) {
-							if ("50_50_UMUM" == keranjang[j].permainan) {
-								if (parseInt(nomor) == parseInt(keranjang[j].nomor)) {
-									maxtotal_bayarmacaukombinasi =parseInt(maxtotal_bayarmacaukombinasi) + (parseInt(keranjang[j].bet) +parseInt(bet));
+							if ("DASAR" == keranjang[j].permainan) {
+								if (nomor == keranjang[j].nomor) {
+									maxtotal_bayardasar =parseInt(maxtotal_bayardasar) + parseInt(keranjang[j].bet);
 								}
 							}
 						}
-						if (parseInt(limittotal_bet_macaukombinasi) < parseInt(maxtotal_bayarmacaukombinasi)) {
-							temp_bulk_error +="Nomor ini : " +nomor +" sudah melebihi LIMIT TOTAL MACAU KOMBINASI<br />";
+						if (parseInt(limit_total) < (parseInt(maxtotal_bayardasar)+parseInt(bet))) {
+							temp_bulk_error ="Nomor ini : " +nomor +" sudah melebihi LIMIT TOTAL DASAR<br />";
 							flag_data = true;
 						}
 					}
@@ -186,6 +186,8 @@
 			};
 			keranjang = [data, ...keranjang];
 			count_keranjang();
+		}else{
+			totalkeranjang = totalkeranjang  - bayar;
 		}
 	}
 	const removekeranjang = (e) => {
@@ -306,6 +308,12 @@
 				kei,flag_fulldiskon
 			);
 			form_clear("dasar");
+			if (temp_bulk_error != "") {
+				let myModal = new bootstrap.Modal(
+					document.getElementById("modalError")
+				);
+				myModal.show();
+			}
 		}
 	}
 	const handleTambah = (e) => {
