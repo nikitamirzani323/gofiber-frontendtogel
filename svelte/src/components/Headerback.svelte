@@ -11,14 +11,12 @@
                     style="margin-left: -20px;"
                     class="navbar-brand"
                     href="/?token={client_token}"
-                    title="BACK"
-                >
+                    title="BACK">
                     <img
                         style="margin-top: 0px;"
                         width="30"
                         src="back_home.png"
-                        alt="close"
-                    />
+                        alt="close"/>
                 </a>
             </center>
             
@@ -32,8 +30,7 @@
                     style="margin-left: -20px;"
                     class="navbar-brand"
                     href="/?token={client_token}"
-                    title="isbtoto"
-                >
+                    title="SDSB4D">
                     <img
                         style="margin-top: 0px;"
                         width="30"

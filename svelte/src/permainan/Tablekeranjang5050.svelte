@@ -315,7 +315,7 @@
             style="font-size:15px;padding:0px;margin:0px;background:#101010;">
             <tr>
                 <td colspan="5" style="color:white;">
-                    TOTAL LINE : <span style="color:#f7941d;">{count_line}</span>
+                    TOTAL LINE : <span style="color:#fc0;">{count_line}</span>
                 </td>
             </tr>
         </table>

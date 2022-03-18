@@ -969,7 +969,7 @@
 						</tr>
 					</table>
 				</TabPane>
-				<TabPane tabId="form_5050special" tab="SPECIAL">
+				<TabPane tabId="form_5050special" tab="SPECIAL" style="padding:5px;">
 					<table class="table" style="background:none;width:100%;">
 						<tr>
 							<td
@@ -1049,7 +1049,7 @@
 						</tr>
 					</table>
 				</TabPane>
-				<TabPane tabId="form_5050kombinasi" tab="KOMBINASI">
+				<TabPane tabId="form_5050kombinasi" tab="KOMBINASI" style="padding:5px;">
 					<table class="table" style="background:none;width:100%;">
 						<tr>
 							<td

@@ -18,9 +18,9 @@
 
     let modal_table_fontsize_header = "13px";
     let modal_table_fontsize_body = "12px";
-    let modal_table_fontsize_bukumimpi_header = "14px";
+    let modal_table_fontsize_bukumimpi_header = "13px";
     if (client_device == "MOBILE") {
-        modal_table_fontsize_bukumimpi_header = "13px";
+        modal_table_fontsize_bukumimpi_header = "12px";
         modal_table_fontsize_header = "11px";
         modal_table_fontsize_body = "11px";
     }
@@ -466,9 +466,9 @@
                 <div class="col">
                     <Card color="dark" style="border:none;background-color:#252525;">
                         <CardBody style="background-color:#252525;text-align:right;">
-                            <span style="font-size:13px;">TIMEZONE : <span id="style_text">{client_timezone}</span>  <span id="style_text">{clockmachine} WIB</span><br />
-                            <span style="font-size:13px;">{client_username}</span>&nbsp;(<span id="style_text">{client_ipaddress}</span>)<br />
-                            <span style="font-size:13px;">Credit : IDR <span id="style_text">{display_credit}</span><br />
+                            <span style="font-size:12px;">TIMEZONE : <span id="style_text">{client_timezone}</span>  <span id="style_text">{clockmachine} WIB</span><br />
+                            <span style="font-size:12px;">{client_username}</span>&nbsp;(<span id="style_text">{client_ipaddress}</span>)<br />
+                            <span style="font-size:12px;">Credit : IDR <span id="style_text">{display_credit}</span><br />
                         </CardBody>
                     </Card>
                 </div>
@@ -695,7 +695,9 @@
                     <tr>
                         <td
                             NOWRAP
-                            style="text-align: center;vertical-align: top;{rec.invoice_background};">{rec.invoice_status}</td>
+                            style="text-align: center;vertical-align: top;;">
+                            <span style="padding:5px;border-radius:5px;{rec.invoice_background}">{rec.invoice_status}</span> 
+                        </td>
                         <td
                             NOWRAP
                             style="text-align: center;vertical-align: top;font-size:{modal_table_fontsize_body};">{rec.invoice_tglkeluaran}</td>
@@ -713,11 +715,7 @@
                             style="text-decoration:underline;cursor:pointer;text-align: center;vertical-align: top;font-size:{modal_table_fontsize_body};">{rec.invoice_periode}</td>
                         <td
                             NOWRAP
-                            style="text-align: right;vertical-align: top;font-size:{modal_table_fontsize_body};color:rgb(255, 204, 0);">
-                            {new Intl.NumberFormat().format(
-                                rec.invoice_totallose
-                            )}
-                        </td>
+                            style="text-align: right;vertical-align: top;font-size:{modal_table_fontsize_body};color:#fc0;">{new Intl.NumberFormat().format(rec.invoice_totallose)}</td>
                     </tr>
                 {/each}
             </tbody>
@@ -952,32 +950,22 @@
                 <tr>
                     <th
                         width="1%"
-                        style="text-align:center;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;"
-                        >NO</th
-                    >
+                        style="text-align:center;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">NO</th>
                     <th
                         width="15%"
-                        style="text-align:left;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;"
-                        >PERMAINAN</th
-                    >
+                        style="text-align:left;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">PERMAINAN</th>
                     <th
                         width="50%"
-                        style="text-align:right;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;"
-                        >BAYAR</th
-                    >
+                        style="text-align:right;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">BAYAR</th>
                     <th
                         width="25%"
-                        style="text-align:right;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;"
-                        >MENANG</th
-                    >
+                        style="text-align:right;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">MENANG</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td
-                        style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};"
-                        >1</td
-                    >
+                        style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};">1</td>
                     <td
                         on:click={() => {
                             fetch_invoicealldetailpermainan(
@@ -986,25 +974,17 @@
                             );
                         }}
                         NOWRAP
-                        style="text-decoration:underline;cursor:pointer;text-align:left;vertical-align:top;font-size:{modal_table_fontsize_body};"
-                        >4D</td
-                    >
-                    <td
-                        style="text-align:right;vertical-align:top;color:#fc0;font-size:{modal_table_fontsize_body};"
-                    >
+                        style="text-decoration:underline;cursor:pointer;text-align:left;vertical-align:top;font-size:{modal_table_fontsize_body};">4D</td>
+                    <td style="text-align:right;vertical-align:top;color:#fc0;font-size:{modal_table_fontsize_body};" >
                         {new Intl.NumberFormat().format(total4d_bayar)}
                     </td>
-                    <td
-                        style="text-align:right;vertical-align:top;color:#fc0;font-size:{modal_table_fontsize_body};"
-                    >
+                    <td style="text-align:right;vertical-align:top;color:#fc0;font-size:{modal_table_fontsize_body};">
                         {new Intl.NumberFormat().format(totalwin_4d)}
                     </td>
                 </tr>
                 <tr>
-                    <td
-                        style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};"
-                        >2</td
-                    >
+                    <td style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};"
+                        >2</td>
                     <td
                         on:click={() => {
                             fetch_invoicealldetailpermainan(
@@ -1408,7 +1388,7 @@
                 <tr>
                     <th width="1%" style="text-align:center;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">NO</th>
                     <th width="1%" style="text-align:center;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">STATUS</th>
-                    <th width="10%" style="text-align:center;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">TIPE</th>
+                    <th width="5%" style="text-align:center;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">TIPE</th>
                     <th width="20%" style="text-align:center;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">PERMAINAN</th>
                     <th width="*" style="text-align:center;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">NOMOR</th>
                     <th width="10%" style="text-align:right;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">BET</th>
@@ -1422,7 +1402,9 @@
                 {#each listhasilinvoicebet as rec}
                     <tr>
                         <td NOWRAP style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};">{rec.bet_no}</td>
-                        <td NOWRAP style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};{rec.bet_background}">{rec.bet_status}</td>
+                        <td NOWRAP style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};">
+                            <span style="padding:5px;border-radius:5px;{rec.bet_background}">{rec.bet_status}</span>
+                        </td>
                         <td NOWRAP style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};">{rec.bet_tipe}</td>
                         <td NOWRAP style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};">{rec.bet_permainan}</td>
                         <td NOWRAP style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};">{rec.bet_nomor}</td>

@@ -165,20 +165,12 @@
                                 }}>
                                 <Icon name="trash" style="cursor:pointer;" />
                             </td>
-                            <td style="text-align:center;vertical-align:top;font-size:12px;color:#ffd292;">{rec.nomor}</td>
-                            <td style="text-align:center;vertical-align:top;font-size:12px;color:#ffd292;">{rec.tipetoto}</td>
-                            <td style="text-align:center;vertical-align:top;font-size:12px;color:#ffd292;">{rec.permainan}</td>
-                            <td style="text-align:right;vertical-align:top;font-size:12px;color:#ffd292;">
-                                {new Intl.NumberFormat().format(rec.bet)}
-                            </td>
-                            <td style="text-align:right;vertical-align:top;font-size:12px;color:#ffd292;">
-                                {new Intl.NumberFormat().format(
-                                    Math.ceil(rec.diskon)
-                                )} ({(rec.diskonpercen * 100).toFixed(2)}%)
-                            </td>
-                            <td style="text-align:right;vertical-align:top;font-size:12px;color:#ffd292;">
-                                {new Intl.NumberFormat().format(rec.bayar)}
-                            </td>
+                            <td style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;">{rec.nomor}</td>
+                            <td style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;">{rec.tipetoto}</td>
+                            <td style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;">{rec.permainan}</td>
+                            <td style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;">{new Intl.NumberFormat().format(rec.bet)}</td>
+                            <td style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;">{new Intl.NumberFormat().format( Math.ceil(rec.diskon))} ({(rec.diskonpercen * 100).toFixed(2)}%)</td>
+                            <td style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;">{new Intl.NumberFormat().format(rec.bayar)}</td>
                         </tr>
                     {/each}
                 </tbody>
@@ -236,15 +228,15 @@
                 class="table"
                 style="font-size:15px;padding:0px;margin:0px;background:#101010;">
                 <tr>
-                    <td colspan="5" style="color:white;">TOTAL LINE : <span style="color:#f7941d;">{count_line}</span></td>
+                    <td colspan="5" style="color:white;">TOTAL LINE : <span style="color:#fc0;">{count_line}</span></td>
                 </tr>
                 <tr>
-                    <td style="color:white;">4D : <span style="color:#f7941d;">{count_line_4d}</span></td>
-                    <td style="color:white;">3D : <span style="color:#f7941d;">{count_line_3d}</span></td>
-                    <td style="color:white;">3DD : <span style="color:#f7941d;">{count_line_3dd}</span></td>
-                    <td style="color:white;">2D : <span style="color:#f7941d;">{count_line_2d}</span></td>
-                    <td style="color:white;">2D DEPAN : <span style="color:#f7941d;">{count_line_2dd}</span></td>
-                    <td style="color:white;">2D TENGAH : <span style="color:#f7941d;">{count_line_2dt}</span></td>
+                    <td style="color:white;">4D : <span style="color:#fc0;">{count_line_4d}</span></td>
+                    <td style="color:white;">3D : <span style="color:#fc0;">{count_line_3d}</span></td>
+                    <td style="color:white;">3D DEPAN : <span style="color:#fc0;">{count_line_3dd}</span></td>
+                    <td style="color:white;">2D : <span style="color:#fc0;">{count_line_2d}</span></td>
+                    <td style="color:white;">2D DEPAN : <span style="color:#fc0;">{count_line_2dd}</span></td>
+                    <td style="color:white;">2D TENGAH : <span style="color:#fc0;">{count_line_2dt}</span></td>
                 </tr>
             </table>
         {:else}
@@ -252,15 +244,15 @@
                 class="table"
                 style="font-size:12px;padding:0px;margin:0px;background:#101010;">
                 <tr>
-                    <td colspan="5" style="color:white;">TOTAL LINE : <span style="color:#f7941d;">{count_line}</span></td>
+                    <td colspan="5" style="color:white;">TOTAL LINE : <span style="color:#fc0;">{count_line}</span></td>
                 </tr>
                 <tr>
-                    <td style="color:white;">4D : <span style="color:#f7941d;">{count_line_4d}</span></td>
-                    <td style="color:white;">3D : <span style="color:#f7941d;">{count_line_3d}</span></td>
-                    <td style="color:white;">3DD : <span style="color:#f7941d;">{count_line_3d}</span></td>
-                    <td style="color:white;">2D : <span style="color:#f7941d;">{count_line_2d}</span></td>
-                    <td style="color:white;">2DD : <span style="color:#f7941d;">{count_line_2dd}</span></td>
-                    <td style="color:white;">2DT : <span style="color:#f7941d;">{count_line_2dt}</span></td>
+                    <td style="color:white;">4D : <span style="color:#fc0;">{count_line_4d}</span></td>
+                    <td style="color:white;">3D : <span style="color:#fc0;">{count_line_3d}</span></td>
+                    <td style="color:white;">3DD : <span style="color:#fc0;">{count_line_3d}</span></td>
+                    <td style="color:white;">2D : <span style="color:#fc0;">{count_line_2d}</span></td>
+                    <td style="color:white;">2DD : <span style="color:#fc0;">{count_line_2dd}</span></td>
+                    <td style="color:white;">2DT : <span style="color:#fc0;">{count_line_2dt}</span></td>
                 </tr>
             </table>
         {/if}

@@ -11,7 +11,7 @@
     }
 </script>
 <div class="navbar-fixed-top">
-    <nav id="headernavtop" style="background:#2b2a33;">
+    <nav id="headernavtop" style="background:#181a20;">
         <div class="container">
             <div class="row" >
                 <a href="/" title="" >
@@ -24,12 +24,12 @@
                 </a>
                 <ul class="nav navbar-nav navbar-right" style="padding-right:5px;">
                     <li>
-                        <div style="margin-top:8px;color:white;font-size:13px;margin-right:10px;">
+                        <div style="margin-top:8px;color:white;font-size:12px;margin-right:10px;">
                             Developer | 
                         </div>
                     </li>
                     <li>
-                        <div style="margin-top:8px;color:white;font-size:13px;margin-right:10px;" ng-cloack>
+                        <div style="margin-top:8px;color:white;font-size:12px;margin-right:10px;" ng-cloack>
                             IDR : <span style="color:#fc0;" >5.000.000</span>&nbsp;<span class="glyphicon glyphicon-refresh" style="cursor:pointer;"></span>
                         </div>
                     </li>
@@ -39,7 +39,7 @@
         </div>
     </nav>
     <div class="clearfix"></div>
-    <nav id="headernav" class="navbar navbar-default" style="background:#121212;border-bottom:1px solid #121212;box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);}">
+    <nav id="headernav" class="navbar navbar-default" style="background:#181a20;border-bottom:1px solid #121212;box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);}">
         <div class="container">
             <div class="row">
                 <div class="navbar-header">

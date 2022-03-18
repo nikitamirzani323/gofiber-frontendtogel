@@ -3626,7 +3626,7 @@
 <Loader cssstyle={css_loader} />
 
 {#if client_device == "WEBSITE"}
-	<Card color="dark" style="border:1px solid #262424;margin:0px;padding:0px;">
+	<Card color="dark" style="border:1px solid #1e2329;margin:0px;padding:0px;">
 		<CardHeader
 			style="background:#323030;border-bottom:1px solid #333;border-top: 0 solid #333;">
 			<div class="float-end">

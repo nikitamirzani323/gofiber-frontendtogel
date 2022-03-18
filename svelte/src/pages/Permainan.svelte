@@ -1,6 +1,5 @@
 <script>
     import { Button, Col } from "sveltestrap";
-    import dayjs from "dayjs";
     import Loader2 from "../components/Loader.svelte";
     import Notif from "../components/Notif.svelte";
     import Headerback from "../components/Headerback.svelte";
@@ -716,8 +715,7 @@
                                 handleClickBukuMimpi("2D");
                             }}
                             class="nav-item"
-                            role="presentation"
-                        >
+                            role="presentation">
                             <button
                                 class="nav-link"
                                 id="pills-contact-tab"
@@ -726,14 +724,13 @@
                                 type="button"
                                 role="tab"
                                 aria-controls="pills-bukumimpi2d"
-                                aria-selected="false">2D</button
-                            >
+                                aria-selected="false">2D</button>
                         </li>
                     </ul>
                     <input
                         bind:value={searchbukumimpi}
                         on:keypress={handleKeyboardbukumimpi_checkenter}
-                        style="border-radius: none;border: none; background: rgb(48, 48, 48) none repeat scroll 0% 0%; color: white; font-size: 15px; "
+                        style="border-radius: none;border: none; background: rgb(48, 48, 48) none repeat scroll 0% 0%; color: white; font-size: 14px; "
                         placeholder="Ketik apa yang telah kamu mimpikan"
                         class="form-control"
                         type="text"/>
@@ -756,18 +753,12 @@
                                                     <td
                                                         NOWRAP
                                                         width="30px"
-                                                        style="text-align:center;vertical-align:top;font-size:14px;color:#fc0;"
-                                                        >{rec.bukumimpi_tipe}</td
-                                                    >
+                                                        style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;">{rec.bukumimpi_tipe}</td>
                                                     <td
                                                         width="*"
-                                                        style="text-align:left;vertical-align:top;font-size:15px;color:#8b8989;"
-                                                        >{rec.bukumimpi_nama}
+                                                        style="text-align:left;vertical-align:top;font-size:12px;color:#8b8989;">{rec.bukumimpi_nama}
                                                         <br />
-                                                        <span
-                                                            style="color:#fc0;font-size:14px;"
-                                                            >{rec.bukumimpi_nomor}</span
-                                                        >
+                                                        <span style="color:#fc0;font-size:12px;">{rec.bukumimpi_nomor}</span>
                                                     </td>
                                                 </tr>
                                             {/each}
@@ -879,18 +870,12 @@
                                                     <td
                                                         NOWRAP
                                                         width="30px"
-                                                        style="text-align:center;vertical-align:top;font-size:14px;color:#fc0;"
-                                                        >{rec.bukumimpi_tipe}</td
-                                                    >
+                                                        style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;">{rec.bukumimpi_tipe}</td>
                                                     <td
                                                         width="*"
-                                                        style="text-align:left;vertical-align:top;font-size:15px;color:#8b8989;"
-                                                        >{rec.bukumimpi_nama}
+                                                        style="text-align:left;vertical-align:top;font-size:15px;color:#8b8989;">{rec.bukumimpi_nama}
                                                         <br />
-                                                        <span
-                                                            style="color:#fc0;font-size:14px;"
-                                                            >{rec.bukumimpi_nomor}</span
-                                                        >
+                                                        <span style="color:#fc0;font-size:12px;">{rec.bukumimpi_nomor}</span>
                                                     </td>
                                                 </tr>
                                             {/each}
@@ -1091,28 +1076,23 @@
                                     <th
                                         width="10%"
                                         style="text-align:center;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;"
-                                        NOWRAP>PERMAINAN</th
-                                    >
+                                        NOWRAP>PERMAINAN</th>
                                     <th
                                         width="20%"
                                         style="text-align:right;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;"
-                                        NOWRAP>BET</th
-                                    >
+                                        NOWRAP>BET</th>
                                     <th
                                         width="20%"
                                         style="text-align:right;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;"
-                                        NOWRAP>KEI(%)</th
-                                    >
+                                        NOWRAP>KEI(%)</th>
                                     <th
                                         width="20%"
                                         style="text-align:right;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;"
-                                        NOWRAP>DISC(%)</th
-                                    >
+                                        NOWRAP>DISC(%)</th>
                                     <th
                                         width="20%"
                                         style="text-align:right;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;"
-                                        NOWRAP>BAYAR</th
-                                    >
+                                        NOWRAP>BAYAR</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -1126,30 +1106,19 @@
                                             NOWRAP>{rec.tipe_betinvoice}</td>
                                         <td
                                             style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;"
-                                            NOWRAP>{rec.permainan}</td
-                                        >
+                                            NOWRAP>{rec.permainan}</td>
                                         <td
                                             style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;"
-                                            NOWRAP
-                                            >{new Intl.NumberFormat().format(
-                                                rec.bet
-                                            )}</td
-                                        >
+                                            NOWRAP>{new Intl.NumberFormat().format(rec.bet)}</td>
                                         <td
                                             style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;"
-                                            NOWRAP>{rec.kei.toFixed(2)}</td
-                                        >
+                                            NOWRAP>{rec.kei.toFixed(2)}</td>
                                         <td
                                             style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;"
-                                            NOWRAP>{rec.diskon.toFixed(2)}</td
-                                        >
+                                            NOWRAP>{rec.diskon.toFixed(2)}</td >
                                         <td
                                             style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;"
-                                            NOWRAP
-                                            >{new Intl.NumberFormat().format(
-                                                rec.bayar
-                                            )}</td
-                                        >
+                                            NOWRAP>{new Intl.NumberFormat().format(rec.bayar)}</td>
                                     </tr>
                                 {/each}
                             </tbody>
@@ -1159,35 +1128,19 @@
                         <table class="table" style="background:none;">
                             <tr>
                                 <td
-                                    style="text-align:right;color:white;font-size:11px;"
-                                    >TOTAL BET</td
-                                >
+                                    style="text-align:right;color:white;font-size:11px;">TOTAL BET</td>
                                 <td
-                                    style="text-align:right;color:white;font-size:11px;"
-                                    >:</td
-                                >
+                                    style="text-align:right;color:white;font-size:11px;">:</td>
                                 <td
-                                    style="text-align:right;color:#fc0;font-size:11px;"
-                                    >{new Intl.NumberFormat().format(
-                                        totalbet_invoice
-                                    )}</td
-                                >
+                                    style="text-align:right;color:#fc0;font-size:11px;">{new Intl.NumberFormat().format(totalbet_invoice)}</td>
                             </tr>
                             <tr>
                                 <td
-                                    style="text-align:right;color:white;font-size:11px;"
-                                    >TOTAL BAYAR</td
-                                >
+                                    style="text-align:right;color:white;font-size:11px;">TOTAL BAYAR</td>
                                 <td
-                                    style="text-align:right;color:white;font-size:11px;"
-                                    >:</td
-                                >
+                                    style="text-align:right;color:white;font-size:11px;">:</td>
                                 <td
-                                    style="text-align:right;color:#fc0;font-size:11px;"
-                                    >{new Intl.NumberFormat().format(
-                                        totalbayar_invoice
-                                    )}</td
-                                >
+                                    style="text-align:right;color:#fc0;font-size:11px;">{new Intl.NumberFormat().format(totalbayar_invoice)}</td>
                             </tr>
                         </table>
                     </slot:template>

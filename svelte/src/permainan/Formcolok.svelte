@@ -1161,403 +1161,411 @@
 					id="pills-cmacau"
 					role="tabpanel"
 					aria-labelledby="pills-cmacau-tab">
-					<table class="table" style="background:none;width:100%;">
-						<tr>
-							<td
-								width="25%"
-								NOWRAP
-								style="padding-right:10px;vertical-align: center;">
-								<span style="color:#8a8a8a;">Nomor (0-9)</span>
-								<input
-									bind:this={nomor_colokmacau_1_input}
-									bind:value={nomor_colokmacau_1}
-									on:keyup={handleKeyboard_format}
-									on:keypress={handleKeyboard_checkenter}
-									type="text"
-									class="form-control form-control-sm"
-									placeholder="Input 1 Digit"
-									style="border:none;background:#303030;color:white;font-size:20px;text-align:center;"
-									minlength="1"
-									maxlength="1"
-									tab_index="-1"
-									autocomplete="off"/>
-								<span
-									class="help-block"
-									style="text-align:right;font-size:12px;"/>
-							</td>
-							<td
-								width="25%"
-								NOWRAP
-								style="padding-right:10px;vertical-align: center;">
-								<span style="color:#8a8a8a;">Nomor (0-9)</span>
-								<input
-									bind:this={nomor_colokmacau_2_input}
-									bind:value={nomor_colokmacau_2}
-									on:keyup={handleKeyboard_format}
-									on:keypress={handleKeyboard_checkenter}
-									type="text"
-									class="form-control form-control-sm"
-									placeholder="Input 1 Digit"
-									style="border:none;background:#303030;color:white;font-size:20px;text-align:center;"
-									minlength="1"
-									maxlength="1"
-									tab_index="-1"
-									autocomplete="off"/>
-								<span
-									class="help-block"
-									style="text-align:right;font-size:12px;"/>
-							</td>
-							<td
-								width="*"
-								NOWRAP
-								style="padding-right:10px;vertical-align: center;text-align:right;">
-								<span style="color:#8a8a8a;"
-									>Bet (min : {new Intl.NumberFormat().format(
-										min_bet_colokmacau
-									)} dan max : {new Intl.NumberFormat().format(
-										max_bet_colokmacau
-									)})
-								</span>
-								<input
-									bind:value={bet_colokmacau}
-									on:keyup={handleKeyboard_number}
-									on:keypress={handleKeyboardcolokmacau_checkenter}
-									type="text"
-									class="form-control"
-									placeholder="Bet"
-									style="border:none;background:#303030;color:white;font-size:20px;text-align:right;"
-									minlength="3"
-									maxlength="7"
-									tab_index="0"/>
-								<span
-									style="text-align:right;font-size:12px;color:#8a8a8a;"
-									>{new Intl.NumberFormat().format(
-										bet_colokmacau
-									)}
-								</span>
-							</td>
-							<td
-								width="20%"
-								NOWRAP
-								style="vertical-align: center;">
-								<Button
-									id="btn2"
-									on:click={() => {
-										handleTambah("colokmacau");
-									}}>TAMBAH</Button>
-							</td>
-						</tr>
-					</table>
+					<div style="margin:5px;">
+						<table class="table" style="background:none;width:100%;">
+							<tr>
+								<td
+									width="25%"
+									NOWRAP
+									style="padding-right:10px;vertical-align: center;">
+									<span style="color:#8a8a8a;">Nomor (0-9)</span>
+									<input
+										bind:this={nomor_colokmacau_1_input}
+										bind:value={nomor_colokmacau_1}
+										on:keyup={handleKeyboard_format}
+										on:keypress={handleKeyboard_checkenter}
+										type="text"
+										class="form-control form-control-sm"
+										placeholder="Input 1 Digit"
+										style="border:none;background:#303030;color:white;font-size:20px;text-align:center;"
+										minlength="1"
+										maxlength="1"
+										tab_index="-1"
+										autocomplete="off"/>
+									<span
+										class="help-block"
+										style="text-align:right;font-size:12px;"/>
+								</td>
+								<td
+									width="25%"
+									NOWRAP
+									style="padding-right:10px;vertical-align: center;">
+									<span style="color:#8a8a8a;">Nomor (0-9)</span>
+									<input
+										bind:this={nomor_colokmacau_2_input}
+										bind:value={nomor_colokmacau_2}
+										on:keyup={handleKeyboard_format}
+										on:keypress={handleKeyboard_checkenter}
+										type="text"
+										class="form-control form-control-sm"
+										placeholder="Input 1 Digit"
+										style="border:none;background:#303030;color:white;font-size:20px;text-align:center;"
+										minlength="1"
+										maxlength="1"
+										tab_index="-1"
+										autocomplete="off"/>
+									<span
+										class="help-block"
+										style="text-align:right;font-size:12px;"/>
+								</td>
+								<td
+									width="*"
+									NOWRAP
+									style="padding-right:10px;vertical-align: center;text-align:right;">
+									<span style="color:#8a8a8a;"
+										>Bet (min : {new Intl.NumberFormat().format(
+											min_bet_colokmacau
+										)} dan max : {new Intl.NumberFormat().format(
+											max_bet_colokmacau
+										)})
+									</span>
+									<input
+										bind:value={bet_colokmacau}
+										on:keyup={handleKeyboard_number}
+										on:keypress={handleKeyboardcolokmacau_checkenter}
+										type="text"
+										class="form-control"
+										placeholder="Bet"
+										style="border:none;background:#303030;color:white;font-size:20px;text-align:right;"
+										minlength="3"
+										maxlength="7"
+										tab_index="0"/>
+									<span
+										style="text-align:right;font-size:12px;color:#8a8a8a;"
+										>{new Intl.NumberFormat().format(
+											bet_colokmacau
+										)}
+									</span>
+								</td>
+								<td
+									width="20%"
+									NOWRAP
+									style="vertical-align: center;">
+									<Button
+										id="btn2"
+										on:click={() => {
+											handleTambah("colokmacau");
+										}}>TAMBAH</Button>
+								</td>
+							</tr>
+						</table>
+					</div>
 				</div>
 				<div class="tab-pane fade "
 					id="pills-cnaga"
 					role="tabpanel"
 					aria-labelledby="pills-cnaga-tab">
-					<table class="table" style="background:none;width:100%;">
-						<tr>
-							<td
-								width="25%"
-								NOWRAP
-								style="padding-right:10px;vertical-align: center;">
-								<span style="color:#8a8a8a;">Nomor (0-9)</span>
-								<input
-									bind:this={nomor_coloknaga_1_input}
-									bind:value={nomor_coloknaga_1}
-									on:keyup={handleKeyboard_format}
-									on:keypress={handleKeyboard_checkenter}
-									type="text"
-									class="form-control form-control-sm"
-									placeholder="Input 1 Digit"
-									style="border:none;background:#303030;color:white;font-size:20px;text-align:center;"
-									minlength="1"
-									maxlength="1"
-									tab_index="-1"
-									autocomplete="off"/>
-								<span
-									class="help-block"
-									style="text-align:right;font-size:12px;"/>
-							</td>
-							<td
-								width="25%"
-								NOWRAP
-								style="padding-right:10px;vertical-align: center;">
-								<span style="color:#8a8a8a;">Nomor (0-9)</span>
-								<input
-									bind:this={nomor_coloknaga_2_input}
-									bind:value={nomor_coloknaga_2}
-									on:keyup={handleKeyboard_format}
-									on:keypress={handleKeyboard_checkenter}
-									type="text"
-									class="form-control form-control-sm"
-									placeholder="Input 1 Digit"
-									style="border:none;background:#303030;color:white;font-size:20px;text-align:center;"
-									minlength="1"
-									maxlength="1"
-									tab_index="-1"
-									autocomplete="off"/>
-								<span
-									class="help-block"
-									style="text-align:right;font-size:12px;"/>
-							</td>
-							<td
-								width="25%"
-								NOWRAP
-								style="padding-right:10px;vertical-align: center;">
-								<span style="color:#8a8a8a;">Nomor (0-9)</span>
-								<input
-									bind:this={nomor_coloknaga_3_input}
-									bind:value={nomor_coloknaga_3}
-									on:keyup={handleKeyboard_format}
-									on:keypress={handleKeyboard_checkenter}
-									type="text"
-									class="form-control form-control-sm"
-									placeholder="Input 1 Digit"
-									style="border:none;background:#303030;color:white;font-size:20px;text-align:center;"
-									minlength="1"
-									maxlength="1"
-									tab_index="-1"
-									autocomplete="off"/>
-								<span
-									class="help-block"
-									style="text-align:right;font-size:12px;"/>
-							</td>
-							<td
-								width="*"
-								NOWRAP
-								style="padding-right:10px;vertical-align: center;text-align:right;">
-								<span style="color:#8a8a8a;">
-									Bet (min : {new Intl.NumberFormat().format(
-										min_bet_coloknaga
-									)} dan max : {new Intl.NumberFormat().format(
-										max_bet_coloknaga
-									)})
-								</span>
-								<input
-									bind:value={bet_coloknaga}
-									on:keyup={handleKeyboard_number}
-									on:keypress={handleKeyboardcoloknaga_checkenter}
-									type="text"
-									class="form-control"
-									placeholder="Bet"
-									style="border:none;background:#303030;color:white;font-size:20px;text-align:right;"
-									minlength="3"
-									maxlength="7"
-									tab_index="0"/>
-								<span
-									style="text-align:right;font-size:12px;color:#8a8a8a;"
-									>{new Intl.NumberFormat().format(
-										bet_coloknaga
-									)}
-								</span>
-							</td>
-							<td
-								width="20%"
-								NOWRAP
-								style="vertical-align: center;">
-								<Button
-									id="btn2"
-									on:click={() => {
-										handleTambah("coloknaga");
-									}}>TAMBAH</Button>
-							</td>
-						</tr>
-					</table>
+					<div style="margin:5px;">
+						<table class="table" style="background:none;width:100%;">
+							<tr>
+								<td
+									width="25%"
+									NOWRAP
+									style="padding-right:10px;vertical-align: center;">
+									<span style="color:#8a8a8a;">Nomor (0-9)</span>
+									<input
+										bind:this={nomor_coloknaga_1_input}
+										bind:value={nomor_coloknaga_1}
+										on:keyup={handleKeyboard_format}
+										on:keypress={handleKeyboard_checkenter}
+										type="text"
+										class="form-control form-control-sm"
+										placeholder="Input 1 Digit"
+										style="border:none;background:#303030;color:white;font-size:20px;text-align:center;"
+										minlength="1"
+										maxlength="1"
+										tab_index="-1"
+										autocomplete="off"/>
+									<span
+										class="help-block"
+										style="text-align:right;font-size:12px;"/>
+								</td>
+								<td
+									width="25%"
+									NOWRAP
+									style="padding-right:10px;vertical-align: center;">
+									<span style="color:#8a8a8a;">Nomor (0-9)</span>
+									<input
+										bind:this={nomor_coloknaga_2_input}
+										bind:value={nomor_coloknaga_2}
+										on:keyup={handleKeyboard_format}
+										on:keypress={handleKeyboard_checkenter}
+										type="text"
+										class="form-control form-control-sm"
+										placeholder="Input 1 Digit"
+										style="border:none;background:#303030;color:white;font-size:20px;text-align:center;"
+										minlength="1"
+										maxlength="1"
+										tab_index="-1"
+										autocomplete="off"/>
+									<span
+										class="help-block"
+										style="text-align:right;font-size:12px;"/>
+								</td>
+								<td
+									width="25%"
+									NOWRAP
+									style="padding-right:10px;vertical-align: center;">
+									<span style="color:#8a8a8a;">Nomor (0-9)</span>
+									<input
+										bind:this={nomor_coloknaga_3_input}
+										bind:value={nomor_coloknaga_3}
+										on:keyup={handleKeyboard_format}
+										on:keypress={handleKeyboard_checkenter}
+										type="text"
+										class="form-control form-control-sm"
+										placeholder="Input 1 Digit"
+										style="border:none;background:#303030;color:white;font-size:20px;text-align:center;"
+										minlength="1"
+										maxlength="1"
+										tab_index="-1"
+										autocomplete="off"/>
+									<span
+										class="help-block"
+										style="text-align:right;font-size:12px;"/>
+								</td>
+								<td
+									width="*"
+									NOWRAP
+									style="padding-right:10px;vertical-align: center;text-align:right;">
+									<span style="color:#8a8a8a;">
+										Bet (min : {new Intl.NumberFormat().format(
+											min_bet_coloknaga
+										)} dan max : {new Intl.NumberFormat().format(
+											max_bet_coloknaga
+										)})
+									</span>
+									<input
+										bind:value={bet_coloknaga}
+										on:keyup={handleKeyboard_number}
+										on:keypress={handleKeyboardcoloknaga_checkenter}
+										type="text"
+										class="form-control"
+										placeholder="Bet"
+										style="border:none;background:#303030;color:white;font-size:20px;text-align:right;"
+										minlength="3"
+										maxlength="7"
+										tab_index="0"/>
+									<span
+										style="text-align:right;font-size:12px;color:#8a8a8a;"
+										>{new Intl.NumberFormat().format(
+											bet_coloknaga
+										)}
+									</span>
+								</td>
+								<td
+									width="20%"
+									NOWRAP
+									style="vertical-align: center;">
+									<Button
+										id="btn2"
+										on:click={() => {
+											handleTambah("coloknaga");
+										}}>TAMBAH</Button>
+								</td>
+							</tr>
+						</table>
+					</div>
 				</div>
 				<div class="tab-pane fade "
 					id="pills-cjitu"
 					role="tabpanel"
 					aria-labelledby="pills-cjitu-tab">
-					<table class="table" style="background:none;width:100%;">
-						<tr>
-							<td
-								width="25%"
-								NOWRAP
-								style="padding-right:10px;vertical-align: center;">
-								<span style="color:#8a8a8a;">Nomor (0-9)</span>
-								<input
-									bind:this={nomor_colokjitu_input}
-									bind:value={nomor_colokjitu}
-									on:keyup={handleKeyboard_format}
-									on:keypress={handleKeyboard_checkenter}
-									type="text"
-									class="form-control form-control-sm"
-									placeholder="Input 1 Digit"
-									style="border:none;background:#303030;color:white;font-size:20px;text-align:center;"
-									minlength="1"
-									maxlength="1"
-									tab_index="-1"
-									autocomplete="off"/>
-								<span
-									class="help-block"
-									style="text-align:right;font-size:12px;"/>
-							</td>
-							<td
-								width="15%"
-								NOWRAP
-								style="padding-right:10px;vertical-align: center;">
-								<div style="margin-top:-20px;">
-									<span style="color:#8a8a8a;">Posisi</span>
-									<select
-										bind:value={select_pilihancolokjitu}
-										bind:this={select_pilihancolokjitu_input}
-										style="border:none;background:#303030;color:white;"
-										class="form-control">
-										<option value="">--Pilih--</option>
-										<option value="AS">AS</option>
-										<option value="KECIL">KOP</option>
-										<option value="KEPALA">KEPALA</option>
-										<option value="EKOR">EKOR</option>
-									</select>
-								</div>
-							</td>
-							<td
-								width="*"
-								NOWRAP
-								style="padding-right:10px;vertical-align: center;text-align:right;">
-								<span style="color:#8a8a8a;"
-									>Bet (min : {new Intl.NumberFormat().format(
-										min_bet_colokjitu
-									)} dan max : {new Intl.NumberFormat().format(
-										max_bet_colokjitu
-									)})
-								</span>
-								<input
-									bind:value={bet_colokjitu}
-									on:keyup={handleKeyboard_number}
-									on:keypress={handleKeyboardcolokjitu_checkenter}
-									type="text"
-									class="form-control"
-									placeholder="Bet"
-									style="border:none;background:#303030;color:white;font-size:20px;text-align:right;"
-									minlength="3"
-									maxlength="7"
-									tab_index="0"/>
-								<span
-									style="text-align:right;font-size:12px;color:#8a8a8a;"
-									>{new Intl.NumberFormat().format(
-										bet_colokjitu
-									)}
-								</span>
-							</td>
-							<td
-								width="20%"
-								NOWRAP
-								style="vertical-align: center;">
-								<Button
-									id="btn2"
-									on:click={() => {
-										handleTambah("colokjitu");
-									}}>TAMBAH</Button>
-							</td>
-						</tr>
-					</table>
+					<div style="margin:5px;">
+						<table class="table" style="background:none;width:100%;">
+							<tr>
+								<td
+									width="25%"
+									NOWRAP
+									style="padding-right:10px;vertical-align: center;">
+									<span style="color:#8a8a8a;">Nomor (0-9)</span>
+									<input
+										bind:this={nomor_colokjitu_input}
+										bind:value={nomor_colokjitu}
+										on:keyup={handleKeyboard_format}
+										on:keypress={handleKeyboard_checkenter}
+										type="text"
+										class="form-control form-control-sm"
+										placeholder="Input 1 Digit"
+										style="border:none;background:#303030;color:white;font-size:20px;text-align:center;"
+										minlength="1"
+										maxlength="1"
+										tab_index="-1"
+										autocomplete="off"/>
+									<span
+										class="help-block"
+										style="text-align:right;font-size:12px;"/>
+								</td>
+								<td
+									width="15%"
+									NOWRAP
+									style="padding-right:10px;vertical-align: center;">
+									<div style="margin-top:-20px;">
+										<span style="color:#8a8a8a;">Posisi</span>
+										<select
+											bind:value={select_pilihancolokjitu}
+											bind:this={select_pilihancolokjitu_input}
+											style="border:none;background:#303030;color:white;"
+											class="form-control">
+											<option value="">--Pilih--</option>
+											<option value="AS">AS</option>
+											<option value="KECIL">KOP</option>
+											<option value="KEPALA">KEPALA</option>
+											<option value="EKOR">EKOR</option>
+										</select>
+									</div>
+								</td>
+								<td
+									width="*"
+									NOWRAP
+									style="padding-right:10px;vertical-align: center;text-align:right;">
+									<span style="color:#8a8a8a;"
+										>Bet (min : {new Intl.NumberFormat().format(
+											min_bet_colokjitu
+										)} dan max : {new Intl.NumberFormat().format(
+											max_bet_colokjitu
+										)})
+									</span>
+									<input
+										bind:value={bet_colokjitu}
+										on:keyup={handleKeyboard_number}
+										on:keypress={handleKeyboardcolokjitu_checkenter}
+										type="text"
+										class="form-control"
+										placeholder="Bet"
+										style="border:none;background:#303030;color:white;font-size:20px;text-align:right;"
+										minlength="3"
+										maxlength="7"
+										tab_index="0"/>
+									<span
+										style="text-align:right;font-size:12px;color:#8a8a8a;"
+										>{new Intl.NumberFormat().format(
+											bet_colokjitu
+										)}
+									</span>
+								</td>
+								<td
+									width="20%"
+									NOWRAP
+									style="vertical-align: center;">
+									<Button
+										id="btn2"
+										on:click={() => {
+											handleTambah("colokjitu");
+										}}>TAMBAH</Button>
+								</td>
+							</tr>
+						</table>
+					</div>
 				</div>
 				<div class="tab-pane fade "
 					id="pills-polacolok"
 					role="tabpanel"
 					aria-labelledby="pills-polacolok-tab">
-					<table class="table" style="background:none;width:100%;">
-						<tr>
-							<td
-								width="25%"
-								NOWRAP
-								style="padding-right:10px;vertical-align: center;">
-								<span style="color:#8a8a8a;">Nomor (4 Digit / 7 Digit)</span>
-								<input
-									bind:this={nomor_polacolok_input}
-									bind:value={nomor_polacolok}
-									on:keyup={handleKeyboard_number}
-									on:keypress={handleKeyboard_checkenter}
-									type="text"
-									class="form-control form-control-sm"
-									placeholder="Input 4 / 7 Digit"
-									style="border:none;background:#303030;color:white;font-size:20px;text-align:center;"
-									minlength="4"
-									maxlength="7"
-									tab_index="-1"
-									autocomplete="off"/>
-								<span
-									class="help-block"
-									style="text-align:right;font-size:12px;"/>
-							</td>
-							<td
-								width="20%"
-								NOWRAP
-								style="padding-right:10px;vertical-align: center;text-align:right;">
-								<span style="color:#8a8a8a;">Bet Colok Bebas</span>
-								<input
-									bind:value={bet_polacolokbebas}
-									on:keyup={handleKeyboard_number}
-									on:keypress={handleKeyboardpolacolok_checkenter}
-									type="text"
-									class="form-control"
-									placeholder="Bet"
-									style="border:none;background:#303030;color:white;font-size:20px;text-align:right;"
-									minlength="3"
-									maxlength="7"
-									tab_index="0"/>
-								<span
-									style="text-align:right;font-size:12px;color:#8a8a8a;">{new Intl.NumberFormat().format(
-										bet_polacolokbebas
-									)}
-								</span>
-							</td>
-							<td
-								width="20%"
-								NOWRAP
-								style="padding-right:10px;vertical-align: center;text-align:right;">
-								<span style="color:#8a8a8a;">Bet Colok Macau</span>
-								<input
-									bind:value={bet_polacolokmacau}
-									on:keyup={handleKeyboard_number}
-									on:keypress={handleKeyboardpolacolok_checkenter}
-									type="text"
-									class="form-control"
-									placeholder="Bet"
-									style="border:none;background:#303030;color:white;font-size:20px;text-align:right;"
-									minlength="3"
-									maxlength="7"
-									tab_index="0"/>
-								<span
-									style="text-align:right;font-size:12px;color:#8a8a8a;">{new Intl.NumberFormat().format(
-										bet_polacolokmacau
-									)}
-								</span>
-							</td>
-							<td
-								width="20%"
-								NOWRAP
-								style="padding-right:10px;vertical-align: center;text-align:right;">
-								<span style="color:#8a8a8a;">Bet Colok Naga</span>
-								<input
-									bind:value={bet_polacoloknaga}
-									on:keyup={handleKeyboard_number}
-									on:keypress={handleKeyboardpolacolok_checkenter}
-									type="text"
-									class="form-control"
-									placeholder="Bet"
-									style="border:none;background:#303030;color:white;font-size:20px;text-align:right;"
-									minlength="3"
-									maxlength="7"
-									tab_index="0"/>
-								<span
-									style="text-align:right;font-size:12px;color:#8a8a8a;">{new Intl.NumberFormat().format(
-										bet_polacoloknaga
-									)}
-								</span>
-							</td>
-							<td
-								width="*"
-								NOWRAP
-								style="vertical-align: center;">
-								<Button
-									id="btn2"
-									on:click={() => {
-										handleTambah("polacolok");
-									}}>TAMBAH</Button>
-							</td>
-						</tr>
-					</table>
+					<div style="margin:5px;">
+						<table class="table" style="background:none;width:100%;">
+							<tr>
+								<td
+									width="25%"
+									NOWRAP
+									style="padding-right:10px;vertical-align: center;">
+									<span style="color:#8a8a8a;">Nomor (4 Digit / 7 Digit)</span>
+									<input
+										bind:this={nomor_polacolok_input}
+										bind:value={nomor_polacolok}
+										on:keyup={handleKeyboard_number}
+										on:keypress={handleKeyboard_checkenter}
+										type="text"
+										class="form-control form-control-sm"
+										placeholder="Input 4 / 7 Digit"
+										style="border:none;background:#303030;color:white;font-size:20px;text-align:center;"
+										minlength="4"
+										maxlength="7"
+										tab_index="-1"
+										autocomplete="off"/>
+									<span
+										class="help-block"
+										style="text-align:right;font-size:12px;"/>
+								</td>
+								<td
+									width="20%"
+									NOWRAP
+									style="padding-right:10px;vertical-align: center;text-align:right;">
+									<span style="color:#8a8a8a;">Bet Colok Bebas</span>
+									<input
+										bind:value={bet_polacolokbebas}
+										on:keyup={handleKeyboard_number}
+										on:keypress={handleKeyboardpolacolok_checkenter}
+										type="text"
+										class="form-control"
+										placeholder="Bet"
+										style="border:none;background:#303030;color:white;font-size:20px;text-align:right;"
+										minlength="3"
+										maxlength="7"
+										tab_index="0"/>
+									<span
+										style="text-align:right;font-size:12px;color:#8a8a8a;">{new Intl.NumberFormat().format(
+											bet_polacolokbebas
+										)}
+									</span>
+								</td>
+								<td
+									width="20%"
+									NOWRAP
+									style="padding-right:10px;vertical-align: center;text-align:right;">
+									<span style="color:#8a8a8a;">Bet Colok Macau</span>
+									<input
+										bind:value={bet_polacolokmacau}
+										on:keyup={handleKeyboard_number}
+										on:keypress={handleKeyboardpolacolok_checkenter}
+										type="text"
+										class="form-control"
+										placeholder="Bet"
+										style="border:none;background:#303030;color:white;font-size:20px;text-align:right;"
+										minlength="3"
+										maxlength="7"
+										tab_index="0"/>
+									<span
+										style="text-align:right;font-size:12px;color:#8a8a8a;">{new Intl.NumberFormat().format(
+											bet_polacolokmacau
+										)}
+									</span>
+								</td>
+								<td
+									width="20%"
+									NOWRAP
+									style="padding-right:10px;vertical-align: center;text-align:right;">
+									<span style="color:#8a8a8a;">Bet Colok Naga</span>
+									<input
+										bind:value={bet_polacoloknaga}
+										on:keyup={handleKeyboard_number}
+										on:keypress={handleKeyboardpolacolok_checkenter}
+										type="text"
+										class="form-control"
+										placeholder="Bet"
+										style="border:none;background:#303030;color:white;font-size:20px;text-align:right;"
+										minlength="3"
+										maxlength="7"
+										tab_index="0"/>
+									<span
+										style="text-align:right;font-size:12px;color:#8a8a8a;">{new Intl.NumberFormat().format(
+											bet_polacoloknaga
+										)}
+									</span>
+								</td>
+								<td
+									width="*"
+									NOWRAP
+									style="vertical-align: center;">
+									<Button
+										id="btn2"
+										on:click={() => {
+											handleTambah("polacolok");
+										}}>TAMBAH</Button>
+								</td>
+							</tr>
+						</table>
+					</div>
 				</div>
 			</div>
 		</CardBody>
