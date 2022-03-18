@@ -390,7 +390,18 @@
             3D = 100rb x [Indeks kemenangan untuk 3D]<br />
             2D = 100rb x [Indeks kemenangan untuk 2D]<br /><br />
             (Catatan: nilai bet 100rb tidak dikembalikan ke member)<br/>
-            (Khusus untuk 4D,3D dan 2D diberikan diskon tambahan)<br />
+            (Khusus untuk 4D,3D dan 2D diberikan diskon tambahan)<br /><br/>
+            <b>3D Posisi</b><br>
+            Struktur: ABCD<br/>
+            Misalnya keluar nomor = 1234<br/>
+            berati pemenang untuk 3D Depan / 3DD adalah = 123<br/>
+            berati pemenang untuk 3D Belakang / 3D adalah = 234 <br/><br/>
+            <b>2D Posisi</b><br>
+            Struktur: ABCD<br/>
+            Misalnya keluar nomor = 1234<br/>
+            berati pemenang untuk 2D Depan / 2DD adalah = 12<br/>
+            berati pemenang untuk 2D Tengah / 2DT adalah = 23<br/>
+            berati pemenang untuk 2D Belakang / 2D adalah = 34 <br/>
         </p>
     </slot:template>
 </Modal>

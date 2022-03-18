@@ -157,7 +157,7 @@
 </script>
 
 <svelte:head>
-  <title>SDSB4D</title>
+  <title>APP TOTO</title>
 </svelte:head>
 {#if client_device == "WEBSITE"}
   <div class="content" style="margin-top:20px;margin-bottom:50px;">

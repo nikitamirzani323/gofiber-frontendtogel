@@ -305,7 +305,7 @@
     {listkeluaran}
     {client_device}/>
     {#if client_device == "WEBSITE"}
-        <div class="card " style="margin-top:-30px;background:#323030;">
+        <div class="card " style="margin-top:-20px;background:#323030;">
             <div class="card-body" style="padding: 10px;margin:0px;background:#323030;">
                 <center style="margin-top: 5px;">
                     <Button

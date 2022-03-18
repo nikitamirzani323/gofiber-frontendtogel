@@ -429,64 +429,63 @@
 
 {#if client_device == "WEBSITE"}
     <nav class="navbar fixed-top " style="background-color: #252525;margin-bottom:100px;">
+       
         <div class="container">
-                <div class="col" style="margin: 0px;padding:0px;">
-                    <a href="/?token={client_token}" title="totoapp">
-                        <img
-                            id="imglogo"
-                            alt="SDSB4D"
-                            style="margin-top:0px;"
-                            src="logo.svg"/>
-                    </a>
-                </div>
-                <div class="col" style="margin: 0px;padding:0px;">
-                    <center>
-                        <form class="d-flex">
-                            <button
-                                on:click={() => {
-                                    handleClickButtonTop("result");
-                                }}
-                                id="btn1"
-                                class="btn btn-secondary "
-                                type="button">RESULT</button>
-                            &nbsp;
-                            <button
-                                on:click={() => {
-                                    handleClickButtonTop("invoice");
-                                }}
-                                id="btn1"
-                                class="btn btn-secondary "
-                                type="button">INVOICE</button>
-                            &nbsp;
-                            <button
-                                on:click={() => {
-                                    handleClickButtonTop("pasaran");
-                                }}
-                                id="btn1"
-                                class="btn btn-secondary "
-                                type="button">PASARAN</button>
-                            &nbsp;
-                            <button
-                                on:click={() => {
-                                    handleClickButtonTop("bukumimpi");
-                                }}
-                                id="btn1"
-                                class="btn btn-secondary "
-                                type="button">BUKU MIMPI</button>
-                        </form>
-                    </center>
-                </div>
-                <div class="col" style="margin: 0px;padding:0px;">
-                    <Card color="dark" style="border:none;background-color:#252525;">
-                        <CardBody style="background-color:#252525;text-align:right;">
-                            <span style="font-size:14px;">TIMEZONE : <span id="style_text">{client_timezone}</span>  <span id="style_text">{clockmachine} WIB</span><br />
-                            <span style="font-size:14px;">{client_username}</span>&nbsp;(<span id="style_text">{client_ipaddress}</span>)<br />
-                            <span style="font-size:14px;">Credit : IDR <span id="style_text">{display_credit}</span><br />
-                        </CardBody>
-                    </Card>
-                </div>
-            
+            <div class="col" style="margin: 0px;padding:0px;">
+                <a href="/?token={client_token}" title="totoapp">
+                    <img
+                        id="imglogo"
+                        alt="totoapp"
+                        width="70"
+                        src="logoarab_white.png"/>
+                </a>
+            </div>      
+            <div class="col" style="margin: 0px;padding:0px;">
+                <form class="d-flex justify-content-center">
+                    <button
+                        on:click={() => {
+                            handleClickButtonTop("result");
+                        }}
+                        id="btn1"
+                        class="btn btn-secondary "
+                        type="button">RESULT</button>
+                    &nbsp;
+                    <button
+                        on:click={() => {
+                            handleClickButtonTop("invoice");
+                        }}
+                        id="btn1"
+                        class="btn btn-secondary "
+                        type="button">INVOICE</button>
+                    &nbsp;
+                    <button
+                        on:click={() => {
+                            handleClickButtonTop("pasaran");
+                        }}
+                        id="btn1"
+                        class="btn btn-secondary "
+                        type="button">PASARAN</button>
+                    &nbsp;
+                    <button
+                        on:click={() => {
+                            handleClickButtonTop("bukumimpi");
+                        }}
+                        id="btn1"
+                        class="btn btn-secondary "
+                        type="button">BUKU MIMPI</button>
+                </form>
+            </div>      
+            <div class="col" style="margin: 0px;padding:0px;">
+                <Card  style="border:none;background:none;">
+                    <CardBody style="background-color:none;text-align:right;">
+                        <span style="font-size:14px;">TIMEZONE : <span id="style_text">{client_timezone}</span>  <span id="style_text">{clockmachine} WIB</span><br />
+                        <span style="font-size:14px;">{client_username}</span>&nbsp;(<span id="style_text">{client_ipaddress}</span>)<br />
+                        <span style="font-size:14px;">Credit : IDR <span id="style_text">{display_credit}</span><br />
+                    </CardBody>
+                </Card>
+            </div>
         </div>
+         
     </nav>
     <div style="margin-top:100px;">&nbsp;</div>
 {:else}
@@ -754,17 +753,11 @@
             <tbody>
                 {#each listhasilinvoice as rec}
                     <tr>
-                        <td
-                            NOWRAP
-                            style="text-align: center;vertical-align: top;;">
-                            <span style="padding:5px;border-radius:5px;{rec.invoice_background}">{rec.invoice_status}</span> 
+                        <td NOWRAP style="text-align: center;vertical-align: top;;">
+                            <span style="padding:5px;border-radius:5px;{rec.invoice_background};font-size:{modal_table_fontsize_body};">{rec.invoice_status}</span> 
                         </td>
-                        <td
-                            NOWRAP
-                            style="text-align: center;vertical-align: top;font-size:{modal_table_fontsize_body};">{rec.invoice_tglkeluaran}</td>
-                        <td
-                            NOWRAP
-                            style="text-align: left;vertical-align: top;font-size:{modal_table_fontsize_body};">{rec.invoice_pasaran}</td>
+                        <td NOWRAP style="text-align: center;vertical-align: top;font-size:{modal_table_fontsize_body};">{rec.invoice_tglkeluaran}</td>
+                        <td NOWRAP style="text-align: left;vertical-align: top;font-size:{modal_table_fontsize_body};">{rec.invoice_pasaran}</td>
                         <td
                             on:click={() => {
                                 fetch_invoicelldetail(
@@ -1463,8 +1456,8 @@
                 {#each listhasilinvoicebet as rec}
                     <tr>
                         <td NOWRAP style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};">{rec.bet_no}</td>
-                        <td NOWRAP style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};">
-                            <span style="padding:5px;border-radius:5px;{rec.bet_background}">{rec.bet_status}</span>
+                        <td NOWRAP style="text-align:center;vertical-align:top;">
+                            <span style="padding:5px;border-radius:5px;{rec.bet_background};font-size:{modal_table_fontsize_body};">{rec.bet_status}</span>
                         </td>
                         <td NOWRAP style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};">{rec.bet_tipe}</td>
                         <td NOWRAP style="text-align:center;vertical-align:top;font-size:{modal_table_fontsize_body};">{rec.bet_permainan}</td>
