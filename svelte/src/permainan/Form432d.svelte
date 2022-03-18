@@ -3799,7 +3799,7 @@
 									NOWRAP
 									style="vertical-align: center;">
 									<Button
-										id="btn2"
+										id="btn2" block 
 										on:click={() => {
 											handleTambah("pilihan","4-3-2");
 										}}>TAMBAH</Button>
@@ -4274,7 +4274,7 @@
 									NOWRAP
 									style="vertical-align: center;">
 									<Button
-										id="btn2"
+										id="btn2" block 
 										on:click={() => {
 											handleTambah("pilihan","polatarung");
 										}}>TAMBAH</Button>
@@ -4364,7 +4364,7 @@
 									NOWRAP
 									style="vertical-align: center;">
 									<Button
-										id="btn2"
+										id="btn2" block 
 										on:click={() => {
 											handleTambah("pilihan","quick2D");
 										}}>TAMBAH</Button>
@@ -4429,7 +4429,7 @@
 									NOWRAP
 									style="vertical-align: center;">
 									<Button
-										id="btn2"
+										id="btn2" block 
 										on:click={() => {
 											handleTambah("pilihan","3DD");
 										}}>TAMBAH</Button>
@@ -4496,7 +4496,7 @@
 									NOWRAP
 									style="vertical-align: center;">
 									<Button
-										id="btn2"
+										id="btn2" block 
 										on:click={() => {
 											handleTambah("pilihan","2DD");
 										}}>TAMBAH</Button>
@@ -4563,7 +4563,7 @@
 									NOWRAP
 									style="vertical-align: center;">
 									<Button
-										id="btn2"
+										id="btn2" block 
 										on:click={() => {
 											handleTambah("pilihan","2DT");
 										}}>TAMBAH</Button>

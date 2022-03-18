@@ -1148,7 +1148,7 @@
 									NOWRAP
 									style="vertical-align: center;">
 									<Button
-										id="btn2"
+										id="btn2" block 
 										on:click={() => {
 											handleTambah("colokbebas");
 										}}>TAMBAH</Button>
@@ -1241,7 +1241,7 @@
 									width="20%"
 									NOWRAP
 									style="vertical-align: center;">
-									<Button
+									<Button block 
 										id="btn2"
 										on:click={() => {
 											handleTambah("colokmacau");
@@ -1358,7 +1358,7 @@
 									NOWRAP
 									style="vertical-align: center;">
 									<Button
-										id="btn2"
+										id="btn2" block 
 										on:click={() => {
 											handleTambah("coloknaga");
 										}}>TAMBAH</Button>
@@ -1449,7 +1449,7 @@
 									NOWRAP
 									style="vertical-align: center;">
 									<Button
-										id="btn2"
+										id="btn2" block 
 										on:click={() => {
 											handleTambah("colokjitu");
 										}}>TAMBAH</Button>
@@ -1558,7 +1558,7 @@
 									NOWRAP
 									style="vertical-align: center;">
 									<Button
-										id="btn2"
+										id="btn2" block 
 										on:click={() => {
 											handleTambah("polacolok");
 										}}>TAMBAH</Button>

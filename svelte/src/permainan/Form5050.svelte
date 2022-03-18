@@ -961,7 +961,7 @@
 								NOWRAP
 								style="vertical-align: center;">
 								<Button
-									id="btn2"
+									id="btn2" block 
 									on:click={() => {
 										handleTambah("5050umum");
 									}}>TAMBAH</Button>
@@ -1041,7 +1041,7 @@
 								NOWRAP
 								style="vertical-align: center;">
 								<Button
-									id="btn2"
+									id="btn2" block 
 									on:click={() => {
 										handleTambah("5050special");
 									}}>TAMBAH</Button>
@@ -1124,7 +1124,7 @@
 								NOWRAP
 								style="vertical-align: center;">
 								<Button
-									id="btn2"
+									id="btn2" block 
 									on:click={() => {
 										handleTambah("5050kombinasi");
 									}}>TAMBAH</Button>

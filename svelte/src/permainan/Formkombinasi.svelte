@@ -444,7 +444,7 @@
 						</td>
 						<td width="20%" NOWRAP style="vertical-align: center;">
 							<Button
-								id="btn2"
+								id="btn2" block 
 								on:click={() => {
 									handleTambah("macaukombinasi");
 								}}>TAMBAH</Button

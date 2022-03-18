@@ -380,20 +380,15 @@
 								style="border:none;background:#303030;color:white;font-size:20px;text-align:right;"
 								minlength="3"
 								maxlength="7"
-								tab_index="0"
-							/>
-							<span
-								style="text-align:right;font-size:12px;color:#8a8a8a;"
-								>{new Intl.NumberFormat().format(bet_shio)}</span
-							>
+								tab_index="0"/>
+							<span style="text-align:right;font-size:12px;color:#8a8a8a;">{new Intl.NumberFormat().format(bet_shio)}</span>
 						</td>
 						<td width="20%" NOWRAP style="vertical-align: center;">
 							<Button
-								id="btn2"
+								id="btn2" block 
 								on:click={() => {
 									handleTambah("shio");
-								}}>TAMBAH</Button
-							>
+								}}>TAMBAH</Button>
 						</td>
 					</tr>
 				</table>

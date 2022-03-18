@@ -366,39 +366,33 @@
 						<td
 							width="25%"
 							NOWRAP
-							style="padding-right:10px;vertical-align: center;"
-						>
+							style="padding-right:10px;vertical-align: center;">
 							<span style="color:#8a8a8a;">TEBAK</span>
 							<select
 								bind:value={select_dasar}
 								bind:this={select_dasar_input}
 								style="border:none;background:#303030;color:white;"
-								class="form-control"
-							>
+								class="form-control">
 								<option value="">--Pilih--</option>
 								<option value="GANJIL">GANJIL</option>
 								<option value="GENAP">GENAP</option>
 								<option value="BESAR">BESAR</option>
 								<option value="KECIL">KECIL</option>
 							</select>
-							<span
-								class="help-block"
-								style="text-align:right;font-size:12px;"
-							/>
+							<span class="help-block" style="text-align:right;font-size:12px;"/>
 						</td>
 
 						<td
 							width="*"
 							NOWRAP
-							style="padding-right:10px;vertical-align: center;text-align:right;"
-						>
-							<span style="color:#8a8a8a;"
-								>Bet (min : {new Intl.NumberFormat().format(
+							style="padding-right:10px;vertical-align: center;text-align:right;">
+							<span style="color:#8a8a8a;">
+								Bet (min : {new Intl.NumberFormat().format(
 									min_bet
 								)} dan max : {new Intl.NumberFormat().format(
 									max_bet
-								)})</span
-							>
+								)})
+							</span>
 							<input
 								bind:value={bet_dasar}
 								on:keyup={handleKeyboard_number}
@@ -409,16 +403,12 @@
 								style="border:none;background:#303030;color:white;font-size:20px;text-align:right;"
 								minlength="3"
 								maxlength="7"
-								tab_index="0"
-							/>
-							<span
-								style="text-align:right;font-size:12px;color:#8a8a8a;"
-								>{new Intl.NumberFormat().format(bet_dasar)}</span
-							>
+								tab_index="0"/>
+							<span style="text-align:right;font-size:12px;color:#8a8a8a;">{new Intl.NumberFormat().format(bet_dasar)}</span>
 						</td>
 						<td width="20%" NOWRAP style="vertical-align: center;">
 							<Button
-								id="btn2"
+								id="btn2" block 
 								on:click={() => {
 									handleTambah("dasar");
 								}}>TAMBAH</Button
