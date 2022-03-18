@@ -15,6 +15,7 @@
     export let client_ipaddress = "";
     export let client_timezone = "";
     export let client_device = "";
+    export let listkeluaran = [];
 
     let modal_table_fontsize_header = "13px";
     let modal_table_fontsize_body = "12px";
@@ -385,6 +386,10 @@
                 idmodal = "modalbukumimpi";
                 fetch_bukumimpi();
                 break;
+            case "pasaran":
+                idmodal = "modallistpasaran";
+                fetch_bukumimpi();
+                break;
         }
         let myModal = new bootstrap.Modal(document.getElementById(idmodal));
         myModal.show();
@@ -425,7 +430,7 @@
 {#if client_device == "WEBSITE"}
     <nav class="navbar fixed-top " style="background-color: #252525;margin-bottom:100px;">
         <div class="container">
-                <div class="col">
+                <div class="col" style="margin: 0px;padding:0px;">
                     <a href="/?token={client_token}" title="totoapp">
                         <img
                             id="imglogo"
@@ -434,7 +439,7 @@
                             src="logo.svg"/>
                     </a>
                 </div>
-                <div class="col">
+                <div class="col" style="margin: 0px;padding:0px;">
                     <center>
                         <form class="d-flex">
                             <button
@@ -442,7 +447,7 @@
                                     handleClickButtonTop("result");
                                 }}
                                 id="btn1"
-                                class="btn btn-secondary"
+                                class="btn btn-secondary "
                                 type="button">RESULT</button>
                             &nbsp;
                             <button
@@ -450,25 +455,33 @@
                                     handleClickButtonTop("invoice");
                                 }}
                                 id="btn1"
-                                class="btn btn-secondary"
+                                class="btn btn-secondary "
                                 type="button">INVOICE</button>
+                            &nbsp;
+                            <button
+                                on:click={() => {
+                                    handleClickButtonTop("pasaran");
+                                }}
+                                id="btn1"
+                                class="btn btn-secondary "
+                                type="button">PASARAN</button>
                             &nbsp;
                             <button
                                 on:click={() => {
                                     handleClickButtonTop("bukumimpi");
                                 }}
                                 id="btn1"
-                                class="btn btn-secondary"
+                                class="btn btn-secondary "
                                 type="button">BUKU MIMPI</button>
                         </form>
                     </center>
                 </div>
-                <div class="col">
+                <div class="col" style="margin: 0px;padding:0px;">
                     <Card color="dark" style="border:none;background-color:#252525;">
                         <CardBody style="background-color:#252525;text-align:right;">
-                            <span style="font-size:12px;">TIMEZONE : <span id="style_text">{client_timezone}</span>  <span id="style_text">{clockmachine} WIB</span><br />
-                            <span style="font-size:12px;">{client_username}</span>&nbsp;(<span id="style_text">{client_ipaddress}</span>)<br />
-                            <span style="font-size:12px;">Credit : IDR <span id="style_text">{display_credit}</span><br />
+                            <span style="font-size:14px;">TIMEZONE : <span id="style_text">{client_timezone}</span>  <span id="style_text">{clockmachine} WIB</span><br />
+                            <span style="font-size:14px;">{client_username}</span>&nbsp;(<span id="style_text">{client_ipaddress}</span>)<br />
+                            <span style="font-size:14px;">Credit : IDR <span id="style_text">{display_credit}</span><br />
                         </CardBody>
                     </Card>
                 </div>
@@ -545,6 +558,54 @@
 {/if}
 
 <div class="clearfix " />
+<Modal
+    modal_id={"modallistpasaran"}
+    modal_footer_flag={false}
+    modal_body_height={"height:350px;"}
+    modal_size={"modal-dialog-centered"}>
+    <slot:template slot="header">
+        <h5 class="modal-title">INFO PASARAN</h5>
+    </slot:template>
+    <slot:template slot="body">
+   
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th
+                        width="*"
+                        style="text-align:left;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">PASARAN</th>
+                    <th
+                        width="15%"
+                        style="text-align:left;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">DIUNDI</th>
+                    <th
+                        width="15%"
+                        style="text-align:center;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">TUTUP</th>
+                    <th
+                        width="15%"
+                        style="text-align:center;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">JADWAL</th>
+                    <th
+                        width="15%"
+                        style="text-align:center;vertical-align:top;background:#303030;font-size:{modal_table_fontsize_header};border-bottom:none;">OPEN</th>
+                </tr>
+            </thead>
+            <tbody>
+                {#each listkeluaran as rec}
+                    <tr>
+                        <td NOWRAP style="cursor:pointer;text-align: left;vertical-align: top;font-size:{modal_table_fontsize_body};">
+                            <a href="{rec.pasaran_url}" target="_blank">
+                                {rec.pasaran}
+                            </a>
+                        </td>
+                        <td NOWRAP style="text-align: left;vertical-align: top;font-size:{modal_table_fontsize_body};">{rec.pasaran_note}</td>
+                        <td NOWRAP style="text-align: center;vertical-align: top;font-size:{modal_table_fontsize_body};">{rec.pasaran_tglclose}</td>
+                        <td NOWRAP style="text-align: center;vertical-align: top;font-size:{modal_table_fontsize_body};">{rec.pasaran_tglschedule}</td>
+                        <td NOWRAP style="text-align: center;vertical-align: top;font-size:{modal_table_fontsize_body};">{rec.pasaran_tglopen}</td>
+                    </tr>
+                {/each}
+            </tbody>
+        </table>
+    </slot:template>
+</Modal>
 <Modal
     modal_id={"modalhasilkeluaran"}
     modal_footer_flag={false}

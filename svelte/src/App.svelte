@@ -136,9 +136,12 @@
                 pasaran_code: record[i]["pasaran_id"],
                 pasaran: record[i]["pasaran_togel"],
                 pasaran_periode: record[i]["pasaran_periode"],
-                pasaran_tgl: dayjs(record[i]["pasaran_marketclose"])
-                  .tz(client_timezone)
-                  .format("DD MMM YYYY | HH:mm:ss"),
+                pasaran_tgl: dayjs(record[i]["pasaran_marketclose"]).tz(client_timezone).format("DD MMM YYYY | HH:mm:ss"),
+                pasaran_tglclose: dayjs(record[i]["pasaran_marketclose"]).tz(client_timezone).format("HH:mm:ss"),
+                pasaran_tglschedule: dayjs(record[i]["pasaran_marketschedule"]).tz(client_timezone).format("HH:mm:ss"),
+                pasaran_tglopen: dayjs(record[i]["pasaran_marketopen"]).tz(client_timezone).format("HH:mm:ss"),
+                pasaran_url: record[i]["pasaran_url"],
+                pasaran_note: record[i]["pasaran_note"],
                 pasaran_status: record[i]["pasaran_status"],
               },
             ];
@@ -175,6 +178,7 @@
                 {pasaran_name}
                 {pasaran_periode}
                 {permainan}
+                {listkeluaran}
               />
             {/if}
           {:else if client_token != ""}

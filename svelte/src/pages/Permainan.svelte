@@ -24,6 +24,7 @@
     export let pasaran_name = "";
     export let pasaran_periode = 0;
     export let permainan = "";
+    export let listkeluaran = [];
     let css_loader = "display:none;";
 
     let resultinvoice = [];
@@ -301,6 +302,7 @@
     {client_token}
     {client_ipaddress}
     {client_timezone}
+    {listkeluaran}
     {client_device}/>
     {#if client_device == "WEBSITE"}
         <div class="card " style="margin-top:-30px;background:#323030;">

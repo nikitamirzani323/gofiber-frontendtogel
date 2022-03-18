@@ -35,6 +35,7 @@
     {client_token}
     {client_ipaddress}
     {client_timezone}
+    {listkeluaran}
     {client_device}/>
     {#each listkeluaran as rec}
         {#if client_device == "WEBSITE"}
