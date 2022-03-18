@@ -161,33 +161,20 @@
                                 style="text-align:center;vertical-align:middle;"
                                 on:click={() => {
                                     handleRemoveKeranjang(rec.id, rec.bayar);
-                                }}
-                            >
+                                }}>
                                 <Icon name="trash" style="cursor:pointer;" />
                             </td>
-                            <td
-                                style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;"
-                                >{rec.nomor}</td
-                            >
-                            <td
-                                style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;"
-                                >{rec.permainan}</td
-                            >
-                            <td
-                                style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;"
-                            >
+                            <td style="text-align:center;vertical-align:top;font-size:12px;color:white;">{rec.nomor}</td>
+                            <td style="text-align:center;vertical-align:top;font-size:12px;color:white;">{rec.permainan}</td>
+                            <td style="text-align:right;vertical-align:top;font-size:12px;color:white;">
                                 {new Intl.NumberFormat().format(rec.bet)}
                             </td>
-                            <td
-                                style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;"
-                            >
+                            <td style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;">
                                 {new Intl.NumberFormat().format(
                                     Math.ceil(rec.diskon)
                                 )} ({(rec.diskonpercen * 100).toFixed(2)}%)
                             </td>
-                            <td
-                                style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;"
-                            >
+                            <td style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;">
                                 {new Intl.NumberFormat().format(rec.bayar)}
                             </td>
                         </tr>
@@ -237,35 +224,14 @@
                                 style="text-align:center;vertical-align:top;"
                                 on:click={() => {
                                     handleRemoveKeranjang(rec.id, rec.bayar);
-                                }}
-                            >
+                                }}>
                                 <Icon name="trash" style="cursor:pointer;" />
                             </td>
-                            <td
-                                style="text-align:center;vertical-align:top;font-size:11px;color:#fc0;"
-                                >{rec.nomor}</td
-                            >
-                            <td
-                                style="text-align:center;vertical-align:top;font-size:11px;color:#fc0;"
-                                >{rec.permainan}</td
-                            >
-                            <td
-                                style="text-align:right;vertical-align:top;font-size:11px;color:#fc0;"
-                            >
-                                {new Intl.NumberFormat().format(rec.bet)}
-                            </td>
-                            <td
-                                style="text-align:right;vertical-align:top;font-size:11px;color:#fc0;"
-                            >
-                                {new Intl.NumberFormat().format(
-                                    Math.ceil(rec.diskon)
-                                )} ({(rec.diskonpercen * 100).toFixed(2)}%)
-                            </td>
-                            <td
-                                style="text-align:right;vertical-align:top;font-size:11px;color:#fc0;"
-                            >
-                                {new Intl.NumberFormat().format(rec.bayar)}
-                            </td>
+                            <td style="text-align:center;vertical-align:top;font-size:11px;color:white;">{rec.nomor}</td>
+                            <td style="text-align:center;vertical-align:top;font-size:11px;color:white;">{rec.permainan}</td>
+                            <td style="text-align:right;vertical-align:top;font-size:11px;color:#fc0;">{new Intl.NumberFormat().format(rec.bet)}</td>
+                            <td style="text-align:right;vertical-align:top;font-size:11px;color:#fc0;">{new Intl.NumberFormat().format(Math.ceil(rec.diskon))} ({(rec.diskonpercen * 100).toFixed(2)}%)</td>
+                            <td style="text-align:right;vertical-align:top;font-size:11px;color:#fc0;">{new Intl.NumberFormat().format(rec.bayar)}</td>
                         </tr>
                     {/each}
                 </tbody>

@@ -121,8 +121,8 @@
                                 }}>
                                 <Icon name="trash" style="cursor:pointer;" />
                             </td>
-                            <td style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;">{rec.nomor}</td>
-                            <td style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;">{rec.permainan}</td>
+                            <td style="text-align:center;vertical-align:top;font-size:12px;color:white;">{rec.nomor}</td>
+                            <td style="text-align:center;vertical-align:top;font-size:12px;color:white;">{rec.permainan}</td>
                             <td style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;">{new Intl.NumberFormat().format(rec.bet)}</td>
                             <td style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;">
                                 {new Intl.NumberFormat().format(
@@ -164,8 +164,8 @@
                                 }}>
                                 <Icon name="trash" style="cursor:pointer;" />
                             </td>
-                            <td style="text-align:center;vertical-align:top;font-size:11px;color:#fc0;">{rec.nomor}</td>
-                            <td style="text-align:center;vertical-align:top;font-size:11px;color:#fc0;">{rec.permainan}</td>
+                            <td style="text-align:center;vertical-align:top;font-size:11px;color:white;">{rec.nomor}</td>
+                            <td style="text-align:center;vertical-align:top;font-size:11px;color:white;">{rec.permainan}</td>
                             <td style="text-align:right;vertical-align:top;font-size:11px;color:#fc0;">
                                 {new Intl.NumberFormat().format(rec.bet)}
                             </td>

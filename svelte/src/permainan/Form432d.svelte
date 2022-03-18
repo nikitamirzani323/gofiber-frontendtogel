@@ -5291,17 +5291,17 @@
 			on:click={() => {
 				handlePilihan("DISC");
 			}} 
-			class="btn btn-info btn-lg">DISKON</button>
+			class="btn btn-lg" id="btn1">DISKON</button>
 		<button
 			on:click={() => {
 				handlePilihan("FULL");
 			}} 
-			class="btn btn-info btn-lg">NON DISKON / FULL</button>
+			class="btn btn-lg" id="btn1">NON DISKON / FULL</button>
 		<button
 			on:click={() => {
 				handlePilihan("BB");
 			}} 
-			class="btn btn-info btn-lg">BOLAK BALIK / BB</button>
+			class="btn btn-lg" id="btn1">BOLAK BALIK / BB</button>
 	   </center>
     </slot:template>
 </Modal2>

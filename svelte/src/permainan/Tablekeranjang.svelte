@@ -149,7 +149,7 @@
                     <tr>
                         <th width="1%" style="text-align:center;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;" NOWRAP>&nbsp;</th>
                         <th width="10%" style="text-align:center;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;" NOWRAP>NOMOR</th>
-                        <th width="20%" style="text-align:center;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;" NOWRAP>TIPE</th>
+                        <th width="10%" style="text-align:center;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;" NOWRAP>TIPE</th>
                         <th width="20%" style="text-align:center;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;" NOWRAP>PERMAINAN</th>
                         <th width="20%" style="text-align:right;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;" NOWRAP>BET</th>
                         <th width="20%" style="text-align:right;vertical-align:top;background:#303030;font-size:13px;border-bottom:none;" NOWRAP>DISKON</th>
@@ -165,9 +165,9 @@
                                 }}>
                                 <Icon name="trash" style="cursor:pointer;" />
                             </td>
-                            <td style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;">{rec.nomor}</td>
-                            <td style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;">{rec.tipetoto}</td>
-                            <td style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;">{rec.permainan}</td>
+                            <td style="text-align:center;vertical-align:top;font-size:12px;color:white;">{rec.nomor}</td>
+                            <td style="text-align:center;vertical-align:top;font-size:12px;color:white;">{rec.tipetoto}</td>
+                            <td style="text-align:center;vertical-align:top;font-size:12px;color:white;">{rec.permainan}</td>
                             <td style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;">{new Intl.NumberFormat().format(rec.bet)}</td>
                             <td style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;">{new Intl.NumberFormat().format( Math.ceil(rec.diskon))} ({(rec.diskonpercen * 100).toFixed(2)}%)</td>
                             <td style="text-align:right;vertical-align:top;font-size:12px;color:#fc0;">{new Intl.NumberFormat().format(rec.bayar)}</td>
@@ -182,6 +182,7 @@
                         <tr>
                             <th width="1%" style="text-align:center;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;" NOWRAP>&nbsp;</th>
                             <th width="10%" style="text-align:center;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;" NOWRAP>NOMOR</th>
+                            <th width="10%" style="text-align:center;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;" NOWRAP>TIPE</th>
                             <th width="20%" style="text-align:center;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;" NOWRAP>PERMAINAN</th>
                             <th width="20%" style="text-align:right;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;" NOWRAP>BET</th>
                             <th width="20%" style="text-align:right;vertical-align:top;background:#303030;font-size:11px;border-bottom:none;" NOWRAP>DISKON</th>
@@ -202,16 +203,12 @@
                                         name="trash"
                                         style="cursor:pointer;"/>
                                 </td>
-                                <td style="text-align:center;vertical-align:top;font-size:11px;color:#fc0;">{rec.nomor}</td>
-                                <td style="text-align:center;vertical-align:top;font-size:11px;color:#fc0;">{rec.permainan}</td>
+                                <td style="text-align:center;vertical-align:top;font-size:11px;color:white;">{rec.nomor}</td>
+                                <td style="text-align:center;vertical-align:top;font-size:11px;color:white;">{rec.tipetoto}</td>
+                                <td style="text-align:center;vertical-align:top;font-size:11px;color:white;">{rec.permainan}</td>
+                                <td style="text-align:right;vertical-align:top;font-size:11px;color:#fc0;">{new Intl.NumberFormat().format(rec.bet)}</td>
                                 <td style="text-align:right;vertical-align:top;font-size:11px;color:#fc0;">
-                                    {new Intl.NumberFormat().format(rec.bet)}
-                                </td>
-                                <td
-                                    style="text-align:right;vertical-align:top;font-size:11px;color:#fc0;">
-                                    {new Intl.NumberFormat().format(
-                                        Math.ceil(rec.diskon)
-                                    )} <br />
+                                    {new Intl.NumberFormat().format( Math.ceil(rec.diskon))} <br />
                                     ({(rec.diskonpercen * 100).toFixed(2)}%)
                                 </td>
                                 <td style="text-align:right;vertical-align:top;font-size:11px;color:#fc0;">{new Intl.NumberFormat().format(rec.bayar)}</td>

@@ -324,7 +324,7 @@
                                 background =
                                     "background:#E91E63;font-weight:bold;color:white;";
                                 break;
-                        }
+                        }  
                         listhasilinvoicebet = [
                             ...listhasilinvoicebet,
                             {
