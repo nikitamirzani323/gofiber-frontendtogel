@@ -2,7 +2,7 @@
     import { Button, Col } from "sveltestrap";
     import Loader2 from "../components/Loader.svelte";
     import Notif from "../components/Notif.svelte";
-    import Headerback from "../components/Headerback.svelte";
+    import Header from "../components/Header.svelte";
     import Panel from "../components/Panel.svelte";
     import PanelFull from "../components/Panelfull.svelte";
     import Placeholder from "../components/Placeholder.svelte";
@@ -242,39 +242,7 @@
             }
         }
     }
-    async function fetch_bukumimpi() {
-        const res = await fetch("/api/bookdream", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                tipe: tipe,
-                nama: searchbukumimpi.toLowerCase(),
-            }),
-        });
-
-        const json = await res.json();
-        if (json.status == 200) {
-            record = json.record;
-            if (record != null) {
-                for (var i = 0; i < record.length; i++) {
-                    listBukumimpi = [
-                        ...listBukumimpi,
-                        {
-                            bukumimpi_tipe: record[i]["bukumimpi_tipe"],
-                            bukumimpi_nama: record[i]["bukumimpi_nama"],
-                            bukumimpi_nomor: record[i]["bukumimpi_nomor"],
-                        },
-                    ];
-                }
-            } else {
-                alert("Error");
-            }
-        } else {
-            alert("Error");
-        }
-    }
+    
     const handleInvoice = (e) => {
         resultinvoice = [];
         resultslipbet = [];
@@ -301,29 +269,7 @@
                 break;
         }
     };
-    const handleClickBukuMimpi = (e) => {
-        filterBukuMimpi = [];
-        listBukumimpi = [];
-        switch (e) {
-            case "ALL":
-                tipe = "";
-                searchbukumimpi = "";
-                break;
-            case "4D":
-                tipe = "4D";
-                searchbukumimpi = "";
-                break;
-            case "3D":
-                tipe = "3D";
-                searchbukumimpi = "";
-                break;
-            case "2D":
-                tipe = "2D";
-                searchbukumimpi = "";
-                break;
-        }
-        fetch_bukumimpi();
-    };
+    
     const handleKeyboardbukumimpi_checkenter = (e) => {
         let keyCode = e.which || e.keyCode;
         if (keyCode === 13) {
@@ -348,70 +294,65 @@
 </script>
 
 {#if statuspasaran == "ONLINE"}
-    <Headerback {client_token} {client_device} />
+<Header
+    {client_username}
+    {client_company}
+    {client_credit}
+    {client_token}
+    {client_ipaddress}
+    {client_timezone}
+    {client_device}/>
     {#if client_device == "WEBSITE"}
-        <Col xs="12" style="padding: 0px; margin:0px;margin-top:40px;">
-            <Panel>
-                <slot:template slot="header">
-                    <h1 style="padding:0px;margin:0px;color:white;font-size:13px;">
-                        JENIS PERMAINAN
-                    </h1>
-                </slot:template>
-                <slot:template slot="body">
-                    <ul class="nav nav-pills">
-                        <li class="active">
-                            <Button
-                                on:click={() => {
-                                    changePermainan("4-3-2");
-                                }}
-                                id={css_permainan_432}>4D/3D/2D</Button
-                            >&nbsp;
-                        </li>
-                        <li>
-                            <Button
-                                on:click={() => {
-                                    changePermainan("colok");
-                                }}
-                                id={css_permainan_colok}>Colok</Button
-                            >&nbsp;
-                        </li>
-                        <li>
-                            <Button
-                                on:click={() => {
-                                    changePermainan("5050");
-                                }}
-                                id={css_permainan_5050}>50-50</Button
-                            >&nbsp;
-                        </li>
-                        <li>
-                            <Button
-                                on:click={() => {
-                                    changePermainan("kombinasi");
-                                }}
-                                id={css_permainan_kombinasi}>KOMBINASI</Button
-                            >&nbsp;
-                        </li>
-                        <li>
-                            <Button
-                                on:click={() => {
-                                    changePermainan("dasar");
-                                }}
-                                id={css_permainan_dasar}>DASAR</Button
-                            >&nbsp;
-                        </li>
-                        <li>
-                            <Button
-                                on:click={() => {
-                                    changePermainan("shio");
-                                }}
-                                id={css_permainan_shio}>SHIO</Button
-                            >&nbsp;
-                        </li>
-                    </ul>
-                </slot:template>
-            </Panel>
-        </Col>
-        <div class="clearfix mt-2" />
+        <div class="card " style="margin-top:-30px;background:#323030;">
+            <div class="card-body" style="padding: 10px;margin:0px;background:#323030;">
+                <center style="margin-top: 5px;">
+                    <Button
+                        on:click={() => {
+                            changePermainan("4-3-2");
+                        }}
+                        id={css_permainan_432}>4D/3D/2D</Button>
+                    <Button
+                        on:click={() => {
+                            changePermainan("colok");
+                        }}
+                        id={css_permainan_colok}>Colok</Button>
+                    <Button
+                        on:click={() => {
+                            changePermainan("5050");
+                        }}
+                        id={css_permainan_5050}>50-50</Button>
+                    <Button
+                        on:click={() => {
+                            changePermainan("kombinasi");
+                        }}
+                        id={css_permainan_kombinasi}>KOMBINASI</Button>
+                    <Button
+                        on:click={() => {
+                            changePermainan("dasar");
+                        }}
+                        id={css_permainan_dasar}>DASAR</Button>
+                    <Button
+                        on:click={() => {
+                            changePermainan("shio");
+                        }}
+                        id={css_permainan_shio}>SHIO</Button>
+                </center>
+                <div class="float-start" style="margin-top: -30px;">
+                    <a
+                        style=""
+                        class="navbar-brand"
+                        href="/?token={client_token}"
+                        title="BACK">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="24" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                        </svg>
+                        Back
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+        <div class="clearfix mt-4" />
         <Col
             xxl="7"
             xl="7"
@@ -553,22 +494,7 @@
                         aria-selected="true">BET HISTORY</button>
                 </li>
 
-                <li
-                    on:click={() => {
-                        handleClickTab("BUKUMIMPI");
-                    }}
-                    class="nav-item"
-                    role="presentation">
-                    <button
-                        class="nav-link"
-                        id="pills-contact-tab"
-                        data-bs-toggle="pill"
-                        data-bs-target="#pills-bukumimpi"
-                        type="button"
-                        role="tab"
-                        aria-controls="pills-bukumimpi"
-                        aria-selected="false">BUKU MIMPI</button>
-                </li>
+                
             </ul>
             <div class="tab-content" id="pills-tabContent">
                 <div
@@ -651,244 +577,7 @@
                         </slot:template>
                     </PanelFull>
                 </div>
-                <div
-                    class="tab-pane fade"
-                    id="pills-bukumimpi"
-                    role="tabpanel"
-                    aria-labelledby="pills-result-tab">
-                    <ul
-                        class="nav nav-pills mb-3"
-                        id="pills-tab"
-                        role="tablist"
-                        style="background-color: #181818;">
-                        <li
-                            on:click={() => {
-                                handleClickBukuMimpi("ALL");
-                            }}
-                            class="nav-item"
-                            role="presentation">
-                            <button
-                                class="nav-link active"
-                                id="pills-home-tab"
-                                data-bs-toggle="pill"
-                                data-bs-target="#pills-bukumimpiall"
-                                type="button"
-                                role="tab"
-                                aria-controls="pills-bukumimpiall"
-                                aria-selected="true">ALL</button>
-                        </li>
-                        <li
-                            on:click={() => {
-                                handleClickBukuMimpi("4D");
-                            }}
-                            class="nav-item"
-                            role="presentation">
-                            <button
-                                class="nav-link"
-                                id="pills-profile-tab"
-                                data-bs-toggle="pill"
-                                data-bs-target="#pills-bukumimpi4d"
-                                type="button"
-                                role="tab"
-                                aria-controls="pills-bukumimpi4d"
-                                aria-selected="false">4D</button>
-                        </li>
-                        <li
-                            on:click={() => {
-                                handleClickBukuMimpi("3D");
-                            }}
-                            class="nav-item"
-                            role="presentation">
-                            <button
-                                class="nav-link"
-                                id="pills-contact-tab"
-                                data-bs-toggle="pill"
-                                data-bs-target="#pills-bukumimpi3d"
-                                type="button"
-                                role="tab"
-                                aria-controls="pills-bukumimpi3d"
-                                aria-selected="false">3D</button
-                            >
-                        </li>
-                        <li
-                            on:click={() => {
-                                handleClickBukuMimpi("2D");
-                            }}
-                            class="nav-item"
-                            role="presentation">
-                            <button
-                                class="nav-link"
-                                id="pills-contact-tab"
-                                data-bs-toggle="pill"
-                                data-bs-target="#pills-bukumimpi2d"
-                                type="button"
-                                role="tab"
-                                aria-controls="pills-bukumimpi2d"
-                                aria-selected="false">2D</button>
-                        </li>
-                    </ul>
-                    <input
-                        bind:value={searchbukumimpi}
-                        on:keypress={handleKeyboardbukumimpi_checkenter}
-                        style="border-radius: none;border: none; background: rgb(48, 48, 48) none repeat scroll 0% 0%; color: white; font-size: 14px; "
-                        placeholder="Ketik apa yang telah kamu mimpikan"
-                        class="form-control"
-                        type="text"/>
-                    <div class="tab-content" id="pills-tabContent">
-                        <div
-                            class="tab-pane fade show active"
-                            id="pills-bukumimpiall"
-                            role="tabpanel"
-                            aria-labelledby="pills-bukumimpiall-tab">
-                            <PanelFull
-                                header={false}
-                                footer={false}
-                                body_style="padding:0px;margin:0px;background:#121212;border:1px solid #0e0c13;height:620px;">
-                                <slot:template slot="body">
-                                    {#if filterBukuMimpi != ""}
-                                    <table>
-                                        <tbody>
-                                            {#each filterBukuMimpi as rec}
-                                                <tr>
-                                                    <td
-                                                        NOWRAP
-                                                        width="30px"
-                                                        style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;">{rec.bukumimpi_tipe}</td>
-                                                    <td
-                                                        width="*"
-                                                        style="text-align:left;vertical-align:top;font-size:12px;color:#8b8989;">{rec.bukumimpi_nama}
-                                                        <br />
-                                                        <span style="color:#fc0;font-size:12px;">{rec.bukumimpi_nomor}</span>
-                                                    </td>
-                                                </tr>
-                                            {/each}
-                                        </tbody>
-                                    </table>
-                                    {:else}
-                                    <Placeholder total_placeholder="20" card_style="background-color:#2c2c2c;border:none;margin-top:5px;" />
-                                    {/if}
-                                </slot:template>
-                            </PanelFull>
-                        </div>
-                        <div
-                            class="tab-pane fade"
-                            id="pills-bukumimpi4d"
-                            role="tabpanel"
-                            aria-labelledby="pills-bukumimpi4d-tab">
-                            <PanelFull
-                                header={false}
-                                footer={false}
-                                body_style="padding:0px;margin:0px;background:#121212;border:1px solid #0e0c13;height:620px;">
-                                <slot:template slot="body">
-                                    {#if filterBukuMimpi != ""}
-                                    <table>
-                                        <tbody>
-                                            {#each filterBukuMimpi as rec}
-                                                <tr>
-                                                    <td
-                                                        NOWRAP
-                                                        width="30px"
-                                                        style="text-align:center;vertical-align:top;font-size:14px;color:#fc0;"
-                                                        >{rec.bukumimpi_tipe}</td
-                                                    >
-                                                    <td
-                                                        width="*"
-                                                        style="text-align:left;vertical-align:top;font-size:15px;color:#8b8989;"
-                                                        >{rec.bukumimpi_nama}
-                                                        <br />
-                                                        <span
-                                                            style="color:#fc0;font-size:14px;"
-                                                            >{rec.bukumimpi_nomor}</span
-                                                        >
-                                                    </td>
-                                                </tr>
-                                            {/each}
-                                        </tbody>
-                                    </table>
-                                    {:else}
-                                    <Placeholder total_placeholder="20" card_style="background-color:#2c2c2c;border:none;margin-top:5px;" />
-                                    {/if}
-                                </slot:template>
-                            </PanelFull>
-                        </div>
-                        <div
-                            class="tab-pane fade"
-                            id="pills-bukumimpi3d"
-                            role="tabpanel"
-                            aria-labelledby="pills-bukumimpi3d-tab">
-                            <PanelFull
-                                header={false}
-                                footer={false}
-                                body_style="padding:0px;margin:0px;background:#121212;border:1px solid #0e0c13;height:620px;">
-                                <slot:template slot="body">
-                                    {#if filterBukuMimpi != ""}
-                                    <table>
-                                        <tbody>
-                                            {#each filterBukuMimpi as rec}
-                                                <tr>
-                                                    <td
-                                                        NOWRAP
-                                                        width="30px"
-                                                        style="text-align:center;vertical-align:top;font-size:14px;color:#fc0;"
-                                                        >{rec.bukumimpi_tipe}</td
-                                                    >
-                                                    <td
-                                                        width="*"
-                                                        style="text-align:left;vertical-align:top;font-size:15px;color:#8b8989;"
-                                                        >{rec.bukumimpi_nama}
-                                                        <br />
-                                                        <span
-                                                            style="color:#fc0;font-size:14px;"
-                                                            >{rec.bukumimpi_nomor}</span
-                                                        >
-                                                    </td>
-                                                </tr>
-                                            {/each}
-                                        </tbody>
-                                    </table>
-                                    {:else}
-                                    <Placeholder total_placeholder="20" card_style="background-color:#2c2c2c;border:none;margin-top:5px;" />
-                                    {/if}
-                                </slot:template>
-                            </PanelFull>
-                        </div>
-                        <div
-                            class="tab-pane fade"
-                            id="pills-bukumimpi2d"
-                            role="tabpanel"
-                            aria-labelledby="pills-bukumimpi2d-tab">
-                            <PanelFull
-                                header={false}
-                                footer={false}
-                                body_style="padding:0px;margin:0px;background:#121212;border:1px solid #0e0c13;height:620px;">
-                                <slot:template slot="body">
-                                    {#if filterBukuMimpi != ""}
-                                    <table>
-                                        <tbody>
-                                            {#each filterBukuMimpi as rec}
-                                                <tr>
-                                                    <td
-                                                        NOWRAP
-                                                        width="30px"
-                                                        style="text-align:center;vertical-align:top;font-size:12px;color:#fc0;">{rec.bukumimpi_tipe}</td>
-                                                    <td
-                                                        width="*"
-                                                        style="text-align:left;vertical-align:top;font-size:15px;color:#8b8989;">{rec.bukumimpi_nama}
-                                                        <br />
-                                                        <span style="color:#fc0;font-size:12px;">{rec.bukumimpi_nomor}</span>
-                                                    </td>
-                                                </tr>
-                                            {/each}
-                                        </tbody>
-                                    </table>
-                                    {:else}
-                                    <Placeholder total_placeholder="20" card_style="background-color:#2c2c2c;border:none;margin-top:5px;" />
-                                    {/if}
-                                </slot:template>
-                            </PanelFull>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </Col>
     {:else}

@@ -246,10 +246,10 @@
                 <tr>
                     <td style="color:white;">4D : <span style="color:#fc0;">{count_line_4d}</span></td>
                     <td style="color:white;">3D : <span style="color:#fc0;">{count_line_3d}</span></td>
-                    <td style="color:white;">3DD : <span style="color:#fc0;">{count_line_3d}</span></td>
+                    <td style="color:white;">3D DEPAN : <span style="color:#fc0;">{count_line_3d}</span></td>
                     <td style="color:white;">2D : <span style="color:#fc0;">{count_line_2d}</span></td>
-                    <td style="color:white;">2DD : <span style="color:#fc0;">{count_line_2dd}</span></td>
-                    <td style="color:white;">2DT : <span style="color:#fc0;">{count_line_2dt}</span></td>
+                    <td style="color:white;">2D DEPAN : <span style="color:#fc0;">{count_line_2dd}</span></td>
+                    <td style="color:white;">2D TENGAH : <span style="color:#fc0;">{count_line_2dt}</span></td>
                 </tr>
             </table>
         {/if}
@@ -269,23 +269,23 @@
             <thead>
                 <tr>
                     <th style="background:#303030;border:1px solid #282828;border-bottom:none;">&nbsp;</th>
-                    <th style="background:#303030;border:1px solid #282828;text-align:right;border-bottom:none;">4D</th>
-                    <th style="background:#303030;border:1px solid #282828;text-align:right;border-bottom:none;">3D</th>
-                    <th style="background:#303030;border:1px solid #282828;text-align:right;border-bottom:none;">3DD</th>
-                    <th style="background:#303030;border:1px solid #282828;text-align:right;border-bottom:none;">2D</th>
-                    <th style="background:#303030;border:1px solid #282828;text-align:right;border-bottom:none;">2DD</th>
-                    <th style="background:#303030;border:1px solid #282828;text-align:right;border-bottom:none;">2DT</th>
+                    <th style="background:#303030;border:1px solid #282828;text-align:right;border-bottom:none;font-size:11px;">4D</th>
+                    <th style="background:#303030;border:1px solid #282828;text-align:right;border-bottom:none;font-size:11px;">3D</th>
+                    <th style="background:#303030;border:1px solid #282828;text-align:right;border-bottom:none;font-size:11px;">3DD / 3D DEPAN</th>
+                    <th style="background:#303030;border:1px solid #282828;text-align:right;border-bottom:none;font-size:11px;">2D</th>
+                    <th style="background:#303030;border:1px solid #282828;text-align:right;border-bottom:none;font-size:11px;">2DD / 2D DEPAN</th>
+                    <th style="background:#303030;border:1px solid #282828;text-align:right;border-bottom:none;font-size:11px;">2DT / 2D TENGAH</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td nowrap style="background:#303030;border:1px solid #282828;font-size:12px;">MIN BET</td>
-                    <td nowrap style="border:1px solid #282828;text-align:right;font-size:12px;color:#fc0;">{new Intl.NumberFormat().format(minimal_bet)}</td>
-                    <td nowrap style="border:1px solid #282828;text-align:right;font-size:12px;color:#fc0;">{new Intl.NumberFormat().format(minimal_bet)}</td>
-                    <td nowrap style="border:1px solid #282828;text-align:right;font-size:12px;color:#fc0;">{new Intl.NumberFormat().format( minimal_bet)}</td>
-                    <td nowrap style="border:1px solid #282828;text-align:right;font-size:12px;color:#fc0;">{new Intl.NumberFormat().format(minimal_bet)}</td>
-                    <td nowrap style="border:1px solid #282828;text-align:right;font-size:12px;color:#fc0;">{new Intl.NumberFormat().format(minimal_bet)}</td>
-                    <td nowrap style="border:1px solid #282828;text-align:right;font-size:12px;color:#fc0;">{new Intl.NumberFormat().format(minimal_bet)}</td>
+                    <td nowrap style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{new Intl.NumberFormat().format(minimal_bet)}</td>
+                    <td nowrap style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{new Intl.NumberFormat().format(minimal_bet)}</td>
+                    <td nowrap style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{new Intl.NumberFormat().format( minimal_bet)}</td>
+                    <td nowrap style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{new Intl.NumberFormat().format(minimal_bet)}</td>
+                    <td nowrap style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{new Intl.NumberFormat().format(minimal_bet)}</td>
+                    <td nowrap style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{new Intl.NumberFormat().format(minimal_bet)}</td>
                 </tr>
                 <tr>
                     <td style="background:#303030;border:1px solid #282828;font-size:11px;">MAX BET</td>
@@ -307,7 +307,7 @@
                 </tr>
                 <tr>
                     <td style="background:#303030;border:1px solid #282828;font-size:11px;">HADIAH</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#fc0;">{win4d_bet}x</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win4d_bet}x</td>
                     <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win3d_bet}x</td>
                     <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win3dd_bet}x</td>
                     <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win2d_bet}x</td>
@@ -316,7 +316,7 @@
                 </tr>
                 <tr>
                     <td style="background:#303030;border:1px solid #282828;font-size:11px;">HADIAH FULL</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#fc0;">{win4dnodiskon_bet}x</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win4dnodiskon_bet}x</td>
                     <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win3dnodiskon_bet}x</td>
                     <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win3ddnodiskon_bet}x</td>
                     <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win2dnodiskon_bet}x</td>
@@ -324,8 +324,8 @@
                     <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win2dtnodiskon_bet}x</td>
                 </tr>
                 <tr>
-                    <td style="background:#303030;border:1px solid #282828;font-size:11px;">HADIAH BB KENA</td>
-                    <td style="border:1px solid #282828;text-align:right;font-size:12px;color:#fc0;">{win4dbb_kena_bet}x</td>
+                    <td style="background:#303030;border:1px solid #282828;font-size:11px;" NOWRAP>HADIAH BB KENA</td>
+                    <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win4dbb_kena_bet}x</td>
                     <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win3dbb_kena_bet}x</td>
                     <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win3ddbb_kena_bet}x</td>
                     <td style="border:1px solid #282828;text-align:right;font-size:11px;color:#fc0;">{win2dbb_kena_bet}x</td>
@@ -355,9 +355,13 @@
         <p style="font-size:12px;padding:5px;color:white;">
             <b>Contoh Penulisan 4D/3D/2D:</b><br />
             1234 : 4D<br /> 
-            123 : 3D<br /> *123 : 3D<br /> 123* : 3DD<br /> 
+            123 : 3D<br /> 
+            *123 : 3D<br /> 
+            123* : 3DD / 3D DEPAN<br /> 
             12 : 2D <br />
-            **12 : 2D<br /> 12** : 2DD<br /> *12* : 2DT
+            **12 : 2D<br /> 
+            12** : 2DD / 2D DEPAN<br /> 
+            *12* : 2DT / 2D TENGAH
         </p>
         <p style="font-size:12px;padding: 5px;color:white;">
             <b>CARA BERMAIN</b><br>
@@ -369,10 +373,10 @@
             Berarti pemenang untuk<br />
             4D = 4321<br />
             3D = 321<br />
-            3DD = 432<br />
+            3DD / 3D DEPAN = 432<br />
             2D = 21<br />
-            2DD = 43<br />
-            2DT = 32<br /><br />
+            2DD / 2D DEPAN = 43<br />
+            2DT / 2D TENGAH = 32<br /><br />
 
             Aturan permainan:<br />
             1. Jika anda membeli diluar dari nomor yang dikeluarkan, berarti

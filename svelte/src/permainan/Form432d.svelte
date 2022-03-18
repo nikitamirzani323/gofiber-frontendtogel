@@ -3640,9 +3640,9 @@
 			</h1>
 		</CardHeader>
 		<CardBody style="background:#121212;padding:0px;margin:0px;">
-			<ul class="nav nav-pills">
+			<ul class="nav nav-pills nav-fill">
 				<li class="nav-item">
-				  <button
+					<button
 					class="nav-link active"
 					id="pills-form432d-tab"
 					data-bs-toggle="pill"
@@ -3654,91 +3654,91 @@
 				</li>
 				<li class="nav-item">
 					<button
-					  class="nav-link"
-					  id="pills-form432dset-tab"
-					  data-bs-toggle="pill"
-					  data-bs-target="#pills-form432dset"
-					  type="button"
-					  role="tab"
-					  aria-controls="pills-form432dset"
-					  aria-selected="true">4D/3D/2D SET</button>
+						class="nav-link"
+						id="pills-form432dset-tab"
+						data-bs-toggle="pill"
+						data-bs-target="#pills-form432dset"
+						type="button"
+						role="tab"
+						aria-controls="pills-form432dset"
+						aria-selected="true">4D/3D/2D SET</button>
 				</li>
 				<li class="nav-item">
 					<button
-					  class="nav-link"
-					  id="pills-bolakbalik-tab"
-					  data-bs-toggle="pill"
-					  data-bs-target="#pills-bolakbalik"
-					  type="button"
-					  role="tab"
-					  aria-controls="pills-bolakbalik"
-					  aria-selected="true">BOLAK BALIK</button>
+						class="nav-link"
+						id="pills-bolakbalik-tab"
+						data-bs-toggle="pill"
+						data-bs-target="#pills-bolakbalik"
+						type="button"
+						role="tab"
+						aria-controls="pills-bolakbalik"
+						aria-selected="true">BOLAK BALIK</button>
 				</li>
 				<li class="nav-item">
 					<button
-					  class="nav-link"
-					  id="pills-wap-tab"
-					  data-bs-toggle="pill"
-					  data-bs-target="#pills-wap"
-					  type="button"
-					  role="tab"
-					  aria-controls="pills-wap"
-					  aria-selected="true">WAP</button>
+						class="nav-link"
+						id="pills-wap-tab"
+						data-bs-toggle="pill"
+						data-bs-target="#pills-wap"
+						type="button"
+						role="tab"
+						aria-controls="pills-wap"
+						aria-selected="true">WAP</button>
 				</li>
 				<li class="nav-item">
 					<button
-					  class="nav-link"
-					  id="pills-polatarung-tab"
-					  data-bs-toggle="pill"
-					  data-bs-target="#pills-polatarung"
-					  type="button"
-					  role="tab"
-					  aria-controls="pills-polatarung"
-					  aria-selected="true">POLA TARUNG</button>
+						class="nav-link"
+						id="pills-polatarung-tab"
+						data-bs-toggle="pill"
+						data-bs-target="#pills-polatarung"
+						type="button"
+						role="tab"
+						aria-controls="pills-polatarung"
+						aria-selected="true">POLA TARUNG</button>
 				</li>
 				<li class="nav-item">
 					<button
-					  class="nav-link"
-					  id="pills-quick2d-tab"
-					  data-bs-toggle="pill"
-					  data-bs-target="#pills-quick2d"
-					  type="button"
-					  role="tab"
-					  aria-controls="pills-quick2d"
-					  aria-selected="true">QUICK 2D</button>
+						class="nav-link"
+						id="pills-quick2d-tab"
+						data-bs-toggle="pill"
+						data-bs-target="#pills-quick2d"
+						type="button"
+						role="tab"
+						aria-controls="pills-quick2d"
+						aria-selected="true">QUICK 2D</button>
 				</li>
 				<li class="nav-item">
 					<button
-					  class="nav-link"
-					  id="pills-3dd-tab"
-					  data-bs-toggle="pill"
-					  data-bs-target="#pills-3dd"
-					  type="button"
-					  role="tab"
-					  aria-controls="pills-3dd"
-					  aria-selected="true">3DD</button>
+						class="nav-link"
+						id="pills-3dd-tab"
+						data-bs-toggle="pill"
+						data-bs-target="#pills-3dd"
+						type="button"
+						role="tab"
+						aria-controls="pills-3dd"
+						aria-selected="true">3DD</button>
 				</li>
 				<li class="nav-item">
 					<button
-					  class="nav-link"
-					  id="pills-2dd-tab"
-					  data-bs-toggle="pill"
-					  data-bs-target="#pills-2dd"
-					  type="button"
-					  role="tab"
-					  aria-controls="pills-2dd"
-					  aria-selected="true">2DD</button>
+						class="nav-link"
+						id="pills-2dd-tab"
+						data-bs-toggle="pill"
+						data-bs-target="#pills-2dd"
+						type="button"
+						role="tab"
+						aria-controls="pills-2dd"
+						aria-selected="true">2DD</button>
 				</li>
 				<li class="nav-item">
 					<button
-					  class="nav-link"
-					  id="pills-2dt-tab"
-					  data-bs-toggle="pill"
-					  data-bs-target="#pills-2dt"
-					  type="button"
-					  role="tab"
-					  aria-controls="pills-2dt"
-					  aria-selected="true">2D TENGAH</button>
+						class="nav-link"
+						id="pills-2dt-tab"
+						data-bs-toggle="pill"
+						data-bs-target="#pills-2dt"
+						type="button"
+						role="tab"
+						aria-controls="pills-2dt"
+						aria-selected="true">2DT</button>
 				</li>
 			</ul>
 			<div class="tab-content" id="nav-tabContent">
@@ -4394,7 +4394,7 @@
 										on:keypress={handleKeyboard3dd_checkenter}
 										type="text"
 										class="form-control form-control-sm"
-										placeholder="Input 3DD Digit"
+										placeholder="Input 3D DEPAN Digit"
 										style="border:none;background:#303030;color:white;font-size:20px;text-align:center;"
 										minlength="3"
 										maxlength="3"
@@ -4459,7 +4459,7 @@
 										on:keypress={handleKeyboard2dd_checkenter}
 										type="text"
 										class="form-control form-control-sm"
-										placeholder="Input 2DD Digit"
+										placeholder="Input 2D DEPAN Digit"
 										style="border:none;background:#303030;color:white;font-size:20px;text-align:center;"
 										minlength="2"
 										maxlength="2"
@@ -4526,7 +4526,7 @@
 										on:keypress={handleKeyboard2dt_checkenter}
 										type="text"
 										class="form-control form-control-sm"
-										placeholder="Input 2DT Digit"
+										placeholder="Input 2D TENGAH Digit"
 										style="border:none;background:#303030;color:white;font-size:20px;text-align:center;"
 										minlength="2"
 										maxlength="2"
